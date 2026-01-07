@@ -11,6 +11,7 @@ import { WhatsIncludedSection } from "@/components/WhatsIncludedSection";
 import { GuidesSection } from "@/components/GuidesSection";
 import { FreeResourcesSection } from "@/components/FreeResourcesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { PastProjectsSection } from "@/components/PastProjectsSection";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SEOHead } from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
@@ -56,6 +57,7 @@ const Index = () => {
       <main className="flex-1 pt-16">
         <HeroSection />
         <DownloadSection />
+        <PastProjectsSection />
         <MSAccessSection />
         <FormsQueriesSection />
         <SampleReportsSection />

@@ -86,6 +86,45 @@ export type Database = {
         }
         Relationships: []
       }
+      past_projects: {
+        Row: {
+          created_at: string
+          description: string | null
+          download_count: number | null
+          download_url: string
+          file_type: string
+          id: string
+          is_published: boolean | null
+          title: string
+          updated_at: string
+          year: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          download_url: string
+          file_type?: string
+          id?: string
+          is_published?: boolean | null
+          title: string
+          updated_at?: string
+          year: number
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          download_url?: string
+          file_type?: string
+          id?: string
+          is_published?: boolean | null
+          title?: string
+          updated_at?: string
+          year?: number
+        }
+        Relationships: []
+      }
       seo_settings: {
         Row: {
           canonical_url: string | null
