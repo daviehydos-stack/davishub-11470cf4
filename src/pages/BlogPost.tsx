@@ -15,6 +15,7 @@ import {
   Loader2,
   BookOpen,
   ArrowRight,
+  Download,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -231,80 +232,91 @@ const BlogPost = () => {
       />
       <Header />
       <main className="flex-1 pt-16">
-        {/* Hero Section */}
-        <section className="relative">
-          {blogPost?.featured_image && (
-            <div className="absolute inset-0 h-80 md:h-96">
-              <img
-                src={blogPost.featured_image}
-                alt={blogPost.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-            </div>
-          )}
-          
-          <div className="container mx-auto px-4 relative pt-8 pb-12">
+        {/* Hero Section - Desktop: Two column, Mobile: Stacked */}
+        <section className="relative py-8 md:py-12 border-b border-border">
+          <div className="container mx-auto px-4">
             <Link
               to="/blogs"
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to articles
             </Link>
 
-            <div className="max-w-3xl">
-              <Badge className="mb-4 bg-primary text-primary-foreground">
-                {blogPost?.category || 'General'}
-              </Badge>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                {blogPost?.title}
-              </h1>
-              
-              {blogPost?.excerpt && (
-                <p className="text-lg text-muted-foreground mb-6">
-                  {blogPost.excerpt}
-                </p>
-              )}
+            <div className="grid md:grid-cols-[1fr,320px] gap-8 items-start">
+              {/* Main Content Column */}
+              <div>
+                <Badge className="mb-4 bg-primary text-primary-foreground">
+                  {blogPost?.category || 'General'}
+                </Badge>
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                  {blogPost?.title}
+                </h1>
+                
+                {blogPost?.excerpt && (
+                  <p className="text-lg text-muted-foreground mb-6">
+                    {blogPost.excerpt}
+                  </p>
+                )}
 
-              {blogPost?.keywords && blogPost.keywords.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {blogPost.keywords.map((k) => (
-                    <Link key={k} to={`/tags/${encodeURIComponent(k)}`} aria-label={`View posts tagged ${k}`}>
-                      <Badge variant="secondary" className="hover:bg-secondary/70">
-                        {k}
-                      </Badge>
-                    </Link>
-                  ))}
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    {formatDate(blogPost?.created_at || "")}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    {estimateReadingTime(blogPost?.content || "")} min read
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-4 w-4" />
+                    KCSE Guide
+                  </div>
                 </div>
-              )}
 
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  {formatDate(blogPost?.created_at || "")}
+                {blogPost?.keywords && blogPost.keywords.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {blogPost.keywords.map((k) => (
+                      <Link key={k} to={`/tags/${encodeURIComponent(k)}`} aria-label={`View posts tagged ${k}`}>
+                        <Badge variant="secondary" className="hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer">
+                          {k}
+                        </Badge>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Sidebar - Featured Image & Actions */}
+              <div className="space-y-4 md:sticky md:top-24">
+                {blogPost?.featured_image && (
+                  <div className="rounded-xl overflow-hidden border border-border">
+                    <img
+                      src={blogPost.featured_image}
+                      alt={blogPost.title}
+                      className="w-full h-48 md:h-56 object-cover"
+                    />
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" onClick={handleShare} className="flex-1">
+                    <Share2 className="h-4 w-4 mr-2" />
+                    Share
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => window.print()} className="flex-1">
+                    <Download className="h-4 w-4 mr-2" />
+                    Save
+                  </Button>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
-                  {estimateReadingTime(blogPost?.content || "")} min read
-                </div>
-                <div className="flex items-center gap-2">
-                  <BookOpen className="h-4 w-4" />
-                  KCSE Guide
-                </div>
-                <Button variant="ghost" size="sm" onClick={handleShare} className="ml-auto">
-                  <Share2 className="h-4 w-4 mr-2" />
-                  Share
-                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Content Section */}
-        <article className="py-12">
+        {/* Content Section - Full width on desktop */}
+        <article className="py-10">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl">
               <div
                 className="prose prose-lg max-w-none 
                   prose-headings:font-display prose-headings:text-foreground prose-headings:font-bold

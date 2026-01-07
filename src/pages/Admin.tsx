@@ -10,9 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Trash2, Edit, Plus, ArrowLeft, Save, X, Eye, EyeOff, 
-  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video
+  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { PastProjectsPanel } from "@/components/admin/PastProjectsPanel";
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import ImageExtension from '@tiptap/extension-image';
@@ -1148,10 +1149,14 @@ const Admin = () => {
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="mb-6">
+            <TabsList className="mb-6 flex-wrap">
               <TabsTrigger value="posts" className="flex items-center gap-2">
                 <FileText className="w-4 h-4" />
                 Blog Posts
+              </TabsTrigger>
+              <TabsTrigger value="projects" className="flex items-center gap-2">
+                <FolderOpen className="w-4 h-4" />
+                Past Projects
               </TabsTrigger>
               <TabsTrigger value="videos" className="flex items-center gap-2">
                 <Video className="w-4 h-4" />
@@ -1162,6 +1167,10 @@ const Admin = () => {
                 SEO Settings
               </TabsTrigger>
             </TabsList>
+
+            <TabsContent value="projects">
+              <PastProjectsPanel refreshSession={refreshSession} />
+            </TabsContent>
 
             <TabsContent value="posts">
               {error && (
