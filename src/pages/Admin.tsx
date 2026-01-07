@@ -1212,14 +1212,17 @@ const Admin = () => {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Essential fields at top */}
                     <div className="grid gap-4 md:grid-cols-2">
                       <div>
-                        <label className="block text-sm font-medium mb-1">Title *</label>
+                        <label className="block text-sm font-medium mb-1">Title * <span className="text-xs text-muted-foreground">(also used as Meta Title)</span></label>
                         <Input
                           value={formData.title}
                           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                          placeholder="Blog post title"
+                          placeholder="Blog post title (max 60 chars for SEO)"
+                          maxLength={70}
                         />
+                        <p className="text-xs text-muted-foreground mt-1">{formData.title.length}/70</p>
                       </div>
                       <div>
                         <label className="block text-sm font-medium mb-1">Category</label>
@@ -1236,24 +1239,25 @@ const Admin = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-1">Excerpt *</label>
+                      <label className="block text-sm font-medium mb-1">Excerpt * <span className="text-xs text-muted-foreground">(also used as Meta Description - max 160 chars)</span></label>
                       <Textarea
                         value={formData.excerpt}
                         onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                        placeholder="Brief summary of the post"
+                        placeholder="Brief summary of the post (max 160 chars for SEO)"
                         rows={2}
+                        maxLength={200}
                       />
+                      <p className="text-xs text-muted-foreground mt-1">{formData.excerpt.length}/200</p>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-1">Content *</label>
-                      <RichTextEditor
-                        content={formData.content}
-                        onChange={(content) => setFormData({ ...formData, content })}
+                      <label className="block text-sm font-medium mb-1">Keywords/Tags <span className="text-xs text-muted-foreground">(comma separated)</span></label>
+                      <Input
+                        value={formData.keywords}
+                        onChange={(e) => setFormData({ ...formData, keywords: e.target.value })}
+                        placeholder="KCSE, Computer Studies, Project, Database"
                       />
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Supports copy-paste from ChatGPT and other tools with formatting preserved.
-                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">These appear as clickable tags on the post and help with SEO.</p>
                     </div>
 
                     <div>
@@ -1297,65 +1301,15 @@ const Admin = () => {
                       )}
                     </div>
 
-                    <div className="border-t pt-6">
-                      <h3 className="font-semibold mb-4 flex items-center gap-2">
-                        <Settings className="w-4 h-4" />
-                        SEO Settings
-                      </h3>
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div>
-                          <label className="block text-sm font-medium mb-1">Meta Title</label>
-                          <Input
-                            value={formData.meta_title}
-                            onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
-                            placeholder="SEO title (max 60 chars)"
-                            maxLength={60}
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium mb-1">Canonical URL</label>
-                          <Input
-                            value={formData.canonical_url}
-                            onChange={(e) => setFormData({ ...formData, canonical_url: e.target.value })}
-                            placeholder="https://example.com/page"
-                          />
-                        </div>
-                        <div className="md:col-span-2">
-                          <label className="block text-sm font-medium mb-1">Meta Description</label>
-                          <Textarea
-                            value={formData.meta_description}
-                            onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
-                            placeholder="SEO description (max 160 chars)"
-                            maxLength={160}
-                            rows={2}
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium mb-1">OG Title</label>
-                          <Input
-                            value={formData.og_title}
-                            onChange={(e) => setFormData({ ...formData, og_title: e.target.value })}
-                            placeholder="Open Graph title"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium mb-1">Keywords</label>
-                          <Input
-                            value={formData.keywords}
-                            onChange={(e) => setFormData({ ...formData, keywords: e.target.value })}
-                            placeholder="keyword1, keyword2, keyword3"
-                          />
-                        </div>
-                        <div className="md:col-span-2">
-                          <label className="block text-sm font-medium mb-1">OG Description</label>
-                          <Textarea
-                            value={formData.og_description}
-                            onChange={(e) => setFormData({ ...formData, og_description: e.target.value })}
-                            placeholder="Open Graph description"
-                            rows={2}
-                          />
-                        </div>
-                      </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-1">Content *</label>
+                      <RichTextEditor
+                        content={formData.content}
+                        onChange={(content) => setFormData({ ...formData, content })}
+                      />
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Supports copy-paste from ChatGPT with formatting. Use toolbar for tables.
+                      </p>
                     </div>
 
                     <div className="flex items-center gap-4 pt-4 border-t">

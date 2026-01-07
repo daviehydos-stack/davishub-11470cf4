@@ -330,3 +330,61 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground));
 }
+
+/* Print styles - only print blog content */
+@media print {
+  /* Hide everything except blog content */
+  body * {
+    visibility: hidden;
+  }
+  
+  #blog-content,
+  #blog-content * {
+    visibility: visible;
+  }
+  
+  #blog-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Reset colors for print */
+  #blog-content {
+    color: black !important;
+    background: white !important;
+  }
+  
+  #blog-content .prose {
+    color: black !important;
+    max-width: none !important;
+  }
+  
+  #blog-content .prose h1,
+  #blog-content .prose h2,
+  #blog-content .prose h3,
+  #blog-content .prose h4,
+  #blog-content .prose strong {
+    color: black !important;
+  }
+  
+  #blog-content .prose p,
+  #blog-content .prose li {
+    color: #333 !important;
+  }
+  
+  #blog-content .prose a {
+    color: #0066cc !important;
+  }
+  
+  #blog-content .prose table th,
+  #blog-content .prose table td {
+    border-color: #ccc !important;
+  }
+  
+  #blog-content .prose table th {
+    background: #f0f0f0 !important;
+  }
+}
