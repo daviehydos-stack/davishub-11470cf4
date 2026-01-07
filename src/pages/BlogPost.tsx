@@ -243,9 +243,9 @@ const BlogPost = () => {
               Back to articles
             </Link>
 
-            <div className="grid md:grid-cols-[1fr,320px] gap-8 items-start">
-              {/* Main Content Column */}
-              <div>
+            <div className="max-w-3xl mx-auto">
+              {/* Centered Hero Content */}
+              <div className="text-center mb-8">
                 <Badge className="mb-4 bg-primary text-primary-foreground">
                   {blogPost?.category || 'General'}
                 </Badge>
@@ -259,7 +259,7 @@ const BlogPost = () => {
                   </p>
                 )}
 
-                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+                <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground mb-6">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     {formatDate(blogPost?.created_at || "")}
@@ -275,7 +275,7 @@ const BlogPost = () => {
                 </div>
 
                 {blogPost?.keywords && blogPost.keywords.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap justify-center gap-2 mb-6">
                     {blogPost.keywords.map((k) => (
                       <Link key={k} to={`/tags/${encodeURIComponent(k)}`} aria-label={`View posts tagged ${k}`}>
                         <Badge variant="secondary" className="hover:bg-primary/20 hover:text-primary transition-colors cursor-pointer">
@@ -285,38 +285,39 @@ const BlogPost = () => {
                     ))}
                   </div>
                 )}
-              </div>
-
-              {/* Sidebar - Featured Image & Actions */}
-              <div className="space-y-4 md:sticky md:top-24">
-                {blogPost?.featured_image && (
-                  <div className="rounded-xl overflow-hidden border border-border">
-                    <img
-                      src={blogPost.featured_image}
-                      alt={blogPost.title}
-                      className="w-full h-48 md:h-56 object-cover"
-                    />
-                  </div>
-                )}
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm" onClick={handleShare} className="flex-1">
+                
+                {/* Action Buttons */}
+                <div className="flex gap-2 justify-center">
+                  <Button variant="outline" size="sm" onClick={handleShare}>
                     <Share2 className="h-4 w-4 mr-2" />
                     Share
                   </Button>
-                  <Button variant="outline" size="sm" onClick={() => window.print()} className="flex-1">
+                  <Button variant="outline" size="sm" onClick={() => window.print()}>
                     <Download className="h-4 w-4 mr-2" />
-                    Save
+                    Save PDF
                   </Button>
                 </div>
               </div>
+
+              {/* Featured Image */}
+              {blogPost?.featured_image && (
+                <div className="rounded-xl overflow-hidden border border-border">
+                  <img
+                    src={blogPost.featured_image}
+                    alt={blogPost.title}
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
+                </div>
+              )}
             </div>
+
           </div>
         </section>
 
-        {/* Content Section - Full width on desktop */}
-        <article className="py-10">
+        {/* Content Section - Centered with proper width */}
+        <article className="py-10 print-content" id="blog-content">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl">
+            <div className="max-w-3xl mx-auto">
               <div
                 className="prose prose-lg max-w-none 
                   prose-headings:font-display prose-headings:text-foreground prose-headings:font-bold
@@ -330,7 +331,10 @@ const BlogPost = () => {
                   prose-blockquote:border-l-primary prose-blockquote:bg-secondary/30 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
                   prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                   prose-pre:bg-secondary prose-pre:border prose-pre:border-border
-                  prose-img:rounded-xl prose-img:shadow-lg"
+                  prose-img:rounded-xl prose-img:shadow-lg
+                  prose-table:border prose-table:border-border prose-table:w-full
+                  prose-th:bg-secondary prose-th:p-2 prose-th:border prose-th:border-border
+                  prose-td:p-2 prose-td:border prose-td:border-border"
                 dangerouslySetInnerHTML={{ __html: stripLeadingEmptyBlocks(blogPost?.content || "") }}
               />
             </div>
