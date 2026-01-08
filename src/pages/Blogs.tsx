@@ -100,8 +100,8 @@ const Blogs = () => {
         }
         canonical={
           activeTag
-            ? `https://kcse.lovable.app/tags/${encodeURIComponent(activeTag)}`
-            : seo?.canonical_url || "https://kcse.lovable.app/blogs"
+            ? `https://davishub.vercel.app/tags/${encodeURIComponent(activeTag)}`
+            : seo?.canonical_url || "https://davishub.vercel.app/blogs"
         }
         ogTitle={
           activeTag

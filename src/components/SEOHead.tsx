@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 interface SEOHeadProps {
   title: string;
@@ -19,8 +20,9 @@ interface SEOHeadProps {
 }
 
 const SITE_NAME = "Victory School Project";
-const SITE_URL = "https://kcse.lovable.app";
+const SITE_URL = "https://davishub.vercel.app";
 const DEFAULT_OG_IMAGE = "https://lovable.dev/opengraph-image-p98pqg.png";
+const DEFAULT_DESCRIPTION = "The ultimate resource for KCSE Computer Studies projects. Get original, A-grade project materials with complete documentation. Join 500+ students who scored top marks.";
 
 export const SEOHead = ({
   title,
@@ -34,17 +36,23 @@ export const SEOHead = ({
   article,
   noindex = false,
 }: SEOHeadProps) => {
-  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  const location = useLocation();
+  
+  // Use description or fallback to default - never empty
+  const finalDescription = description || DEFAULT_DESCRIPTION;
+  
+  // For blog posts, use the title directly without appending site name if it's unique
+  const isArticle = ogType === "article";
+  const fullTitle = isArticle 
+    ? title 
+    : (title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`);
   
   // Generate canonical URL properly - prefer explicit canonical, fallback to current path
   const getCanonicalUrl = () => {
     if (canonical) return canonical;
-    if (typeof window !== 'undefined') {
-      // Clean URL: remove trailing slashes, query params, and ensure HTTPS
-      const path = window.location.pathname.replace(/\/$/, '') || '/';
-      return `${SITE_URL}${path}`;
-    }
-    return SITE_URL;
+    // Use React Router location for SSR-safe path
+    const path = location.pathname.replace(/\/$/, '') || '/';
+    return `${SITE_URL}${path}`;
   };
   
   const canonicalUrl = getCanonicalUrl();
@@ -96,7 +104,7 @@ export const SEOHead = ({
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
-      <meta name="description" content={description} />
+      <meta name="description" content={finalDescription} />
       <meta name="author" content="Victory School Project" />
       {keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
       
@@ -113,16 +121,16 @@ export const SEOHead = ({
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={ogTitle || title} />
-      <meta property="og:description" content={ogDescription || description} />
+      <meta property="og:title" content={ogTitle || fullTitle} />
+      <meta property="og:description" content={ogDescription || finalDescription} />
       <meta property="og:image" content={finalOgImage} />
       <meta property="og:site_name" content={SITE_NAME} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={canonicalUrl} />
-      <meta name="twitter:title" content={ogTitle || title} />
-      <meta name="twitter:description" content={ogDescription || description} />
+      <meta name="twitter:title" content={ogTitle || fullTitle} />
+      <meta name="twitter:description" content={ogDescription || finalDescription} />
       <meta name="twitter:image" content={finalOgImage} />
       <meta name="twitter:site" content="@VictorySchool" />
       

@@ -47,7 +47,7 @@ const Index = () => {
       <SEOHead
         title={seo?.meta_title || "Victory School Project | Ace Your KCSE Computer Studies"}
         description={seo?.meta_description || "The ultimate resource for KCSE Computer Studies projects. Get original, A-grade project materials with complete documentation. Join 500+ students who scored top marks."}
-        canonical={seo?.canonical_url || "https://kcse.lovable.app"}
+        canonical={seo?.canonical_url || "https://davishub.vercel.app"}
         ogTitle={seo?.og_title || "Victory School Project | Ace Your KCSE"}
         ogDescription={seo?.og_description || "The ultimate resource for KCSE Computer Studies projects. Original, A-grade materials with complete documentation."}
         ogImage={seo?.og_image || undefined}
