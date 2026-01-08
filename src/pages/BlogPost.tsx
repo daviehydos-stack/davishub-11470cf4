@@ -49,7 +49,7 @@ interface SEOSettings {
   robots_directives: string | null;
 }
 
-const SITE_URL = "https://kcse.lovable.app";
+const SITE_URL = "https://davishub.vercel.app";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
