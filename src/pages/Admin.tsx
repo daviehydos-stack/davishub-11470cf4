@@ -917,7 +917,7 @@ const Admin = () => {
     const keywordsArray = formData.keywords.split(',').map(k => k.trim()).filter(Boolean);
     
     // Auto-generate canonical URL if not provided
-    const canonicalUrl = formData.canonical_url || `https://kcse.lovable.app/blogs/${slug}`;
+    const canonicalUrl = formData.canonical_url || `https://www.azaniispproject.co.ke/blogs/${slug}`;
 
     try {
       if (editing) {
