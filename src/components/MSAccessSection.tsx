@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Database, Table2, FileSpreadsheet, Lock } from "lucide-react";
+import { Database, Table2, FileSpreadsheet, Lock, Wifi, Users } from "lucide-react";
 
 const features = [
   {
     icon: Database,
     title: "Database Design",
-    description: "Properly normalized database with entity relationships",
+    description: "Properly normalized database for ISP operations management",
   },
   {
-    icon: Table2,
-    title: "Table Structures",
-    description: "Well-designed tables with appropriate data types and constraints",
+    icon: Wifi,
+    title: "Network Management",
+    description: "Complete modules for managing network infrastructure and services",
   },
   {
-    icon: FileSpreadsheet,
-    title: "Data Modeling",
-    description: "Complete ER diagrams and data flow documentation",
+    icon: Users,
+    title: "Customer Management",
+    description: "Customer registration, billing, and service plan tracking",
   },
   {
     icon: Lock,
@@ -40,10 +40,10 @@ export function MSAccessSection() {
           className="text-center mb-12"
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            MS Access Database
+            ISP Database System
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Professional database design following KCSE computer studies requirements with proper normalization and relationships.
+            Professional database design for Internet Service Provider management with proper normalization and relationships.
           </p>
         </motion.div>
 

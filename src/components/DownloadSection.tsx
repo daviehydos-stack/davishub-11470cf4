@@ -2,14 +2,14 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, FileText, Database, Layout } from "lucide-react";
+import { Check, FileText, Database, Layout, Wifi } from "lucide-react";
 
 const packages = [
   {
     milestone: "Milestone 1",
     title: "Basic",
     price: "500",
-    description: "Basic system implementation with core features",
+    description: "Basic ISP system implementation with core features",
     features: [
       "Complete Documentation",
       "Project Overview",
@@ -23,7 +23,7 @@ const packages = [
     milestone: "Milestone 2",
     title: "Advanced",
     price: "1,200",
-    description: "Enhanced system with additional features",
+    description: "Enhanced ISP system with additional features",
     features: [
       "Fully Customized Forms & Reports",
       "Data/Table Modeling",
@@ -37,7 +37,7 @@ const packages = [
     milestone: "Complete Project",
     title: "Full",
     price: "1,400",
-    description: "Full system with complete documentation",
+    description: "Full ISP system with complete documentation",
     features: [
       "Fully Customized Forms & Reports",
       "Project Overview",
@@ -53,17 +53,17 @@ const highlights = [
   {
     icon: FileText,
     title: "Complete Documentation",
-    description: "Comprehensive documentation that meets all KCSE requirements, including system analysis, design, and implementation details.",
+    description: "Comprehensive ISP documentation that meets all project requirements, including system analysis, design, and implementation details.",
   },
   {
     icon: Database,
     title: "Database Structure",
-    description: "Well-designed database with proper relationships, normalization, and optimized queries for efficient data management.",
+    description: "Well-designed database with proper relationships, normalization, and optimized queries for efficient ISP data management.",
   },
   {
-    icon: Layout,
-    title: "User Interface",
-    description: "Intuitive and user-friendly interface designed for easy navigation and efficient club management operations.",
+    icon: Wifi,
+    title: "Network Management",
+    description: "Complete modules for customer management, billing, service plans, and network infrastructure tracking.",
   },
 ];
 
@@ -91,7 +91,7 @@ export function DownloadSection() {
             <span className="gradient-text">success package</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Invest in your future. All packages include KCSE-aligned materials 
+            Invest in your future. All packages include professionally designed ISP materials 
             and expert support to help you score top marks.
           </p>
         </motion.div>

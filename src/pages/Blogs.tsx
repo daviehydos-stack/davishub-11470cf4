@@ -89,42 +89,42 @@ const Blogs = () => {
       <SEOHead
         title={
           activeTag
-            ? `${activeTag} KCSE Guides`
-            : seo?.meta_title || "KCSE Computer Studies Resources & Guides"
+            ? `${activeTag} ISP Project Guides`
+            : seo?.meta_title || "ISP Project Resources & Guides"
         }
         description={
           activeTag
-            ? `Read KCSE Computer Studies guides tagged "${activeTag}". Practical tips, database work, and project support.`
+            ? `Read ISP project guides tagged "${activeTag}". Database design, network management, and project support.`
             : seo?.meta_description ||
-              "Expert guides and resources for KCSE Computer Studies. Learn database design, programming concepts, and project documentation tips to score A in your exams."
+              "Expert guides and resources for ISP management systems. Learn database design, network concepts, and project documentation tips."
         }
         canonical={
           activeTag
-            ? `https://davishub.vercel.app/tags/${encodeURIComponent(activeTag)}`
-            : seo?.canonical_url || "https://davishub.vercel.app/blogs"
+            ? `https://azaniispproject.co.ke/tags/${encodeURIComponent(activeTag)}`
+            : seo?.canonical_url || "https://azaniispproject.co.ke/blogs"
         }
         ogTitle={
           activeTag
-            ? `${activeTag} Guides | Victory School Project`
-            : seo?.og_title || "KCSE Computer Studies Guides | Victory School Project"
+            ? `${activeTag} Guides | Azani ISP Project`
+            : seo?.og_title || "ISP Project Guides | Azani ISP Project"
         }
         ogDescription={
           activeTag
-            ? `Browse guides tagged "${activeTag}" and find related KCSE Computer Studies materials.`
+            ? `Browse guides tagged "${activeTag}" and find related ISP project materials.`
             : seo?.og_description ||
-              "Step-by-step guides to help you ace your KCSE Computer Studies project. Database design, programming tips, and exam preparation resources."
+              "Step-by-step guides to help you ace your ISP project. Database design, network management, and documentation resources."
         }
-        ogImage={seo?.og_image || undefined}
+        ogImage={seo?.og_image || "https://azaniispproject.co.ke/og-image.jpg"}
         keywords={
           activeTag
-            ? [activeTag, "KCSE", "Computer Studies", "Kenya", "Project"]
+            ? [activeTag, "ISP", "Computer Science", "Kenya", "Project"]
             : seo?.keywords || [
-                "KCSE",
-                "Computer Studies",
+                "ISP project",
+                "Internet Service Provider",
                 "database project",
-                "programming",
+                "network management",
                 "Kenya education",
-                "KCSE 2026",
+                "2025 project",
                 "student guides",
               ]
         }
@@ -137,7 +137,7 @@ const Blogs = () => {
             <div className="max-w-4xl">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                  {activeTag ? `Guides tagged: ${activeTag}` : "KCSE Computer Studies Resources"}
+                  {activeTag ? `Guides tagged: ${activeTag}` : "ISP Project Resources"}
                 </h1>
                 {activeTag && (
                   <Link

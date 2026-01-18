@@ -17,24 +17,24 @@ const categories = [
     ],
   },
   {
-    title: "Database Structure",
+    title: "ISP Database Structure",
     items: [
       "Entity Relationship Diagrams",
       "Database Normalization (1NF, 2NF, 3NF)",
-      "Table Structures & Data Types",
-      "Primary & Foreign Keys",
-      "Referential Integrity Rules",
+      "Customer & Service Tables",
+      "Billing & Payment Records",
+      "Network Infrastructure Tables",
       "Sample Data Records",
     ],
   },
   {
     title: "User Interface",
     items: [
-      "Main Menu Form",
-      "Data Entry Forms",
-      "Search & Filter Forms",
-      "Report Generation Forms",
-      "Navigation Controls",
+      "Main Dashboard",
+      "Customer Management Forms",
+      "Service Plan Management",
+      "Billing & Invoicing Forms",
+      "Report Generation",
       "Input Validation",
     ],
   },
@@ -57,7 +57,7 @@ export function WhatsIncludedSection() {
             What's Included
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Everything you need for a complete and comprehensive KCSE project submission.
+            Everything you need for a complete and comprehensive ISP project submission.
           </p>
         </motion.div>
 

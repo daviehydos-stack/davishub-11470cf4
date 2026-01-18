@@ -15,14 +15,15 @@ interface SEOHeadProps {
     modifiedTime?: string;
     author?: string;
     section?: string;
+    tags?: string[];
   };
   noindex?: boolean;
 }
 
-const SITE_NAME = "Victory School Project";
-const SITE_URL = "https://davishub.vercel.app";
-const DEFAULT_OG_IMAGE = "https://lovable.dev/opengraph-image-p98pqg.png";
-const DEFAULT_DESCRIPTION = "The ultimate resource for KCSE Computer Studies projects. Get original, A-grade project materials with complete documentation. Join 500+ students who scored top marks.";
+const SITE_NAME = "Azani ISP Project";
+const SITE_URL = "https://azaniispproject.co.ke";
+const DEFAULT_OG_IMAGE = "https://azaniispproject.co.ke/og-image.jpg";
+const DEFAULT_DESCRIPTION = "Complete ISP management system with full documentation and database. Get 100% original computer science projects at KES 500. Instant delivery for students.";
 
 export const SEOHead = ({
   title,
@@ -39,9 +40,10 @@ export const SEOHead = ({
   const location = useLocation();
   
   // Use description or fallback to default - never empty
-  const finalDescription = description || DEFAULT_DESCRIPTION;
+  const finalDescription = description && description.length > 0 ? description : DEFAULT_DESCRIPTION;
   
-  // For blog posts, use the title directly without appending site name if it's unique
+  // For blog posts (articles), use the title directly without appending site name
+  // For other pages, append site name if not already included
   const isArticle = ogType === "article";
   const fullTitle = isArticle 
     ? title 
@@ -50,21 +52,53 @@ export const SEOHead = ({
   // Generate canonical URL properly - prefer explicit canonical, fallback to current path
   const getCanonicalUrl = () => {
     if (canonical) return canonical;
-    // Use React Router location for SSR-safe path
     const path = location.pathname.replace(/\/$/, '') || '/';
     return `${SITE_URL}${path}`;
   };
   
   const canonicalUrl = getCanonicalUrl();
-  const finalOgImage = ogImage || DEFAULT_OG_IMAGE;
+  const finalOgImage = ogImage && ogImage.length > 0 ? ogImage : DEFAULT_OG_IMAGE;
+  const finalOgTitle = ogTitle && ogTitle.length > 0 ? ogTitle : fullTitle;
+  const finalOgDescription = ogDescription && ogDescription.length > 0 ? ogDescription : finalDescription;
 
   // Generate JSON-LD structured data
   const generateJsonLd = () => {
-    const baseData = {
+    if (ogType === "article" && article) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": finalOgTitle,
+        "description": finalOgDescription,
+        "image": finalOgImage,
+        "url": canonicalUrl,
+        "datePublished": article.publishedTime,
+        "dateModified": article.modifiedTime || article.publishedTime,
+        "author": {
+          "@type": "Person",
+          "name": article.author || "Azani ISP"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": SITE_NAME,
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${SITE_URL}/favicon.ico`
+          }
+        },
+        "articleSection": article.section || "Technology",
+        "keywords": article.tags?.join(", ") || keywords.join(", "),
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        }
+      };
+    }
+
+    return {
       "@context": "https://schema.org",
-      "@type": ogType === "article" ? "Article" : "WebPage",
-      "name": ogTitle || title,
-      "description": ogDescription || description,
+      "@type": "WebPage",
+      "name": finalOgTitle,
+      "description": finalOgDescription,
       "url": canonicalUrl,
       "image": finalOgImage,
       "publisher": {
@@ -76,27 +110,6 @@ export const SEOHead = ({
         }
       }
     };
-
-    if (ogType === "article" && article) {
-      return {
-        ...baseData,
-        "@type": "Article",
-        "headline": ogTitle || title,
-        "datePublished": article.publishedTime,
-        "dateModified": article.modifiedTime || article.publishedTime,
-        "author": {
-          "@type": "Person",
-          "name": article.author || "Victory Project Team"
-        },
-        "articleSection": article.section || "Education",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": canonicalUrl
-        }
-      };
-    }
-
-    return baseData;
   };
 
   return (
@@ -105,10 +118,10 @@ export const SEOHead = ({
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
       <meta name="description" content={finalDescription} />
-      <meta name="author" content="Victory School Project" />
+      <meta name="author" content="Azani ISP Project" />
       {keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
       
-      {/* Canonical - single canonical tag */}
+      {/* Canonical */}
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Robots */}
@@ -117,30 +130,36 @@ export const SEOHead = ({
       ) : (
         <meta name="robots" content="index, follow" />
       )}
+      <meta name="googlebot" content={noindex ? "noindex, nofollow" : "index, follow"} />
       
-      {/* Open Graph / Facebook */}
+      {/* Open Graph / Facebook / WhatsApp */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={ogTitle || fullTitle} />
-      <meta property="og:description" content={ogDescription || finalDescription} />
+      <meta property="og:title" content={finalOgTitle} />
+      <meta property="og:description" content={finalOgDescription} />
       <meta property="og:image" content={finalOgImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="en_US" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={canonicalUrl} />
-      <meta name="twitter:title" content={ogTitle || fullTitle} />
-      <meta name="twitter:description" content={ogDescription || finalDescription} />
+      <meta name="twitter:title" content={finalOgTitle} />
+      <meta name="twitter:description" content={finalOgDescription} />
       <meta name="twitter:image" content={finalOgImage} />
-      <meta name="twitter:site" content="@VictorySchool" />
       
       {/* Article specific meta tags */}
       {ogType === "article" && article && (
         <>
           <meta property="article:published_time" content={article.publishedTime} />
           {article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
-          <meta property="article:author" content={article.author || "Victory Project Team"} />
+          <meta property="article:author" content={article.author || "Azani ISP"} />
           {article.section && <meta property="article:section" content={article.section} />}
+          {article.tags && article.tags.map((tag, index) => (
+            <meta key={index} property="article:tag" content={tag} />
+          ))}
         </>
       )}
       

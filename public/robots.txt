@@ -1,5 +1,5 @@
-# Victory School Project - robots.txt
-# https://kcse.lovable.app
+# Azani ISP Project - robots.txt
+# https://azaniispproject.co.ke
 
 User-agent: Googlebot
 Allow: /
@@ -17,5 +17,5 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-# XML Sitemap - dynamically generated
-Sitemap: https://lmezoezwrejhvjrrnamv.supabase.co/functions/v1/sitemap
+# XML Sitemap
+Sitemap: https://azaniispproject.co.ke/sitemap.xml
