@@ -5,35 +5,35 @@ import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Faith W.",
-    school: "Kenya High School",
+    name: "Brian K.",
+    school: "Moi University",
+    year: "2025",
+    quote:
+      "The Azani ISP project was exactly what I needed. The documentation was comprehensive and the database structure was professionally designed. Got top marks!",
+    rating: 5,
+  },
+  {
+    name: "Mercy W.",
+    school: "JKUAT",
+    year: "2025",
+    quote:
+      "At just KES 500, this is incredible value. The WhatsApp support helped me understand every module. My lecturer was impressed with the ISP system design.",
+    rating: 5,
+  },
+  {
+    name: "James M.",
+    school: "Kenyatta University",
     year: "2024",
     quote:
-      "I was stressed about my project until I found Victory. The documentation was so thorough that my teacher was impressed. Scored an A!",
+      "I used the project last year and scored an A. The network management and customer billing modules were exactly what KNEC was looking for.",
     rating: 5,
   },
   {
-    name: "Mark O.",
-    school: "Nairobi School",
-    year: "2024",
+    name: "Grace N.",
+    school: "Strathmore University",
+    year: "2025",
     quote:
-      "The WhatsApp support is incredible. They answered all my questions, even at night before my deadline. Total lifesaver!",
-    rating: 5,
-  },
-  {
-    name: "Grace M.",
-    school: "Alliance Girls",
-    year: "2023",
-    quote:
-      "Zero plagiarism concerns. The project was 100% original and I understood everything because of the detailed explanations.",
-    rating: 5,
-  },
-  {
-    name: "David K.",
-    school: "Starehe Boys",
-    year: "2023",
-    quote:
-      "Best investment for my KCSE. The database design section alone taught me more than my entire term's lessons.",
+      "100% original work as promised. The ISP documentation covered everything from system analysis to implementation. Highly recommend for any computer science student!",
     rating: 5,
   },
 ];
@@ -62,8 +62,8 @@ export function TestimonialsSection() {
             <span className="gradient-text">success stories</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Real students, real results. See why KCSE candidates trust us 
-            with their Computer Studies projects.
+            Real students, real results. See why computer science students trust us 
+            with their ISP projects.
           </p>
         </motion.div>
 

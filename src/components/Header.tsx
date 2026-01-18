@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -38,7 +38,6 @@ export function Header() {
     if (href.startsWith("/#")) {
       const targetId = href.replace("/#", "");
       
-      // If we're on home page, scroll directly
       if (location.pathname === "/") {
         e.preventDefault();
         const element = document.getElementById(targetId);
@@ -46,7 +45,6 @@ export function Header() {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }
-      // If not on home page, let the navigation happen (will go to /#download)
       closeMenu();
     }
   };
@@ -65,10 +63,10 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-purple to-brand-cyan flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-white" />
+              <Wifi className="w-4 h-4 text-white" />
             </div>
             <span className="font-display text-xl font-bold">
-              Victory<span className="text-brand-cyan">Project</span>
+              Azani<span className="text-brand-cyan">ISP</span>
             </span>
           </Link>
 

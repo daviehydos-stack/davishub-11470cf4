@@ -1,30 +1,37 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, CheckCircle, Zap, FileCheck, Shield, Clock } from "lucide-react";
+import { ArrowRight, Users, CheckCircle, Zap, FileCheck, Shield, Clock, Wifi } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroBackground from "@/assets/hero-background.jpg";
 
 export function HeroSection() {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <CheckCircle className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">KCSE 2026 Projects Ready</span>
+            <Wifi className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">2025 ISP Projects Ready</span>
           </div>
 
           {/* Main headline */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 text-foreground">
-            Ace Your Computer Studies Project
+            Need a Complete Internet Service Provider Project?
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Complete Victory School Club Membership System with documentation, 
-            MS Access database, forms, queries & reports. 100% KNEC-aligned.
+            Azani ISP Information System with complete documentation and database. 
+            Get your project at <strong className="text-foreground">KES 500</strong>. 
+            100% original work. Instant delivery. Read free guides.
           </p>
 
           {/* CTA Buttons */}
@@ -73,11 +80,11 @@ export function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               { icon: FileCheck, label: "Full Documentation" },
-              { icon: FileCheck, label: "MS Access Database" },
+              { icon: FileCheck, label: "Database System" },
               { icon: FileCheck, label: "Forms & Queries" },
               { icon: FileCheck, label: "Sample Reports" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 p-3 bg-card border border-border rounded-lg">
+              <div key={i} className="flex items-center gap-2 p-3 bg-card/80 backdrop-blur-sm border border-border rounded-lg">
                 <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm font-medium text-foreground">{item.label}</span>
               </div>

@@ -35,7 +35,7 @@ const Index = () => {
         .from('seo_settings')
         .select('*')
         .eq('page_path', '/')
-        .single();
+        .maybeSingle();
       
       if (data) setSeo(data);
     };
@@ -45,13 +45,13 @@ const Index = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title={seo?.meta_title || "Victory School Project | Ace Your KCSE Computer Studies"}
-        description={seo?.meta_description || "The ultimate resource for KCSE Computer Studies projects. Get original, A-grade project materials with complete documentation. Join 500+ students who scored top marks."}
-        canonical={seo?.canonical_url || "https://davishub.vercel.app"}
-        ogTitle={seo?.og_title || "Victory School Project | Ace Your KCSE"}
-        ogDescription={seo?.og_description || "The ultimate resource for KCSE Computer Studies projects. Original, A-grade materials with complete documentation."}
-        ogImage={seo?.og_image || undefined}
-        keywords={seo?.keywords || ["KCSE", "Computer Studies", "school project", "database project", "Kenya education", "KCSE 2026", "student projects"]}
+        title={seo?.meta_title || "Azani ISP Project - Internet Service Provider Information System 2025"}
+        description={seo?.meta_description || "Complete ISP management system with full documentation and database. Get 100% original computer science projects at KES 500. Instant delivery for students."}
+        canonical={seo?.canonical_url || "https://azaniispproject.co.ke"}
+        ogTitle={seo?.og_title || "Azani ISP Project - Complete Internet Service Provider System"}
+        ogDescription={seo?.og_description || "Get your complete ISP management project at KES 500. Includes full documentation and database. 100% original work, instant delivery."}
+        ogImage={seo?.og_image || "https://azaniispproject.co.ke/og-image.jpg"}
+        keywords={seo?.keywords || ["ISP project", "internet service provider project", "computer science project", "student projects Kenya", "ISP database", "ISP documentation", "2025 project"]}
       />
       <Header />
       <main className="flex-1 pt-16">

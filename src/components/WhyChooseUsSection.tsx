@@ -7,7 +7,7 @@ const reasons = [
   {
     icon: Award,
     title: "Top-Rated Quality",
-    description: "Our projects consistently score 90%+ marks in KCSE exams",
+    description: "Our ISP projects consistently score 90%+ marks in examinations",
   },
   {
     icon: Clock,
@@ -22,7 +22,7 @@ const reasons = [
   {
     icon: FileCheck,
     title: "Complete Documentation",
-    description: "Every section follows KNEC marking scheme guidelines",
+    description: "Every section follows professional project guidelines",
   },
   {
     icon: MessageCircle,
@@ -32,7 +32,7 @@ const reasons = [
   {
     icon: CheckCircle2,
     title: "Proven Results",
-    description: "500+ students have successfully used our projects",
+    description: "500+ students have successfully used our ISP projects",
   },
 ];
 
@@ -53,7 +53,7 @@ export function WhyChooseUsSection() {
             Why Choose Us
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Trusted by students across Kenya for quality KCSE computer studies projects.
+            Trusted by students across Kenya for quality computer studies ISP projects.
           </p>
         </motion.div>
 

@@ -49,7 +49,7 @@ interface SEOSettings {
   robots_directives: string | null;
 }
 
-const SITE_URL = "https://davishub.vercel.app";
+const SITE_URL = "https://azaniispproject.co.ke";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -203,7 +203,7 @@ const BlogPost = () => {
     pageSeo?.meta_description ||
     blogPost?.meta_description ||
     blogPost?.excerpt ||
-    "Read this insightful article about KCSE Computer Studies.";
+    "Read this insightful article about ISP systems and computer science projects.";
   const ogImage = pageSeo?.og_image || blogPost?.og_image || blogPost?.featured_image || undefined;
   const seoKeywords =
     pageSeo?.keywords ||
@@ -226,7 +226,7 @@ const BlogPost = () => {
         article={{
           publishedTime: blogPost?.created_at,
           modifiedTime: blogPost?.updated_at,
-          author: "Victory Project Team",
+          author: "Azani ISP",
           section: blogPost?.category || "Education",
         }}
       />

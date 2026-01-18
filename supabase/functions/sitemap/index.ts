@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-const SITE_URL = "https://kcse.lovable.app";
+const SITE_URL = "https://azaniispproject.co.ke";
 
 serve(async (req) => {
   // Handle CORS preflight requests

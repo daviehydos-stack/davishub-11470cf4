@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, MapPin, BookOpen } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Wifi } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,15 +19,15 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <BookOpen className="w-4 h-4 text-primary-foreground" />
+                <Wifi className="w-4 h-4 text-primary-foreground" />
               </div>
               <span className="font-display text-xl font-bold text-foreground">
-                Victory<span className="text-primary">Project</span>
+                Azani<span className="text-primary">ISP</span>
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md">
-              Helping KCSE students ace their Computer Studies projects with
-              original, exam-ready materials and dedicated support.
+              Helping students ace their Computer Studies projects with
+              original, exam-ready ISP management system materials and dedicated support.
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                hello@victoryproject.co.ke
+                hello@azaniispproject.co.ke
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
@@ -70,7 +70,7 @@ export function Footer() {
 
         <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Victory Project. All rights reserved.
+            © {currentYear} Azani ISP Project. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
             Made for Kenyan students
