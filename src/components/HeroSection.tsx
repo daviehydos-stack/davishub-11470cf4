@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, CheckCircle, Zap, FileCheck, Shield, Clock, Wifi } from "lucide-react";
+import { ArrowRight, Users, CheckCircle, Zap, FileCheck, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 export function HeroSection() {
@@ -15,7 +15,7 @@ export function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <Wifi className="w-4 h-4 text-primary" />
+            
             <span className="text-sm font-medium text-primary">2026 KCSE COMPUTER STUDIES PROJECT</span>
           </div>
 
