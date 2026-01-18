@@ -42,16 +42,36 @@ const Index = () => {
     fetchSEO();
   }, []);
 
+  // Default SEO values with your exact specifications
+  const defaultTitle = "Azani Internet Service Provider Project | KCSE 2026 Computer Project";
+  const defaultDescription = "Azani Internet Service Provider Project. KCSE 2026 Computer Project. Documentation and Database Available. Free KCSE 2026 Project. Milestone 1 and Milestone 2 Available.";
+  const defaultImage = "https://www.azaniispproject.co.ke/meta.jpg";
+  const defaultCanonical = "https://www.azaniispproject.co.ke/";
+  const defaultKeywords = [
+    "KCSE 2026 project",
+    "computer project",
+    "ISP project",
+    "internet service provider",
+    "database project",
+    "MS Access project",
+    "KCSE computer project",
+    "milestone 1",
+    "milestone 2",
+    "student projects Kenya",
+    "ISP documentation",
+    "ISP database"
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title={seo?.meta_title || "Azani ISP Project - Internet Service Provider Information System 2025"}
-        description={seo?.meta_description || "Complete ISP management system with full documentation and database. Get 100% original computer science projects at KES 500. Instant delivery for students."}
-        canonical={seo?.canonical_url || "https://azaniispproject.co.ke"}
-        ogTitle={seo?.og_title || "Azani ISP Project - Complete Internet Service Provider System"}
-        ogDescription={seo?.og_description || "Get your complete ISP management project at KES 500. Includes full documentation and database. 100% original work, instant delivery."}
-        ogImage={seo?.og_image || "https://azaniispproject.co.ke/og-image.jpg"}
-        keywords={seo?.keywords || ["ISP project", "internet service provider project", "computer science project", "student projects Kenya", "ISP database", "ISP documentation", "2025 project"]}
+        title={seo?.meta_title || defaultTitle}
+        description={seo?.meta_description || defaultDescription}
+        canonical={seo?.canonical_url || defaultCanonical}
+        ogTitle={seo?.og_title || defaultTitle}
+        ogDescription={seo?.og_description || defaultDescription}
+        ogImage={seo?.og_image || defaultImage}
+        keywords={seo?.keywords || defaultKeywords}
       />
       <Header />
       <main className="flex-1 pt-16">
