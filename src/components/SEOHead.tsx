@@ -21,9 +21,9 @@ interface SEOHeadProps {
 }
 
 const SITE_NAME = "Azani ISP Project";
-const SITE_URL = "https://azaniispproject.co.ke";
-const DEFAULT_OG_IMAGE = "https://azaniispproject.co.ke/og-image.jpg";
-const DEFAULT_DESCRIPTION = "Complete ISP management system with full documentation and database. Get 100% original computer science projects at KES 500. Instant delivery for students.";
+const SITE_URL = "https://www.azaniispproject.co.ke";
+const DEFAULT_OG_IMAGE = "https://www.azaniispproject.co.ke/meta.jpg";
+const DEFAULT_DESCRIPTION = "Azani Internet Service Provider Project. KCSE 2026 Computer Project. Documentation and Database Available. Free KCSE 2026 Project. Milestone 1 and Milestone 2 Available.";
 
 export const SEOHead = ({
   title,
