@@ -158,7 +158,7 @@ export function DownloadSection() {
                   }`}
                 >
                   <a
-                    href="https://wa.link/jox26j"
+                    href="https://wa.link/4mq5mb"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
