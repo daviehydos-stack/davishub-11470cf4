@@ -13,7 +13,7 @@ export function HeroSection() {
         alt="Azani Internet Service Provider Project Background"
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
-        fetchpriority="high"
+        fetchPriority="high"
         width={1920}
         height={1080}
       />
@@ -87,7 +87,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* What's included - quick preview */}
+        {/* What's included */}
         <div className="mt-14 max-w-3xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
