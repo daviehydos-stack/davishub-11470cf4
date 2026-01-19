@@ -414,7 +414,7 @@ const BlogPost = () => {
             <div className="max-w-3xl mx-auto flex items-center justify-between">
               <div className="text-sm text-muted-foreground">
                 <p>Published {formatDate(blogPost?.created_at || "")}</p>
-                <p>Victory Project Materials</p>
+                <p>Azani ISP Project Materials</p>
               </div>
               <Button asChild variant="outline">
                 <Link to="/blogs">

@@ -82,6 +82,7 @@ export function DownloadSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
+          style={{ willChange: 'opacity, transform' }}
         >
           <span className="text-brand-purple font-medium text-sm uppercase tracking-wider">
             Pricing
@@ -103,6 +104,7 @@ export function DownloadSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              style={{ willChange: 'opacity, transform' }}
               className={`relative rounded-2xl ${
                 pkg.popular
                   ? "bg-gradient-to-br from-brand-purple to-brand-pink p-[2px]"
@@ -176,6 +178,7 @@ export function DownloadSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto"
+          style={{ willChange: 'opacity, transform' }}
         >
           {highlights.map((item, index) => (
             <div key={item.title} className="text-center">
@@ -198,6 +201,7 @@ export function DownloadSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-16 flex flex-wrap justify-center gap-8 text-center"
+          style={{ willChange: 'opacity, transform' }}
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Check className="w-5 h-5 text-brand-cyan" />

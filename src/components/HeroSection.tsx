@@ -11,14 +11,14 @@ export function HeroSection() {
         src="/hero-background.webp"
         alt="Azani Internet Service Provider Project Background"
         className="absolute inset-0 w-full h-full object-cover"
-        fetchpriority="high"
+        fetchPriority="high"
         loading="eager"
         width={1920}
         height={1080}
       />
 
-      {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
+      {/* Overlay for text readability - reduced opacity for clearer background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/90" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
