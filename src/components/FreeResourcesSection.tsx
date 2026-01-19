@@ -43,6 +43,7 @@ export function FreeResourcesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
+          style={{ willChange: 'opacity, transform' }}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
             Free Resources
@@ -61,6 +62,7 @@ export function FreeResourcesSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-background rounded-xl p-6 border border-border hover:border-brand-cyan/50 hover:shadow-lg transition-all"
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className="w-12 h-12 rounded-lg bg-brand-cyan/10 flex items-center justify-center mb-4 group-hover:bg-brand-cyan/20 transition-colors">
                 <resource.icon className="w-6 h-6 text-brand-cyan" />
@@ -76,6 +78,7 @@ export function FreeResourcesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-10"
+          style={{ willChange: 'opacity, transform' }}
         >
           <Button asChild variant="outline" size="lg">
             <a href="/blogs">View All Resources</a>

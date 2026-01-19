@@ -38,6 +38,7 @@ export function GuidesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
+          style={{ willChange: 'opacity, transform' }}
         >
           <span className="text-brand-orange font-medium text-sm uppercase tracking-wider">
             Free Resources
@@ -60,6 +61,7 @@ export function GuidesSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass rounded-2xl overflow-hidden group"
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className="relative aspect-video">
                 {activeVideo === video.id ? (
@@ -119,6 +121,7 @@ export function GuidesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 max-w-2xl mx-auto"
+          style={{ willChange: 'opacity, transform' }}
         >
           <div className="glass rounded-2xl p-8 text-center">
             <h3 className="font-display text-2xl font-bold mb-3">
