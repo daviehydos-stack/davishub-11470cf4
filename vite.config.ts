@@ -15,7 +15,6 @@ export default defineConfig({
     },
   },
   build: {
-    // Improve chunk splitting for better caching
     rollupOptions: {
       output: {
         manualChunks: {
@@ -25,7 +24,6 @@ export default defineConfig({
         },
       },
     },
-    // Enable source maps for debugging (optional, can be disabled for production)
     sourcemap: false,
   },
 });
