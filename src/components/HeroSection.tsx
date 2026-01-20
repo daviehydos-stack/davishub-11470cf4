@@ -1,10 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, FileCheck, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+
 export function HeroSection() {
-  return <section className="relative py-16 md:py-24 overflow-hidden">
+  return (
+    <section className="relative py-16 md:py-24 overflow-hidden">
       {/* LCP-Optimized Hero Image */}
-      <img src="/hero-background.webp" alt="Azani ISP 2026 KCSE Computer Project" className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" loading="eager" width={1920} height={1080} />
+      <img
+        src="/hero-background.webp"
+        alt="Azani ISP 2026 KCSE Computer Project"
+        className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
+        loading="eager"
+        width={1920}
+        height={1080}
+      />
 
       {/* Overlay for text readability - reduced opacity for clearer image */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/90" />
@@ -29,18 +39,29 @@ export function HeroSection() {
           {/* Subheadline */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Complete Azani <span className="text-accent font-semibold">ISP</span> Information System with full documentation and MS Access database.
-            Get your project at <strong className="text-foreground">Today</strong>.
+            Get your project at <strong className="text-foreground">KES 500</strong>.
             100% original work. Instant WhatsApp delivery.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-12 text-base group">
-              <a href="#download">Download Now<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-12 text-base group"
+            >
+              <a href="#download">
+                Get Your Project — Ksh 500
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
 
-            <Button asChild size="lg" variant="outline" className="border-border hover:bg-secondary font-medium px-6 h-12">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-border hover:bg-secondary font-medium px-6 h-12"
+            >
               <Link to="/blogs">Read Free Guides</Link>
             </Button>
           </div>
@@ -69,26 +90,25 @@ export function HeroSection() {
         {/* What's included */}
         <div className="mt-14 max-w-3xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[{
-            icon: FileCheck,
-            label: "Full Documentation"
-          }, {
-            icon: FileCheck,
-            label: "MS Access Database"
-          }, {
-            icon: FileCheck,
-            label: "Forms & Queries"
-          }, {
-            icon: FileCheck,
-            label: "Sample Reports"
-          }].map((item, i) => <div key={i} className="flex items-center gap-2 p-3 bg-card/80 backdrop-blur-sm border border-border rounded-lg">
+            {[
+              { icon: FileCheck, label: "Full Documentation" },
+              { icon: FileCheck, label: "MS Access Database" },
+              { icon: FileCheck, label: "Forms & Queries" },
+              { icon: FileCheck, label: "Sample Reports" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 p-3 bg-card/80 backdrop-blur-sm border border-border rounded-lg"
+              >
                 <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm font-medium text-foreground">
                   {item.label}
                 </span>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
