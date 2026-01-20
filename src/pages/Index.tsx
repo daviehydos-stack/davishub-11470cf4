@@ -44,7 +44,7 @@ const Index = () => {
   }, []);
 
   // Default SEO values - optimized for target keywords
-  const defaultTitle = "Azani Internet Service Provider Information System - 2026 KCSE Computer Studies Project (451/3) | Download KES 500";
+  const defaultTitle = "Azani Internet Service Provider Information System - 2026 KCSE Computer Studies Project (451/3)";
   const defaultDescription = "Complete Azani ISP System for 2026 KCSE Computer Studies Project (451/3). Milestone 1 & 2 included. 500+ students scored 90%+. Instant WhatsApp delivery. 100% original.";
   const defaultImage = "https://www.azaniispproject.co.ke/meta.jpg";
   const defaultCanonical = "https://www.azaniispproject.co.ke/";
@@ -67,8 +67,8 @@ const Index = () => {
         title={seo?.meta_title || defaultTitle}
         description={seo?.meta_description || defaultDescription}
         canonical={seo?.canonical_url || defaultCanonical}
-        ogTitle={seo?.og_title || "Azani ISP - 2026 KCSE Computer Project (451/3)"}
-        ogDescription={seo?.og_description || "Complete Azani ISP System. Milestone 1 & 2. Download KES 500."}
+        ogTitle={seo?.og_title || "Azani Internet Service Provider Information System | 2026 KCSE Computer Project (451/3)"}
+        ogDescription={seo?.og_description || "Complete Azani ISP System. Milestone 1 & 2. Download Now."}
         ogImage={seo?.og_image || defaultImage}
         keywords={seo?.keywords || defaultKeywords}
       />
