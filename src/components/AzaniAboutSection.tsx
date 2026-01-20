@@ -1,8 +1,6 @@
 import { Building2, Wifi, Server, CreditCard, FileText, Database } from "lucide-react";
-
 export function AzaniAboutSection() {
-  return (
-    <section id="about-azani" className="py-16 md:py-24 bg-secondary/30">
+  return <section id="about-azani" className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -71,12 +69,10 @@ export function AzaniAboutSection() {
               </div>
             </div>
 
-            <p className="text-center text-lg">
-              <strong className="text-foreground">500+ KCSE students</strong> scored 90%+ using our project. Complete package includes Milestone 1 documentation and Milestone 2 working database. 100% original, plagiarism-free content.
+            <p className="text-center text-lg">500+ KCSE students scored 90%+ in our past projects. Complete package includes Milestone 1 documentation and Milestone 2 working database. 100% original, plagiarism-free content.<strong className="text-foreground">500+ KCSE students</strong> scored 90%+ using our project. Complete package includes Milestone 1 documentation and Milestone 2 working database. 100% original, plagiarism-free content.
             </p>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
