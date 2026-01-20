@@ -22,7 +22,7 @@
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 173 80% 40%;
+    --accent: 173 80% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -39,8 +39,8 @@
     --brand-purple-light: 262 83% 68%;
     --brand-purple-dark: 262 83% 48%;
     
-    --brand-cyan: 173 80% 40%;
-    --brand-cyan-light: 173 80% 50%;
+    --brand-cyan: 173 80% 36%;
+    --brand-cyan-light: 173 80% 46%;
     
     --brand-pink: 330 81% 60%;
     --brand-orange: 25 95% 53%;
@@ -91,7 +91,7 @@
     --muted: 230 12% 24%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 173 70% 45%;
+    --accent: 173 70% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 60% 55%;

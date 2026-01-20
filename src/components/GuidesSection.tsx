@@ -36,9 +36,8 @@ export function GuidesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, type: "tween" }}
           className="text-center max-w-3xl mx-auto mb-16"
-          style={{ willChange: 'opacity, transform' }}
         >
           <span className="text-brand-orange font-medium text-sm uppercase tracking-wider">
             Free Resources
@@ -59,9 +58,8 @@ export function GuidesSection() {
               key={video.id}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1, type: "tween" }}
               className="glass rounded-2xl overflow-hidden group"
-              style={{ willChange: 'opacity, transform' }}
             >
               <div className="relative aspect-video">
                 {activeVideo === video.id ? (
@@ -87,8 +85,11 @@ export function GuidesSection() {
                   >
                     <img
                       src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                      alt={video.title}
+                      alt={`Microsoft Access Azani ISP ${video.title} Tutorial`}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                      width={480}
+                      height={360}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -119,9 +120,8 @@ export function GuidesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.4, type: "tween" }}
           className="mt-16 max-w-2xl mx-auto"
-          style={{ willChange: 'opacity, transform' }}
         >
           <div className="glass rounded-2xl p-8 text-center">
             <h3 className="font-display text-2xl font-bold mb-3">
@@ -132,7 +132,7 @@ export function GuidesSection() {
             </p>
             <Button
               asChild
-              className="bg-green-600 hover:bg-green-700 font-semibold"
+              className="bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,30%)] font-semibold"
             >
               <a
                 href="https://chat.whatsapp.com/IO7QQrf6GH3IRHDMDAbNwm"

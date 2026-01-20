@@ -1,21 +1,9 @@
 # Azani ISP Project - robots.txt
 # https://azaniispproject.co.ke
 
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 Disallow: /admin
 
-# XML Sitemap
+# Sitemap
 Sitemap: https://azaniispproject.co.ke/sitemap.xml
