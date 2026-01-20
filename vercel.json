@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/:path*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(jpg|jpeg|png|gif|ico|svg|webp|woff|woff2|ttf|eot))",
+      "source": "/:path*.(jpg|jpeg|png|gif|ico|svg|webp|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "headers": [
         {
           "key": "X-Frame-Options",
@@ -59,7 +59,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
