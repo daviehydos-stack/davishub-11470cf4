@@ -69,7 +69,7 @@ export function AzaniAboutSection() {
               </div>
             </div>
 
-            <p className="text-center text-lg">500+ KCSE students scored 90%+ in our past projects. Complete package includes Milestone 1 documentation and Milestone 2 working database. 100% original, plagiarism-free content.500+ KCSE students <strong className="text-foreground">500+ KCSE students</strong> ​
+            <p className="text-center text-lg">500+ KCSE students scored 90%+ in our past projects. Complete package includes Milestone 1 documentation and Milestone 2 working database. 100% original, plagiarism-free content.<strong className="text-foreground">500+ KCSE students</strong> ​
             </p>
           </div>
         </div>
