@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
 import { MessageCircle, Mail, MapPin, Wifi } from "lucide-react";
-
 export function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const quickLinks = [
-    { href: "/", label: "Home" },
-    { href: "/#download", label: "Pricing" },
-    { href: "/blogs", label: "Blog" },
-    { href: "/#contact", label: "Contact" },
-  ];
-
-  return (
-    <footer className="bg-secondary/50 border-t border-border">
+  const quickLinks = [{
+    href: "/",
+    label: "Home"
+  }, {
+    href: "/#download",
+    label: "Pricing"
+  }, {
+    href: "/blogs",
+    label: "Blog"
+  }, {
+    href: "/#contact",
+    label: "Contact"
+  }];
+  return <footer className="bg-secondary/50 border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
@@ -25,26 +28,18 @@ export function Footer() {
                 Azani<span className="text-primary">ISP</span>
               </span>
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Helping students ace their Computer Studies projects with
-              original, exam-ready ISP management system materials and dedicated support.
-            </p>
+            <p className="text-muted-foreground mb-6 max-w-md">Helping students ace their Computer Studies projects with original, exam-ready ISP management system materials and dedicated support. Projects are for learning only. Students must submit their own original work.</p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="font-display font-semibold text-lg mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
+              {quickLinks.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -54,7 +49,7 @@ export function Footer() {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-primary" />
-                +254 700 000 000
+                +254 115 475 543   
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
@@ -77,6 +72,5 @@ export function Footer() {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
