@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
+import { AzaniAboutSection } from "@/components/AzaniAboutSection";
 import { DownloadSection } from "@/components/DownloadSection";
 import { MSAccessSection } from "@/components/MSAccessSection";
 import { FormsQueriesSection } from "@/components/FormsQueriesSection";
@@ -42,24 +43,22 @@ const Index = () => {
     fetchSEO();
   }, []);
 
-  // Default SEO values with your exact specifications
-  const defaultTitle = "Azani Internet Service Provider Project | KCSE 2026 Computer Project";
-  const defaultDescription = "Azani Internet Service Provider Project. KCSE 2026 Computer Project. Documentation and Database Available. Free KCSE 2026 Project. Milestone 1 and Milestone 2 Available.";
+  // Default SEO values - optimized for target keywords
+  const defaultTitle = "Azani Internet Service Provider Information System - 2026 KCSE Computer Studies Project (451/3) | Download KES 500";
+  const defaultDescription = "Complete Azani ISP System for 2026 KCSE Computer Studies Project (451/3). Milestone 1 & 2 included. 500+ students scored 90%+. Instant WhatsApp delivery. 100% original.";
   const defaultImage = "https://www.azaniispproject.co.ke/meta.jpg";
   const defaultCanonical = "https://www.azaniispproject.co.ke/";
   const defaultKeywords = [
-    "KCSE 2026 project",
-    "computer project",
-    "ISP project",
-    "internet service provider",
-    "database project",
-    "MS Access project",
-    "KCSE computer project",
-    "milestone 1",
-    "milestone 2",
-    "student projects Kenya",
-    "ISP documentation",
-    "ISP database"
+    "Azani ISP",
+    "2026 KCSE Computer Project",
+    "KCSE 451/3",
+    "Azani Internet Service Provider",
+    "Milestone 1",
+    "Milestone 2",
+    "KCSE Computer Studies",
+    "MS Access Project",
+    "KCSE project download",
+    "computer project Kenya"
   ];
 
   return (
@@ -68,14 +67,15 @@ const Index = () => {
         title={seo?.meta_title || defaultTitle}
         description={seo?.meta_description || defaultDescription}
         canonical={seo?.canonical_url || defaultCanonical}
-        ogTitle={seo?.og_title || defaultTitle}
-        ogDescription={seo?.og_description || defaultDescription}
+        ogTitle={seo?.og_title || "Azani ISP - 2026 KCSE Computer Project (451/3)"}
+        ogDescription={seo?.og_description || "Complete Azani ISP System. Milestone 1 & 2. Download KES 500."}
         ogImage={seo?.og_image || defaultImage}
         keywords={seo?.keywords || defaultKeywords}
       />
       <Header />
       <main className="flex-1 pt-16">
         <HeroSection />
+        <AzaniAboutSection />
         <DownloadSection />
         <PastProjectsSection />
         <MSAccessSection />

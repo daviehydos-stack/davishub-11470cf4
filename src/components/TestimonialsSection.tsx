@@ -51,9 +51,8 @@ export function TestimonialsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, type: "tween" }}
           className="text-center max-w-3xl mx-auto mb-16"
-          style={{ willChange: 'opacity, transform' }}
         >
           <span className="text-brand-pink font-medium text-sm uppercase tracking-wider">
             Student Stories
@@ -74,9 +73,8 @@ export function TestimonialsSection() {
               key={testimonial.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1, type: "tween" }}
               className="glass rounded-2xl p-6 relative group"
-              style={{ willChange: 'opacity, transform' }}
             >
               {/* Quote icon */}
               <Quote className="absolute top-6 right-6 w-8 h-8 text-brand-purple/20" />
@@ -102,7 +100,7 @@ export function TestimonialsSection() {
                   <p className="font-semibold">{testimonial.name}</p>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span>{testimonial.school}</span>
-                    <Badge variant="outline" className="text-xs border-brand-cyan/30 text-brand-cyan">
+                    <Badge variant="outline" className="text-xs border-accent/30 text-accent">
                       {testimonial.year}
                     </Badge>
                   </div>
