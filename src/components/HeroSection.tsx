@@ -5,7 +5,15 @@ export function HeroSection() {
   return <section className="relative py-16 md:py-24 overflow-hidden">
 
       {/* LCP-Optimized Hero Image */}
-      <img src="/hero-background.webp" alt="Azani Internet Service Provider Project Background" className="absolute inset-0 w-full h-full object-cover" fetchpriority="high" loading="eager" width={1920} height={1080} />
+      <img
+        src="/hero-background.webp"
+        alt="Azani Internet Service Provider Project Background"
+        className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
+        loading="eager"
+        width={1920}
+        height={1080}
+      />
 
       {/* Overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
