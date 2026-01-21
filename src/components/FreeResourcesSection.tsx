@@ -41,7 +41,7 @@ export function FreeResourcesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, type: "tween" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-12"
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
@@ -59,7 +59,7 @@ export function FreeResourcesSection() {
               href={resource.link}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1, type: "tween" }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
               className="group bg-background rounded-xl p-6 border border-border hover:border-accent/50 hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
@@ -74,7 +74,7 @@ export function FreeResourcesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5, type: "tween" }}
+          transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
           className="text-center mt-10"
         >
           <Button asChild variant="outline" size="lg">

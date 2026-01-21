@@ -1,9 +1,12 @@
 # Azani ISP Project - robots.txt
-# https://azaniispproject.co.ke
+# https://www.azaniispproject.co.ke
 
 User-agent: *
 Allow: /
+Allow: /kcse
+Allow: /knowledge-bank
+Allow: /blogs
 Disallow: /admin
 
 # Sitemap
-Sitemap: https://azaniispproject.co.ke/sitemap.xml
+Sitemap: https://www.azaniispproject.co.ke/sitemap.xml

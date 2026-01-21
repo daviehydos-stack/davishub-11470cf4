@@ -32,6 +32,7 @@ export function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/#download", label: "Pricing" },
+    { href: "/kcse", label: "KCSE Guide" },
     { href: "/blogs", label: "Blog" },
     { href: "/admin", label: "Admin" }
   ];
@@ -65,7 +66,7 @@ export function Header() {
               <Wifi className="w-4 h-4 text-white" />
             </div>
             <span className="font-display text-xl font-bold">
-              Azani<span className="text-brand-cyan">ISP</span>
+              Azani<span className="text-primary">ISP</span>
             </span>
           </Link>
 

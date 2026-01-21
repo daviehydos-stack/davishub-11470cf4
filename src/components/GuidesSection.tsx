@@ -36,7 +36,7 @@ export function GuidesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, type: "tween" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-brand-orange font-medium text-sm uppercase tracking-wider">
@@ -58,7 +58,7 @@ export function GuidesSection() {
               key={video.id}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1, type: "tween" }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
               className="glass rounded-2xl overflow-hidden group"
             >
               <div className="relative aspect-video">
@@ -120,7 +120,7 @@ export function GuidesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.4, type: "tween" }}
+          transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
           className="mt-16 max-w-2xl mx-auto"
         >
           <div className="glass rounded-2xl p-8 text-center">

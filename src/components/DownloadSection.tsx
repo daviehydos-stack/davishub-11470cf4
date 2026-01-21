@@ -80,7 +80,7 @@ export function DownloadSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, type: "tween" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-brand-purple font-medium text-sm uppercase tracking-wider">
@@ -102,7 +102,7 @@ export function DownloadSection() {
               key={pkg.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1, type: "tween" }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
               className={`relative rounded-2xl ${
                 pkg.popular
                   ? "bg-gradient-to-br from-brand-purple to-brand-pink p-[2px]"
@@ -174,7 +174,7 @@ export function DownloadSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.4, type: "tween" }}
+          transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
           className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto"
         >
           {highlights.map((item, index) => (
@@ -196,7 +196,7 @@ export function DownloadSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.5, type: "tween" }}
+          transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
           className="mt-16 flex flex-wrap justify-center gap-8 text-center"
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
