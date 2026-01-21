@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Download, FileText, Video, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -32,17 +30,31 @@ const resources = [
 ];
 
 export function FreeResourcesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "-100px" }
+    );
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="resources" className="py-20" ref={ref}>
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="text-center mb-12"
+        <div
+          className={`text-center mb-12 transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
             Free Resources
@@ -50,37 +62,37 @@ export function FreeResourcesSection() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Helpful resources to supplement your KCSE computer studies preparation.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {resources.map((resource, index) => (
-            <motion.a
+            <a
               key={resource.title}
               href={resource.link}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-              className="group bg-background rounded-xl p-6 border border-border hover:border-accent/50 hover:shadow-lg transition-all"
+              className={`group bg-background rounded-xl p-6 border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                 <resource.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="font-semibold text-lg mb-2">{resource.title}</h3>
               <p className="text-muted-foreground text-sm">{resource.description}</p>
-            </motion.a>
+            </a>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
-          className="text-center mt-10"
+        <div
+          className={`text-center mt-10 transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+          style={{ transitionDelay: "400ms" }}
         >
           <Button asChild variant="outline" size="lg">
             <a href="/blogs">View All Resources</a>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

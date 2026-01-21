@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Quote, Star } from "lucide-react";
 
@@ -39,20 +38,34 @@ const testimonials = [
 ];
 
 export function TestimonialsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
       
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-16"
+      <div className="container mx-auto px-4 relative z-10" ref={ref}>
+        <div
+          className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
         >
           <span className="text-brand-pink font-medium text-sm uppercase tracking-wider">
             Student Stories
@@ -65,16 +78,16 @@ export function TestimonialsSection() {
             Real students, real results. See why KCSE candidates trust us 
             with their Computer Studies projects.
           </p>
-        </motion.div>
+        </div>
 
-        <div ref={ref} className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <motion.div
+            <div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-              className="glass rounded-2xl p-6 relative group"
+              className={`glass rounded-2xl p-6 relative group transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Quote icon */}
               <Quote className="absolute top-6 right-6 w-8 h-8 text-brand-purple/20" />
@@ -106,7 +119,7 @@ export function TestimonialsSection() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

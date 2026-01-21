@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, X, ExternalLink } from "lucide-react";
@@ -26,18 +25,32 @@ const videos = [
 ];
 
 export function GuidesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="guides" className="py-20 md:py-32 relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-16"
+      <div className="container mx-auto px-4" ref={ref}>
+        <div
+          className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
         >
           <span className="text-brand-orange font-medium text-sm uppercase tracking-wider">
             Free Resources
@@ -50,16 +63,16 @@ export function GuidesSection() {
             Free tutorials to help you understand your project. 
             Watch, learn, and ace your KCSE.
           </p>
-        </motion.div>
+        </div>
 
-        <div ref={ref} className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
           {videos.map((video, index) => (
-            <motion.div
+            <div
               key={video.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-              className="glass rounded-2xl overflow-hidden group"
+              className={`glass rounded-2xl overflow-hidden group transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="relative aspect-video">
                 {activeVideo === video.id ? (
@@ -112,16 +125,16 @@ export function GuidesSection() {
                   {video.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* WhatsApp CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-          className="mt-16 max-w-2xl mx-auto"
+        <div
+          className={`mt-16 max-w-2xl mx-auto transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+          style={{ transitionDelay: "300ms" }}
         >
           <div className="glass rounded-2xl p-8 text-center">
             <h3 className="font-display text-2xl font-bold mb-3">
@@ -144,7 +157,7 @@ export function GuidesSection() {
               </a>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,8 +1,7 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, FileText, Database, Layout, Wifi } from "lucide-react";
+import { Check, FileText, Database, Wifi } from "lucide-react";
 
 const packages = [
   {
@@ -68,20 +67,34 @@ const highlights = [
 ];
 
 export function DownloadSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="download" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
       
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-16"
+      <div className="container mx-auto px-4 relative z-10" ref={ref}>
+        <div
+          className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
         >
           <span className="text-brand-purple font-medium text-sm uppercase tracking-wider">
             Pricing
@@ -94,20 +107,20 @@ export function DownloadSection() {
             Invest in your future. All packages include professionally designed ISP materials 
             and expert support to help you score top marks.
           </p>
-        </motion.div>
+        </div>
 
-        <div ref={ref} className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mb-20">
+        <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mb-20">
           {packages.map((pkg, index) => (
-            <motion.div
+            <div
               key={pkg.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-              className={`relative rounded-2xl ${
+              className={`relative rounded-2xl transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              } ${
                 pkg.popular
                   ? "bg-gradient-to-br from-brand-purple to-brand-pink p-[2px]"
                   : "border border-border"
               }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
@@ -117,7 +130,7 @@ export function DownloadSection() {
                 </div>
               )}
               
-              <div className={`rounded-2xl p-8 h-full bg-card ${pkg.popular ? "" : ""}`}>
+              <div className={`rounded-2xl p-8 h-full bg-card`}>
                 <div className="mb-4">
                   <span className="text-brand-purple font-medium text-sm">
                     {pkg.milestone}
@@ -166,18 +179,18 @@ export function DownloadSection() {
                   </a>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Highlights Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-          className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto"
+        <div
+          className={`grid gap-8 md:grid-cols-3 max-w-5xl mx-auto transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+          style={{ transitionDelay: "300ms" }}
         >
-          {highlights.map((item, index) => (
+          {highlights.map((item) => (
             <div key={item.title} className="text-center">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-purple/20 to-brand-cyan/20 flex items-center justify-center mx-auto mb-4">
                 <item.icon className="w-7 h-7 text-brand-purple" />
@@ -190,14 +203,14 @@ export function DownloadSection() {
               </p>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Trust badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
-          className="mt-16 flex flex-wrap justify-center gap-8 text-center"
+        <div
+          className={`mt-16 flex flex-wrap justify-center gap-8 text-center transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+          style={{ transitionDelay: "400ms" }}
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Check className="w-5 h-5 text-brand-cyan" />
@@ -211,7 +224,7 @@ export function DownloadSection() {
             <Check className="w-5 h-5 text-brand-cyan" />
             Money-back Guarantee
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
