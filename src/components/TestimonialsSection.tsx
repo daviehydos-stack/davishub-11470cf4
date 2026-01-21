@@ -51,7 +51,7 @@ export function TestimonialsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, type: "tween" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-brand-pink font-medium text-sm uppercase tracking-wider">
@@ -73,7 +73,7 @@ export function TestimonialsSection() {
               key={testimonial.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1, type: "tween" }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
               className="glass rounded-2xl p-6 relative group"
             >
               {/* Quote icon */}
