@@ -520,6 +520,93 @@ const KnowledgeBank = () => {
             MS Access Tutorial Database Design Best Practices 
             Student Project Support KCSE Success Computer Studies Excellence
           </p>
+          
+          <h3>Azani ISP Project Marking Scheme and Requirements</h3>
+          <p>
+            Milestone 1 Documentation carries 30 Marks. It includes: Problem Statement and Definition, 
+            Overview of Existing System analysis, Proposed System objectives and benefits, 
+            Entity Relationship Diagram (ERD) showing all entities and relationships, 
+            Data Flow Diagrams (DFD) Level 0 and Level 1, System Flowcharts with proper symbols, 
+            Table Design with field names data types and sizes, Input Output Design specifications, 
+            Database Normalization to 1NF 2NF and 3NF.
+            
+            Milestone 2 Database Construction carries 70 Marks. It requires: Microsoft Access Database 
+            with minimum 5 properly related tables, Table Relationships using primary and foreign keys, 
+            Data Entry Forms with input validation and professional design, Queries with calculations 
+            for costs fines discounts and aggregate functions, Reports minimum 3 with grouping sorting 
+            and summary sections, Navigation System with switchboard or menu, User Manual with 
+            installation and usage instructions.
+          </p>
+          
+          <h3>Azani ISP System Database Tables</h3>
+          <p>
+            The Azani ISP database should contain these tables: tblInstitutions storing institution 
+            details including InstitutionID InstitutionName InstitutionType Location County ContactPersonID 
+            RegistrationDate RegistrationFee. tblContactPersons storing FirstName LastName PhoneNumber 
+            Email Position. tblBandwidthPackages storing PackageID PackageName BandwidthMBPS MonthlyCost. 
+            tblServiceSubscriptions storing SubscriptionID InstitutionID PackageID StartDate EndDate Status. 
+            tblPayments storing PaymentID InstitutionID PaymentType Amount PaymentDate ReceiptNumber. 
+            tblInfrastructure storing InfrastructureID InstitutionID NumberOfPCs LANNodes TotalCost. 
+            tblBilling storing BillingID InstitutionID BillingMonth AmountDue AmountPaid OverdueFine 
+            DisconnectionStatus ReconnectionFee.
+          </p>
+          
+          <h3>Azani ISP Queries and Calculations</h3>
+          <p>
+            Required queries include: qryRegisteredInstitutions listing all registered institutions with 
+            contact details. qryDefaulters showing institutions with unpaid bills past due date. 
+            qryDisconnectionList showing institutions disconnected for non-payment. 
+            qryInfrastructureRequirements showing PC and LAN requirements per institution. 
+            qryTotalInstallationCost calculating registration fee plus installation fee plus infrastructure cost. 
+            qryPCandLANCosts calculating number of PCs times 40000 plus LAN nodes cost based on tier. 
+            qryUpgradedBandwidthCharges calculating new package cost minus 10 percent discount. 
+            qryMonthlyChargesByCategory grouping charges by institution type with totals for internet 
+            overdue fines and reconnection fees. qryAggregateByInstitution showing total amounts 
+            sorted by institution name.
+          </p>
+          
+          <h3>Azani ISP Forms Design</h3>
+          <p>
+            Institution Registration Form captures institution name type location county contact person 
+            details registration fee payment. Service Subscription Form links institution to bandwidth 
+            package with start date. Payment Entry Form records registration installation and monthly 
+            payments with receipt generation. Infrastructure Purchase Form captures PC quantities and 
+            LAN node requirements with automatic cost calculation. Billing Management Form shows current 
+            bills overdue status fines and payment tracking. Main Menu Form provides navigation to all 
+            system functions. Login Form provides security with username and password validation.
+          </p>
+          
+          <h3>Azani ISP Reports</h3>
+          <p>
+            Required reports include: Registered Institutions Report listing all institutions grouped 
+            by type with contact information. Defaulters Report showing institutions with outstanding 
+            payments including overdue amounts and fine calculations. Disconnection Report listing 
+            institutions disconnected with dates and outstanding balances. Infrastructure Summary Report 
+            showing equipment requirements and costs per institution. Monthly Revenue Report showing 
+            income from registration installation subscriptions and reconnections. Institution Account 
+            Statement showing payment history and current balance for individual institutions.
+          </p>
+          
+          <h3>VBA Code and Automation</h3>
+          <p>
+            Visual Basic for Applications code should include: Form Load events to initialize controls 
+            and set default values. Before Update events for data validation checking required fields 
+            and valid ranges. Button Click procedures for navigation calculation and report generation. 
+            Custom functions for calculating overdue fines as 15 percent of unpaid amount, upgrade 
+            discounts as 10 percent of new package cost, LAN costs based on node tiers, total 
+            installation costs combining all fees. Error handling with appropriate messages for 
+            user guidance.
+          </p>
+          
+          <h3>Contact Information</h3>
+          <p>
+            Azani ISP Project Help and Support available via WhatsApp at 0115475543. 
+            Email hello@azaniispproject.co.ke. Website www.azaniispproject.co.ke. 
+            Location Nairobi Kenya. Instant delivery after payment. 100% original plagiarism-free work. 
+            Money-back guarantee if not satisfied. Complete Milestone 1 and Milestone 2 available. 
+            Pricing starts at KES 500 for Milestone 1.
+          </p>
+          
           <ul>
             <li>Azani ISP 2026 KCSE Computer Project</li>
             <li>KCSE Paper 451/3 Azani Internet Service Provider</li>
@@ -536,6 +623,26 @@ const KnowledgeBank = () => {
             <li>Upgrade Discount 10 Percent</li>
             <li>KCSE Project Download Kenya</li>
             <li>Computer Project 2026 Free Guide</li>
+            <li>Azani ISP Project PDF Download</li>
+            <li>KCSE Computer Project Sample</li>
+            <li>Azani Internet Service Provider Kenya</li>
+            <li>Computer Studies Project Help</li>
+            <li>KCSE 2026 Project Azani</li>
+            <li>Azani ISP ERD Entity Relationship Diagram</li>
+            <li>Azani ISP DFD Data Flow Diagram</li>
+            <li>Azani ISP System Flowchart</li>
+            <li>Azani ISP Table Design</li>
+            <li>Azani ISP Forms Design</li>
+            <li>Azani ISP Queries SQL</li>
+            <li>Azani ISP Reports Access</li>
+            <li>Azani ISP VBA Code</li>
+            <li>Azani ISP User Manual</li>
+            <li>How to do Azani ISP project</li>
+            <li>Azani ISP project step by step</li>
+            <li>Azani ISP project complete solution</li>
+            <li>Best Azani ISP project Kenya</li>
+            <li>Buy Azani ISP project online</li>
+            <li>Azani ISP project instant download</li>
           </ul>
         </div>
 

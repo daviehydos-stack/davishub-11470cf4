@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, MapPin, Wifi } from "lucide-react";
+import { MessageCircle, Mail, MapPin } from "lucide-react";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const quickLinks = [{
@@ -21,9 +21,13 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Wifi className="w-4 h-4 text-primary-foreground" />
-              </div>
+              <img 
+                src="/azani.jpg" 
+                alt="Azani ISP Logo" 
+                className="w-8 h-8 rounded-lg object-cover"
+                width={32}
+                height={32}
+              />
               <span className="font-display text-xl font-bold text-foreground">
                 Azani<span className="text-primary">ISP</span>
               </span>
