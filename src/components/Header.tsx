@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Wifi } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -62,9 +62,13 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-purple to-brand-cyan flex items-center justify-center">
-              <Wifi className="w-4 h-4 text-white" />
-            </div>
+            <img 
+              src="/azani.jpg" 
+              alt="Azani ISP Logo" 
+              className="w-8 h-8 rounded-lg object-cover"
+              width={32}
+              height={32}
+            />
             <span className="font-display text-xl font-bold">
               Azani<span className="text-primary">ISP</span>
             </span>
