@@ -59,6 +59,13 @@ export function PastProjectsSection() {
       .update({ download_count: project.download_count + 1 })
       .eq('id', project.id);
 
+    // Check if it's an internal anchor link (like #download)
+    if (project.download_url.includes('#')) {
+      // Navigate to the anchor section
+      window.location.href = project.download_url;
+      return;
+    }
+
     // Extract filename from URL
     const urlParts = project.download_url.split('/');
     const filename = decodeURIComponent(urlParts[urlParts.length - 1]);
