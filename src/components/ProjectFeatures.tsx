@@ -1,178 +1,118 @@
-import { useState, useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { FileText, Database, FolderOpen, Download, Calendar } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { 
+  Database, 
+  FileText, 
+  Search, 
+  BarChart, 
+  Layout,
+  ClipboardList,
+  Users,
+  Calendar
+} from "lucide-react";
 
-interface PastProject {
-  id: string;
-  title: string;
-  year: number;
-  description: string | null;
-  file_type: string;
-  download_url: string;
-  download_count: number;
-}
+const features = [
+  {
+    icon: Database,
+    title: "Database Tables",
+    description: "4+ properly normalized tables with relationships - Students, Clubs, Memberships, Activities",
+    color: "text-brand-purple",
+    bg: "bg-brand-purple/10",
+  },
+  {
+    icon: Layout,
+    title: "Custom Forms",
+    description: "User-friendly data entry forms with navigation, validation, and professional styling",
+    color: "text-brand-cyan",
+    bg: "bg-brand-cyan/10",
+  },
+  {
+    icon: Search,
+    title: "Queries & Parameters",
+    description: "5+ queries including parameter queries for dynamic data retrieval",
+    color: "text-brand-pink",
+    bg: "bg-brand-pink/10",
+  },
+  {
+    icon: BarChart,
+    title: "Professional Reports",
+    description: "3+ formatted reports with grouping, sorting, and calculated summaries",
+    color: "text-brand-orange",
+    bg: "bg-brand-orange/10",
+  },
+  {
+    icon: FileText,
+    title: "Complete Documentation",
+    description: "Full project documentation from problem statement to user manual - exam ready",
+    color: "text-green-500",
+    bg: "bg-green-500/10",
+  },
+  {
+    icon: ClipboardList,
+    title: "System Analysis",
+    description: "ERD diagrams, data dictionary, DFDs, and system flow charts included",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    icon: Users,
+    title: "Club Membership Tracking",
+    description: "Track student enrollments, roles, and membership status across all clubs",
+    color: "text-amber-500",
+    bg: "bg-amber-500/10",
+  },
+  {
+    icon: Calendar,
+    title: "Activity Management",
+    description: "Record and report on club activities, events, and student participation",
+    color: "text-rose-500",
+    bg: "bg-rose-500/10",
+  },
+];
 
-const FILE_TYPE_ICONS = {
-  document: FileText,
-  database: Database,
-  full_project: FolderOpen,
-};
-
-const FILE_TYPE_LABELS = {
-  document: "Documentation",
-  database: "Database",
-  full_project: "Full Project",
-};
-
-export function PastProjectsSection() {
-  const [projects, setProjects] = useState<PastProject[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('past_projects')
-          .select('*')
-          .eq('is_published', true)
-          .order('year', { ascending: false });
-
-        if (error) throw error;
-        setProjects(data || []);
-      } catch (err) {
-        console.error('Error fetching past projects:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  const handleDownload = async (project: PastProject) => {
-    // Increment download count
-    await supabase
-      .from('past_projects')
-      .update({ download_count: project.download_count + 1 })
-      .eq('id', project.id);
-
-    // Extract filename from URL
-    const urlParts = project.download_url.split('/');
-    const filename = decodeURIComponent(urlParts[urlParts.length - 1]);
-
-    // Create invisible anchor and trigger download
-    const link = document.createElement('a');
-    link.href = project.download_url;
-    link.download = filename;
-    link.target = '_self';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  // Group projects by year
-  const projectsByYear = projects.reduce((acc, project) => {
-    const year = project.year;
-    if (!acc[year]) acc[year] = [];
-    acc[year].push(project);
-    return acc;
-  }, {} as Record<number, PastProject[]>);
-
-  const years = Object.keys(projectsByYear).map(Number).sort((a, b) => b - a);
-
-  if (loading) {
-    return (
-      <section id="past-projects" className="py-16 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="animate-pulse">
-              <div className="h-8 bg-muted rounded w-64 mx-auto mb-4" />
-              <div className="h-4 bg-muted rounded w-96 mx-auto" />
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (projects.length === 0) {
-    return null;
-  }
+export function ProjectFeatures() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="past-projects" className="py-16 bg-secondary/30">
+    <section ref={ref} className="py-20 md:py-28 relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <Badge variant="outline" className="mb-4">
-            <FolderOpen className="w-3 h-3 mr-1" />
-            Past Projects Archive
-          </Badge>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Download Past Project Files
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.4 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
+          <span className="text-brand-purple font-medium text-sm uppercase tracking-wider">
+            What's Included
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+            Victory School Club{" "}
+            <span className="gradient-text">Membership System</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Access previous years' KCSE Computer Studies project materials for reference and study.
+          <p className="text-muted-foreground text-lg">
+            The complete KCSE 2025/2026 Computer Studies project with all components 
+            required by KNEC. Ready for submission and built to score maximum marks.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {years.map((year) => (
-            <div key={year}>
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar className="w-5 h-5 text-primary" />
-                <h3 className="font-display text-xl font-semibold text-foreground">
-                  {year} Projects
-                </h3>
-                <Badge variant="secondary" className="ml-auto">
-                  {projectsByYear[year].length} files
-                </Badge>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="glass rounded-xl p-5 hover:border-brand-purple/50 transition-all group"
+            >
+              <div className={`w-10 h-10 rounded-lg ${feature.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <feature.icon className={`w-5 h-5 ${feature.color}`} />
               </div>
-
-              <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-                {projectsByYear[year].map((project) => {
-                  const Icon = FILE_TYPE_ICONS[project.file_type as keyof typeof FILE_TYPE_ICONS] || FileText;
-                  const typeLabel = FILE_TYPE_LABELS[project.file_type as keyof typeof FILE_TYPE_LABELS] || project.file_type;
-
-                  return (
-                    <Card
-                      key={project.id}
-                      className="p-4 hover:border-primary/30 transition-colors group"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <Icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-foreground text-sm line-clamp-2 mb-1">
-                            {project.title}
-                          </h4>
-                          <Badge variant="outline" className="text-xs mb-2">
-                            {typeLabel}
-                          </Badge>
-                          {project.description && (
-                            <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
-                              {project.description}
-                            </p>
-                          )}
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            className="h-7 px-2 text-xs text-primary hover:text-primary"
-                            onClick={() => handleDownload(project)}
-                          >
-                            <Download className="w-3 h-3 mr-1" />
-                            Download
-                          </Button>
-                        </div>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
+              <h3 className="font-display font-semibold mb-2">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
