@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { FileText, Database, FolderOpen, Download, ExternalLink, Calendar } from "lucide-react";
+import { FileText, Database, FolderOpen, Download, Calendar } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 interface PastProject {
@@ -59,8 +59,18 @@ export function PastProjectsSection() {
       .update({ download_count: project.download_count + 1 })
       .eq('id', project.id);
 
-    // Open download link
-    window.open(project.download_url, '_blank');
+    // Extract filename from URL
+    const urlParts = project.download_url.split('/');
+    const filename = decodeURIComponent(urlParts[urlParts.length - 1]);
+
+    // Create invisible anchor and trigger download
+    const link = document.createElement('a');
+    link.href = project.download_url;
+    link.download = filename;
+    link.target = '_self';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // Group projects by year
@@ -89,13 +99,12 @@ export function PastProjectsSection() {
   }
 
   if (projects.length === 0) {
-    return null; // Don't show section if no projects
+    return null;
   }
 
   return (
     <section id="past-projects" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4">
             <FolderOpen className="w-3 h-3 mr-1" />
@@ -109,7 +118,6 @@ export function PastProjectsSection() {
           </p>
         </div>
 
-        {/* Projects by Year */}
         <div className="max-w-4xl mx-auto space-y-8">
           {years.map((year) => (
             <div key={year}>
@@ -157,7 +165,6 @@ export function PastProjectsSection() {
                           >
                             <Download className="w-3 h-3 mr-1" />
                             Download
-                            <ExternalLink className="w-3 h-3 ml-1" />
                           </Button>
                         </div>
                       </div>
