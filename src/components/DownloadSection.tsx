@@ -21,7 +21,7 @@ const packages = [
   {
     milestone: "Milestone 2",
     title: "Advanced",
-    price: "1,200",
+    price: "1,000",
     description: "Enhanced ISP system with additional features",
     features: [
       "Fully Customized Forms & Reports",
