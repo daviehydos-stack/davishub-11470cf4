@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { FileText, Database, FolderOpen, Download, ExternalLink, Calendar } from "lucide-react";
+import { FileText, Database, FolderOpen, Download, Calendar } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 interface PastProject {
@@ -30,6 +30,7 @@ const FILE_TYPE_LABELS = {
 export function PastProjectsSection() {
   const [projects, setProjects] = useState<PastProject[]>([]);
   const [loading, setLoading] = useState(true);
+  const [downloading, setDownloading] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -53,14 +54,39 @@ export function PastProjectsSection() {
   }, []);
 
   const handleDownload = async (project: PastProject) => {
-    // Increment download count
-    await supabase
-      .from('past_projects')
-      .update({ download_count: project.download_count + 1 })
-      .eq('id', project.id);
+    try {
+      setDownloading(project.id);
 
-    // Open download link
-    window.open(project.download_url, '_blank');
+      // Increment download count
+      await supabase
+        .from('past_projects')
+        .update({ download_count: project.download_count + 1 })
+        .eq('id', project.id);
+
+      // Fetch the file as a blob
+      const response = await fetch(project.download_url);
+      const blob = await response.blob();
+
+      // Extract filename from URL or use title
+      const urlParts = project.download_url.split('/');
+      const filename = decodeURIComponent(urlParts[urlParts.length - 1]) || `${project.title}.pdf`;
+
+      // Create download link and trigger download
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading file:', error);
+      // Fallback to opening in new tab if download fails
+      window.open(project.download_url, '_blank');
+    } finally {
+      setDownloading(null);
+    }
   };
 
   // Group projects by year
@@ -127,6 +153,7 @@ export function PastProjectsSection() {
                 {projectsByYear[year].map((project) => {
                   const Icon = FILE_TYPE_ICONS[project.file_type as keyof typeof FILE_TYPE_ICONS] || FileText;
                   const typeLabel = FILE_TYPE_LABELS[project.file_type as keyof typeof FILE_TYPE_LABELS] || project.file_type;
+                  const isDownloading = downloading === project.id;
 
                   return (
                     <Card
@@ -154,10 +181,10 @@ export function PastProjectsSection() {
                             variant="ghost"
                             className="h-7 px-2 text-xs text-primary hover:text-primary"
                             onClick={() => handleDownload(project)}
+                            disabled={isDownloading}
                           >
-                            <Download className="w-3 h-3 mr-1" />
-                            Download
-                            <ExternalLink className="w-3 h-3 ml-1" />
+                            <Download className={`w-3 h-3 mr-1 ${isDownloading ? 'animate-bounce' : ''}`} />
+                            {isDownloading ? 'Downloading...' : 'Download'}
                           </Button>
                         </div>
                       </div>
