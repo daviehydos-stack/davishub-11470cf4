@@ -5,6 +5,12 @@ import { Play, X, ExternalLink } from "lucide-react";
 
 const videos = [
   {
+    id: "TMUg9BFWn_g",
+    title: "Azani ISP Database System",
+    description: "Complete KCSE 2026 project with 95-page documentation and Access database.",
+    badge: "New",
+  },
+  {
     id: "Rhp84_oP6bU",
     title: "Getting Started",
     description: "Set up your project environment and understand the basics.",
@@ -65,7 +71,7 @@ export function GuidesSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
           {videos.map((video, index) => (
             <div
               key={video.id}
@@ -134,7 +140,7 @@ export function GuidesSection() {
           className={`mt-16 max-w-2xl mx-auto transition-all duration-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
           }`}
-          style={{ transitionDelay: "300ms" }}
+          style={{ transitionDelay: "400ms" }}
         >
           <div className="glass rounded-2xl p-8 text-center">
             <h3 className="font-display text-2xl font-bold mb-3">
@@ -147,7 +153,7 @@ export function GuidesSection() {
               asChild
               className="bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,30%)] font-semibold"
             >
-              <a
+              
                 href="https://chat.whatsapp.com/IO7QQrf6GH3IRHDMDAbNwm"
                 target="_blank"
                 rel="noopener noreferrer"
