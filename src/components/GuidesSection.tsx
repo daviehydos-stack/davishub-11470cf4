@@ -5,12 +5,6 @@ import { Play, X, ExternalLink } from "lucide-react";
 
 const videos = [
   {
-    id: "TMUg9BFWn_g",
-    title: "Azani ISP Database System",
-    description: "Complete KCSE 2026 project with 95-page documentation and Access database.",
-    badge: "New",
-  },
-  {
     id: "Rhp84_oP6bU",
     title: "Getting Started",
     description: "Set up your project environment and understand the basics.",
@@ -153,7 +147,7 @@ export function GuidesSection() {
               asChild
               className="bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,30%)] font-semibold"
             >
-              
+              <a
                 href="https://chat.whatsapp.com/IO7QQrf6GH3IRHDMDAbNwm"
                 target="_blank"
                 rel="noopener noreferrer"
