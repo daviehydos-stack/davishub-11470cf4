@@ -5,16 +5,16 @@ import { Play, X, ExternalLink } from "lucide-react";
 
 const videos = [
   {
+    id: "TMUg9BFWn_g",
+    title: "Azani ISP Database System | KCSE 2026 Computer Project",
+    description: "Complete KCSE Computer Studies Paper 3 project documentation for Azani Internet Service Provider - Download Now",
+    badge: "New",
+  },
+  {
     id: "Rhp84_oP6bU",
     title: "Getting Started",
     description: "Set up your project environment and understand the basics.",
     badge: "Beginner",
-  },
-   {
-    id: "TMUg9BFWn_g",
-    title: "Getting Started",
-    description: "Set up your project environment and understand the basics.",
-    badge: "New",
   },
   {
     id: "GMP0Fn3WJpk",
@@ -30,10 +30,10 @@ const videos = [
   },
 ];
 
-export function GuidesSection() {
-  const ref = useRef<HTMLDivElement>(null);
+export default function GuidesSection() {
+  const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeVideo, setActiveVideo] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
