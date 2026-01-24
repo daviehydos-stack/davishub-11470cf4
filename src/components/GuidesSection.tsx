@@ -10,6 +10,12 @@ const videos = [
     description: "Set up your project environment and understand the basics.",
     badge: "Beginner",
   },
+   {
+    id: "TMUg9BFWn_g",
+    title: "Getting Started",
+    description: "Set up your project environment and understand the basics.",
+    badge: "New",
+  },
   {
     id: "GMP0Fn3WJpk",
     title: "Database Design",
