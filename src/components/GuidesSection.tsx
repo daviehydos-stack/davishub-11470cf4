@@ -71,7 +71,7 @@ export function GuidesSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
           {videos.map((video, index) => (
             <div
               key={video.id}
@@ -140,7 +140,7 @@ export function GuidesSection() {
           className={`mt-16 max-w-2xl mx-auto transition-all duration-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
           }`}
-          style={{ transitionDelay: "400ms" }}
+          style={{ transitionDelay: "300ms" }}
         >
           <div className="glass rounded-2xl p-8 text-center">
             <h3 className="font-display text-2xl font-bold mb-3">
