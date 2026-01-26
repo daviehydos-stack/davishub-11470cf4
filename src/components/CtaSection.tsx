@@ -52,7 +52,7 @@ export function CtaSection() {
               className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 h-14 text-lg"
             >
               <a
-                href="https://wa.link/jox26j"
+                href="https://wa.link/4mq5mb"
                 target="_blank"
                 rel="noopener noreferrer"
               >
