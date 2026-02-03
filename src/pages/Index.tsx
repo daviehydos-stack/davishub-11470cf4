@@ -9,7 +9,7 @@ import { FormsQueriesSection } from "@/components/FormsQueriesSection";
 import { SampleReportsSection } from "@/components/SampleReportsSection";
 import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
 import { WhatsIncludedSection } from "@/components/WhatsIncludedSection";
-import { GuidesSection } from "@/components/GuidesSection";
+import GuidesSection from "@/components/GuidesSection";
 import { FreeResourcesSection } from "@/components/FreeResourcesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PastProjectsSection } from "@/components/PastProjectsSection";

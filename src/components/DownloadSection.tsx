@@ -171,11 +171,11 @@ export function DownloadSection() {
                   }`}
                 >
                   <a
-                    href="https://wa.link/4mq5mb"
+                    href="https://shop.azaniispproject.co.ke/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Download
+                    Order Now
                   </a>
                 </Button>
               </div>
