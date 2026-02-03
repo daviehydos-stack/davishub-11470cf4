@@ -36,7 +36,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     
     <!-- Default title - React Helmet will override per page -->
-    <title>Azani Internet Service Provider Information System | 2026 KCSE Computer Studies Project (451/3)</title>
+    <title>AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | 2026 KCSE COMPUTER STUDIES PROJECT (451/3)</title>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.azaniispproject.co.ke/" />
@@ -44,9 +44,9 @@
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.azaniispproject.co.ke/" />
-    <meta property="og:title" content="Azani ISP - 2026 KCSE Computer Project (451/3)" />
+    <meta property="og:title" content="AZANI ISP - 2026 KCSE COMPUTER PROJECT (451/3)" />
     <meta property="og:description" content="Complete Azani ISP System. Milestone 1 & 2. Download Now." />
-    <meta property="og:image" content="https://www.azaniispproject.co.ke/meta.jpg" />
+    <meta property="og:image" content="https://www.azaniispproject.co.ke/azani.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Azani ISP Project" />
@@ -55,9 +55,9 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.azaniispproject.co.ke/" />
-    <meta name="twitter:title" content="Azani ISP - 2026 KCSE Computer Project" />
+    <meta name="twitter:title" content="AZANI ISP - 2026 KCSE COMPUTER PROJECT" />
     <meta name="twitter:description" content="Complete Azani ISP System. Milestone 1 & 2. Download Now." />
-    <meta name="twitter:image" content="https://www.azaniispproject.co.ke/meta.jpg" />
+    <meta name="twitter:image" content="https://www.azaniispproject.co.ke/azani.jpg" />
     
     <!-- Google Fonts with display=swap for non-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -189,47 +189,10 @@
       * {
         font-display: swap;
       }
-      
-      /* Loading placeholder - prevents blank screen */
-      #loading-placeholder {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(135deg, #0a0f1e 0%, #1a1f3a 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-      }
-      
-      #loading-placeholder.loaded {
-        display: none;
-      }
     </style>
   </head>
   <body>
-    <!-- Loading placeholder (removed when React loads) -->
-    <div id="loading-placeholder">
-      <div style="text-align: center; color: #fff;">
-        <h1 style="font-size: 1.5rem; margin-bottom: 1rem;">Azani ISP Project</h1>
-        <p style="opacity: 0.7;">Loading...</p>
-      </div>
-    </div>
-    
     <div id="root"></div>
-    
-    <!-- Remove loading placeholder when React mounts -->
-    <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          var loader = document.getElementById('loading-placeholder');
-          if (loader) loader.classList.add('loaded');
-        }, 100);
-      });
-    </script>
-    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
