@@ -263,7 +263,7 @@ const KnowledgeBank = () => {
                     <Table className="h-8 w-8 text-blue-600 mr-3" />
                     <h3 className="text-2xl font-bold">Database Tables</h3>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-blue-600 mr-2">•</span>
                       <div>
@@ -294,37 +294,12 @@ const KnowledgeBank = () => {
                         <strong>tblPayments</strong> - Record all payment transactions
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblLANPurchases</strong> - LAN infrastructure installations
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblPCPurchases</strong> - Computer purchases by institutions
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblUpgrades</strong> - Bandwidth upgrade history with discounts
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblDisconnections</strong> - Service disconnection records
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblReconnections</strong> - Reconnection fees and dates
-                      </div>
-                    </li>
                   </ul>
+                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                    <a href="https://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                      View All Tables & Complete Database →
+                    </a>
+                  </Button>
                 </div>
 
                 {/* Forms */}
@@ -333,7 +308,7 @@ const KnowledgeBank = () => {
                     <Code className="h-8 w-8 text-purple-600 mr-3" />
                     <h3 className="text-2xl font-bold">Data Entry Forms</h3>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-purple-600 mr-2">•</span>
                       <div>
@@ -364,19 +339,12 @@ const KnowledgeBank = () => {
                         <strong>frmMainDashboard</strong> - Navigation menu and system overview
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmReportsMenu</strong> - Access all system reports
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmLogin</strong> - User authentication and security
-                      </div>
-                    </li>
                   </ul>
+                  <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
+                    <a href="https://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                      View All Forms & Templates →
+                    </a>
+                  </Button>
                 </div>
 
                 {/* Queries */}
@@ -385,7 +353,7 @@ const KnowledgeBank = () => {
                     <Database className="h-8 w-8 text-green-600 mr-3" />
                     <h3 className="text-2xl font-bold">Required Queries</h3>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
                       <div>
@@ -407,19 +375,7 @@ const KnowledgeBank = () => {
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
                       <div>
-                        <strong>qryInfrastructureRequirements</strong> - Calculate infrastructure needs
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
                         <strong>qryTotalInstallationCosts</strong> - Sum registration + installation + LAN
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryPCandLANCosts</strong> - Calculate PC and network costs
                       </div>
                     </li>
                     <li className="flex items-start">
@@ -428,25 +384,12 @@ const KnowledgeBank = () => {
                         <strong>qryUpgradeCharges</strong> - Calculate upgrade costs with 10% discount
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryMonthlyChargesByCategory</strong> - Group charges by institution type
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryAggregateServices</strong> - Total all services per institution
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryOverdueFines</strong> - Calculate 15% fines on late payments
-                      </div>
-                    </li>
                   </ul>
+                  <Button asChild className="w-full bg-green-600 hover:bg-green-700">
+                    <a href="https://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                      View All Queries & SQL Code →
+                    </a>
+                  </Button>
                 </div>
 
                 {/* Reports */}
@@ -455,7 +398,7 @@ const KnowledgeBank = () => {
                     <FileText className="h-8 w-8 text-orange-600 mr-3" />
                     <h3 className="text-2xl font-bold">Generated Reports</h3>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-orange-600 mr-2">•</span>
                       <div>
@@ -486,19 +429,12 @@ const KnowledgeBank = () => {
                         <strong>rptMonthlyRevenue</strong> - Revenue breakdown by service
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptInstitutionSummary</strong> - Per-institution service aggregate
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptPaymentHistory</strong> - Complete payment records
-                      </div>
-                    </li>
                   </ul>
+                  <Button asChild className="w-full bg-orange-600 hover:bg-orange-700">
+                    <a href="https://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                      View All Reports & Layouts →
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
