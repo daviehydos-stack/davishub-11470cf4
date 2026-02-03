@@ -21,7 +21,7 @@
     <meta name="google-site-verification" content="5-4cL4v0omMLhQHTpS5n_YJFvJrYSSNaY-kzAtSEjZY" />
     
     <!-- Default Meta Description - React Helmet will override per page -->
-    <meta name="description" content="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download. Milestone 1 & 2 Included. 500+ Students Scored 90%+." />
+    <meta name="description" content="Complete Azani ISP System for 2026 KCSE Computer Studies Project (451/3). Milestone 1 & 2 included. 500+ students scored 90%+. Instant WhatsApp delivery. 100% original." />
     
     <!-- Keywords -->
     <meta name="keywords" content="Azani ISP, 2026 KCSE Computer Project, KCSE 451/3, Azani Internet Service Provider, Milestone 1, Milestone 2, KCSE Computer Studies, MS Access Project" />
@@ -36,7 +36,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     
     <!-- Default title - React Helmet will override per page -->
-    <title>AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT</title>
+    <title>Azani Internet Service Provider Information System | 2026 KCSE Computer Studies Project (451/3)</title>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.azaniispproject.co.ke/" />
@@ -44,9 +44,9 @@
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.azaniispproject.co.ke/" />
-    <meta property="og:title" content="AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT" />
-    <meta property="og:description" content="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download." />
-    <meta property="og:image" content="https://www.azaniispproject.co.ke/azani.jpg" />
+    <meta property="og:title" content="Azani ISP - 2026 KCSE Computer Project (451/3)" />
+    <meta property="og:description" content="Complete Azani ISP System. Milestone 1 & 2. Download Now." />
+    <meta property="og:image" content="https://www.azaniispproject.co.ke/meta.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Azani ISP Project" />
@@ -55,9 +55,9 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.azaniispproject.co.ke/" />
-    <meta name="twitter:title" content="AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT" />
-    <meta name="twitter:description" content="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download." />
-    <meta name="twitter:image" content="https://www.azaniispproject.co.ke/azani.jpg" />
+    <meta name="twitter:title" content="Azani ISP - 2026 KCSE Computer Project" />
+    <meta name="twitter:description" content="Complete Azani ISP System. Milestone 1 & 2. Download Now." />
+    <meta name="twitter:image" content="https://www.azaniispproject.co.ke/meta.jpg" />
     
     <!-- Google Fonts with display=swap for non-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -189,10 +189,47 @@
       * {
         font-display: swap;
       }
+      
+      /* Loading placeholder - prevents blank screen */
+      #loading-placeholder {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0f1e 0%, #1a1f3a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      #loading-placeholder.loaded {
+        display: none;
+      }
     </style>
   </head>
   <body>
+    <!-- Loading placeholder (removed when React loads) -->
+    <div id="loading-placeholder">
+      <div style="text-align: center; color: #fff;">
+        <h1 style="font-size: 1.5rem; margin-bottom: 1rem;">Azani ISP Project</h1>
+        <p style="opacity: 0.7;">Loading...</p>
+      </div>
+    </div>
+    
     <div id="root"></div>
+    
+    <!-- Remove loading placeholder when React mounts -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var loader = document.getElementById('loading-placeholder');
+          if (loader) loader.classList.add('loaded');
+        }, 100);
+      });
+    </script>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
