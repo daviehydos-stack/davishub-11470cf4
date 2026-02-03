@@ -37,10 +37,10 @@ export function HeroSection() {
               </a>
             </Button>
 
-            <Button asChild size="lg" className="bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,30%)] text-white font-semibold px-6 h-12">
+            <Button asChild size="lg" className="bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,26%)] text-white font-semibold px-6 h-12">
               <a href="https://wa.link/jox26j" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp Us
+                WhatsApp
               </a>
             </Button>
 

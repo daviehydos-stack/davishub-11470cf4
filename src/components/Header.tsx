@@ -60,7 +60,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} src="/lovable-uploads/23029cdd-ff38-43b2-a168-923327c0d0d8.jpg" />
+            <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} src="/azani-logo-optimized.webp" loading="eager" />
             <span className="font-display text-xl font-bold">
               Azani<span className="text-primary">ISP</span>
             </span>
