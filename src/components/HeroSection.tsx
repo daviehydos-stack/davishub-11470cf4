@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Shield, Clock, MessageCircle, FileText } from "lucide-react";
+import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 
 export function HeroSection() {
+  const { getDownloadUrl, redirectMode } = useSiteSettings();
+  const downloadUrl = getDownloadUrl();
+  const buttonText = redirectMode === "whatsapp" ? "Order on WhatsApp" : "Download Now";
+
   return (
     <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/20">
       <div className="container mx-auto px-4 relative z-10">
@@ -31,8 +36,8 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-12 text-base group">
-              <a href="https://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
-                Download Now
+              <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                {buttonText}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
