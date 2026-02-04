@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
+import { useSiteSettings } from "@/contexts/SiteSettingsContext";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { redirectMode, whatsappNumber } = useSiteSettings();
+  
   const quickLinks = [{
     href: "/",
     label: "Home"
@@ -41,14 +45,21 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="font-display font-semibold text-lg mb-4 text-foreground">Contact</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-primary" />
-                +254 115 475 543   
+                <a href={`https://wa.me/${whatsappNumber.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  {whatsappNumber}
+                </a>
               </li>
+              {redirectMode === "whatsapp" && (
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="font-medium text-foreground">Call/WhatsApp for Orders</span>
+                </li>
+              )}
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
                 hello@azaniispproject.co.ke

@@ -36,9 +36,6 @@ export function Header() {
   }, {
     href: "/blogs",
     label: "Blog"
-  }, {
-    href: "/admin",
-    label: "Admin"
   }];
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("/#")) {

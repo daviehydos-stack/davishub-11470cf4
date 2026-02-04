@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, FileText, Database, Wifi } from "lucide-react";
+import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 
 const packages = [
   {
@@ -69,6 +70,7 @@ const highlights = [
 export function DownloadSection() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { getDownloadUrl, redirectMode } = useSiteSettings();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,6 +86,9 @@ export function DownloadSection() {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  const downloadUrl = getDownloadUrl();
+  const buttonText = redirectMode === "whatsapp" ? "Order on WhatsApp" : "Order Now";
 
   return (
     <section id="download" className="py-20 md:py-32 relative overflow-hidden">
@@ -171,11 +176,11 @@ export function DownloadSection() {
                   }`}
                 >
                   <a
-                    href="https://shop.azaniispproject.co.ke/"
+                    href={downloadUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Order Now
+                    {buttonText}
                   </a>
                 </Button>
               </div>

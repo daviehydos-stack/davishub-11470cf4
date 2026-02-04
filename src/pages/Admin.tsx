@@ -10,10 +10,11 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Trash2, Edit, Plus, ArrowLeft, Save, X, Eye, EyeOff, 
-  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen
+  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen, Sliders
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PastProjectsPanel } from "@/components/admin/PastProjectsPanel";
+import { SiteSettingsPanel } from "@/components/admin/SiteSettingsPanel";
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import ImageExtension from '@tiptap/extension-image';
@@ -1111,6 +1112,10 @@ const Admin = () => {
                 <Settings className="w-4 h-4" />
                 SEO Settings
               </TabsTrigger>
+              <TabsTrigger value="site-settings" className="flex items-center gap-2">
+                <Sliders className="w-4 h-4" />
+                Site Settings
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="projects">
@@ -1377,6 +1382,10 @@ const Admin = () => {
                 refreshSession={refreshSession}
                 blogs={blogs}
               />
+            </TabsContent>
+
+            <TabsContent value="site-settings">
+              <SiteSettingsPanel refreshSession={refreshSession} />
             </TabsContent>
           </Tabs>
         </div>
