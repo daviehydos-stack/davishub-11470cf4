@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Shield, Clock, MessageCircle, FileText } from "lucide-react";
+import { ArrowRight, Users, Shield, Clock, FileText } from "lucide-react";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 
 export function HeroSection() {
-  const { getDownloadUrl, redirectMode } = useSiteSettings();
+  const { getDownloadUrl } = useSiteSettings();
   const downloadUrl = getDownloadUrl();
-  const buttonText = redirectMode === "whatsapp" ? "Order on WhatsApp" : "Download Now";
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/20">
@@ -37,15 +36,8 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-12 text-base group">
               <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                {buttonText}
+                Download Now
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-
-            <Button asChild size="lg" className="bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,26%)] text-white font-semibold px-6 h-12">
-              <a href="https://wa.link/jox26j" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp
               </a>
             </Button>
 
