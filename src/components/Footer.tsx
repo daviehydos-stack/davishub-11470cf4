@@ -16,6 +16,9 @@ export function Footer() {
     href: "/blogs",
     label: "Blog"
   }, {
+    href: "/community",
+    label: "Community"
+  }, {
     href: "/#contact",
     label: "Contact"
   }];
