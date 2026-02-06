@@ -211,7 +211,7 @@ const Community = () => {
                 <Users className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-primary">Student Community</span>
               </div>
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Project Discussion</h1>
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Discussion</h1>
               <p className="text-muted-foreground mb-6">Ask questions, share knowledge, and connect with fellow students...</p>
               <Dialog open={showNewDialog} onOpenChange={setShowNewDialog}>
                 <DialogTrigger asChild>
