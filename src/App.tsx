@@ -12,6 +12,7 @@ import BlogPost from "./pages/BlogPost";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import KnowledgeBank from "./pages/KnowledgeBank";
+import Community from "./pages/Community";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:slug" element={<BlogPost />} />
               <Route path="/tags/:tag" element={<Blogs />} />
+              <Route path="/community" element={<Community />} />
               <Route path="/admin" element={<Admin />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

@@ -18,6 +18,7 @@ import {
   Download,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { CommentSection } from "@/components/comments/CommentSection";
 
 interface BlogPostData {
   id: string;
@@ -406,6 +407,15 @@ const BlogPost = () => {
               </div>
             </div>
           </section>
+        )}
+
+        {/* Comment Section */}
+        {blogPost && (
+          <CommentSection
+            pageType="blog"
+            pageId={blogPost.slug}
+            title="Comments"
+          />
         )}
 
         {/* Author Section */}

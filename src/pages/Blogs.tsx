@@ -6,8 +6,9 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SEOHead } from "@/components/SEOHead";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, FileText, Users, Award, Loader2, X, Play } from "lucide-react";
+import { ArrowRight, Clock, FileText, Users, Award, Loader2, X, MessageSquare } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { CommentSection } from "@/components/comments/CommentSection";
 
 interface BlogPost {
   id: string;
@@ -310,6 +311,34 @@ const Blogs = () => {
                 <Badge variant="secondary">MS Access</Badge>
                 <Badge variant="secondary">KCSE 2026</Badge>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comment Section for KCSE Guide */}
+        <CommentSection
+          pageType="kcse_guide"
+          pageId="kcse-guides-main"
+          title="KCSE Guide Discussion"
+        />
+
+        {/* Community CTA */}
+        <section className="py-6 md:py-8 bg-secondary/30 border-t border-border">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <MessageSquare className="w-5 h-5 text-primary" />
+                <h2 className="font-display text-lg font-semibold text-foreground">Join the Community</h2>
+              </div>
+              <p className="text-muted-foreground mb-4 text-sm">
+                Have questions? Want to discuss your project with other students?
+              </p>
+              <Button asChild variant="outline">
+                <Link to="/community">
+                  Visit Community Forum
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>

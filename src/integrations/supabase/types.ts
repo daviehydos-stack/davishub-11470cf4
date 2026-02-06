@@ -86,6 +86,104 @@ export type Database = {
         }
         Relationships: []
       }
+      comments: {
+        Row: {
+          author_email: string
+          author_mobile: string | null
+          author_name: string
+          content: string
+          created_at: string
+          id: string
+          is_approved: boolean | null
+          page_id: string
+          page_type: string
+          parent_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          author_email: string
+          author_mobile?: string | null
+          author_name: string
+          content: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean | null
+          page_id: string
+          page_type: string
+          parent_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          author_email?: string
+          author_mobile?: string | null
+          author_name?: string
+          content?: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean | null
+          page_id?: string
+          page_type?: string
+          parent_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "comments_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "comments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      discussions: {
+        Row: {
+          author_email: string
+          author_mobile: string | null
+          author_name: string
+          category: string | null
+          content: string
+          created_at: string
+          id: string
+          is_approved: boolean | null
+          is_pinned: boolean | null
+          reply_count: number | null
+          title: string
+          updated_at: string
+          view_count: number | null
+        }
+        Insert: {
+          author_email: string
+          author_mobile?: string | null
+          author_name: string
+          category?: string | null
+          content: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean | null
+          is_pinned?: boolean | null
+          reply_count?: number | null
+          title: string
+          updated_at?: string
+          view_count?: number | null
+        }
+        Update: {
+          author_email?: string
+          author_mobile?: string | null
+          author_name?: string
+          category?: string | null
+          content?: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean | null
+          is_pinned?: boolean | null
+          reply_count?: number | null
+          title?: string
+          updated_at?: string
+          view_count?: number | null
+        }
+        Relationships: []
+      }
       past_projects: {
         Row: {
           created_at: string
