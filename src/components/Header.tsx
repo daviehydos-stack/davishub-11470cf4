@@ -4,10 +4,12 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -15,8 +17,10 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
   const handleNavClick = () => {
     closeMenu();
     window.scrollTo({
@@ -24,6 +28,7 @@ export function Header() {
       behavior: "smooth"
     });
   };
+
   const navLinks = [{
     href: "/",
     label: "Home"
@@ -34,9 +39,13 @@ export function Header() {
     href: "/kcse",
     label: "KCSE Guide"
   }, {
+    href: "/community",
+    label: "Community"
+  }, {
     href: "/blogs",
     label: "Blog"
   }];
+
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("/#")) {
       const targetId = href.replace("/#", "");
@@ -52,6 +61,7 @@ export function Header() {
       closeMenu();
     }
   };
+
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm" : "bg-transparent")}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
