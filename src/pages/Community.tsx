@@ -67,7 +67,19 @@ const Community = () => {
         error
       } = await query;
       if (error) throw error;
-      setDiscussions(data || []);
+      
+      // Get actual reply counts from comments table
+      const discussionsWithReplies = await Promise.all((data || []).map(async (d) => {
+        const { count } = await supabase
+          .from('comments')
+          .select('*', { count: 'exact', head: true })
+          .eq('page_type', 'discussion')
+          .eq('page_id', d.id)
+          .eq('is_approved', true);
+        return { ...d, actual_reply_count: count || 0 };
+      }));
+      
+      setDiscussions(discussionsWithReplies);
     } catch (error) {
       console.error('Error fetching discussions:', error);
     } finally {
@@ -368,7 +380,7 @@ const Community = () => {
                             </span>
                             <span className="flex items-center gap-1">
                               <MessageCircle className="w-3 h-3" />
-                              {discussion.reply_count} replies
+                              {(discussion as any).actual_reply_count || discussion.reply_count} replies
                             </span>
                           </div>
                         </div>

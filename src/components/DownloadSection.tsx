@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, FileText, Database, Wifi } from "lucide-react";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
+import { supabase } from "@/integrations/supabase/client";
 
-const packages = [
+
+const defaultPackages = [
   {
     milestone: "Milestone 1",
     title: "Basic",
@@ -18,6 +20,8 @@ const packages = [
       "User Interface",
     ],
     popular: false,
+    offerLabel: null as string | null,
+    offerActive: false,
   },
   {
     milestone: "Milestone 2",
@@ -32,6 +36,8 @@ const packages = [
       "Performance Optimization",
     ],
     popular: true,
+    offerLabel: null as string | null,
+    offerActive: false,
   },
   {
     milestone: "Complete Project",
@@ -46,6 +52,8 @@ const packages = [
       "WhatsApp Chat for Support",
     ],
     popular: false,
+    offerLabel: null as string | null,
+    offerActive: false,
   },
 ];
 
@@ -70,7 +78,8 @@ const highlights = [
 export function DownloadSection() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { getDownloadUrl, redirectMode } = useSiteSettings();
+  const [packages, setPackages] = useState(defaultPackages);
+  const { getDownloadUrl } = useSiteSettings();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,8 +96,58 @@ export function DownloadSection() {
     return () => observer.disconnect();
   }, []);
 
+  // Fetch pricing from database
+  useEffect(() => {
+    const fetchPricing = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('pricing_packages')
+          .select('*')
+          .order('default_price', { ascending: true });
+
+        if (error) throw error;
+        
+        if (data && data.length > 0) {
+          const formattedPackages = data.map((pkg) => ({
+            milestone: pkg.milestone,
+            title: pkg.title,
+            price: pkg.current_price.toLocaleString(),
+            description: pkg.description || '',
+            features: Array.isArray(pkg.features) ? (pkg.features as string[]) : [],
+            popular: pkg.is_popular,
+            offerLabel: pkg.offer_label,
+            offerActive: pkg.offer_active,
+            defaultPrice: pkg.default_price,
+            currentPrice: pkg.current_price,
+          }));
+          setPackages(formattedPackages);
+        }
+      } catch (error) {
+        console.error('Error fetching pricing:', error);
+      }
+    };
+
+    fetchPricing();
+
+    // Subscribe to realtime updates
+    const channel = supabase
+      .channel('pricing-updates')
+      .on('postgres_changes', {
+        event: '*',
+        schema: 'public',
+        table: 'pricing_packages'
+      }, () => {
+        fetchPricing();
+      })
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
   const downloadUrl = getDownloadUrl();
-  const buttonText = redirectMode === "whatsapp" ? "Order on WhatsApp" : "Order Now";
+  const buttonText = "Download Now";
 
   return (
     <section id="download" className="py-20 md:py-32 relative overflow-hidden">
@@ -134,6 +193,13 @@ export function DownloadSection() {
                   </Badge>
                 </div>
               )}
+              {(pkg as any).offerActive && (pkg as any).offerLabel && (
+                <div className="absolute -top-4 right-4 z-10">
+                  <Badge className="bg-destructive text-destructive-foreground border-0 font-semibold px-3 animate-pulse">
+                    {(pkg as any).offerLabel}
+                  </Badge>
+                </div>
+              )}
               
               <div className={`rounded-2xl p-8 h-full bg-card`}>
                 <div className="mb-4">
@@ -147,6 +213,11 @@ export function DownloadSection() {
                 </h3>
                 
                 <div className="mb-4">
+                  {(pkg as any).offerActive && (pkg as any).defaultPrice > (pkg as any).currentPrice && (
+                    <span className="text-sm text-muted-foreground line-through mr-2">
+                      Ksh. {(pkg as any).defaultPrice?.toLocaleString()}
+                    </span>
+                  )}
                   <span className="text-sm text-muted-foreground">Ksh. </span>
                   <span className="font-display text-3xl font-bold">
                     {pkg.price}

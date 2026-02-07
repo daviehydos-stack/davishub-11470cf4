@@ -111,30 +111,19 @@ export const CommentSection = ({ pageType, pageId, title = "Discussion" }: Comme
             </span>
           </div>
 
-          {/* Comment Form */}
-          <div className="mb-8 bg-secondary/30 rounded-lg p-4 md:p-6 border border-border">
-            <h3 className="font-semibold text-foreground mb-4">Join the conversation</h3>
-            <CommentForm
-              pageType={pageType}
-              pageId={pageId}
-              onSuccess={fetchComments}
-              placeholder="Share your thoughts, ask a question, or help others..."
-            />
-          </div>
-
-          {/* Comments List */}
+          {/* Comments List - Now above the form */}
           {loading ? (
             <div className="text-center py-8">
               <Loader2 className="w-6 h-6 animate-spin mx-auto text-primary" />
               <p className="text-sm text-muted-foreground mt-2">Loading comments...</p>
             </div>
           ) : comments.length === 0 ? (
-            <div className="text-center py-8 bg-secondary/20 rounded-lg border border-dashed border-border">
+            <div className="text-center py-8 mb-8 bg-secondary/20 rounded-lg border border-dashed border-border">
               <MessageSquare className="w-12 h-12 mx-auto text-muted-foreground mb-3" />
               <p className="text-muted-foreground">No comments yet. Be the first to share your thoughts!</p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-4 mb-8">
               {comments.map((comment) => (
                 <CommentItem
                   key={comment.id}
@@ -146,6 +135,17 @@ export const CommentSection = ({ pageType, pageId, title = "Discussion" }: Comme
               ))}
             </div>
           )}
+
+          {/* Comment Form - Now below comments */}
+          <div className="bg-secondary/30 rounded-lg p-4 md:p-6 border border-border">
+            <h3 className="font-semibold text-foreground mb-4">Join the conversation</h3>
+            <CommentForm
+              pageType={pageType}
+              pageId={pageId}
+              onSuccess={fetchComments}
+              placeholder="Share your thoughts, ask a question, or help others..."
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -92,12 +92,12 @@ export const CommentForm = ({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <Label htmlFor="author_name">Name *</Label>
+          <Label htmlFor="author_name">Full Name *</Label>
           <Input
             id="author_name"
-            placeholder="Your name"
+            placeholder="Your full name"
             value={formData.author_name}
             onChange={(e) => setFormData({ ...formData, author_name: e.target.value })}
             className={errors.author_name ? "border-destructive" : ""}
@@ -120,17 +120,16 @@ export const CommentForm = ({
             <p className="text-xs text-destructive">{errors.author_email}</p>
           )}
         </div>
-      </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor="author_mobile">Phone (optional)</Label>
-        <Input
-          id="author_mobile"
-          type="tel"
-          placeholder="+254 7XX XXX XXX"
-          value={formData.author_mobile}
-          onChange={(e) => setFormData({ ...formData, author_mobile: e.target.value })}
-        />
+        <div className="space-y-2">
+          <Label htmlFor="author_mobile">Phone *</Label>
+          <Input
+            id="author_mobile"
+            type="tel"
+            placeholder="+254 7XX XXX XXX"
+            value={formData.author_mobile}
+            onChange={(e) => setFormData({ ...formData, author_mobile: e.target.value })}
+          />
+        </div>
       </div>
 
       <div className="space-y-2">

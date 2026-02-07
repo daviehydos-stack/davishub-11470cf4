@@ -223,6 +223,54 @@ export type Database = {
         }
         Relationships: []
       }
+      pricing_packages: {
+        Row: {
+          created_at: string
+          current_price: number
+          default_price: number
+          description: string | null
+          features: Json | null
+          id: string
+          is_popular: boolean | null
+          milestone: string
+          offer_active: boolean | null
+          offer_label: string | null
+          package_key: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          current_price: number
+          default_price: number
+          description?: string | null
+          features?: Json | null
+          id?: string
+          is_popular?: boolean | null
+          milestone: string
+          offer_active?: boolean | null
+          offer_label?: string | null
+          package_key: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          current_price?: number
+          default_price?: number
+          description?: string | null
+          features?: Json | null
+          id?: string
+          is_popular?: boolean | null
+          milestone?: string
+          offer_active?: boolean | null
+          offer_label?: string | null
+          package_key?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       seo_settings: {
         Row: {
           canonical_url: string | null

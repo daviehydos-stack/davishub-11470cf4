@@ -13,7 +13,7 @@ const KnowledgeBank = () => {
   const buttonText = redirectMode === "whatsapp" ? "Order on WhatsApp" : "Get Complete Project Files";
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900">
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 overflow-x-hidden">
       <SEOHead
         title="KCSE 2026 Computer Project Complete Guide | Azani ISP Database System"
         description="Comprehensive guide for KCSE 2026 Computer Studies Project (451/3). Complete documentation on Azani Internet Service Provider Information System - tables, forms, queries, reports, and implementation guide."
@@ -39,35 +39,35 @@ const KnowledgeBank = () => {
         ]}
       />
       <Header />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 w-full max-w-full">
         {/* Hero Section */}
-        <section className="py-12 md:py-20 relative overflow-hidden">
+        <section className="py-8 md:py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-blue-600/10"></div>
-          <div className="container mx-auto px-4 relative">
+          <div className="container mx-auto px-4 relative max-w-full">
             <div className="max-w-5xl mx-auto text-center">
-              <Badge className="mb-4 md:mb-6 bg-blue-600 text-white border-0 px-4 md:px-6 py-2 text-xs md:text-sm font-semibold animate-fade-in">
+              <Badge className="mb-3 md:mb-6 bg-blue-600 text-white border-0 px-3 md:px-6 py-1.5 md:py-2 text-[10px] md:text-sm font-semibold animate-fade-in whitespace-normal">
                 Official 2026 KCSE Computer Studies Project (451/3)
               </Badge>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-900 via-purple-800 to-blue-900 dark:from-blue-100 dark:via-purple-200 dark:to-blue-100 bg-clip-text text-transparent animate-fade-in">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-6 bg-gradient-to-r from-blue-900 via-purple-800 to-blue-900 dark:from-blue-100 dark:via-purple-200 dark:to-blue-100 bg-clip-text text-transparent animate-fade-in leading-tight">
                 Azani Internet Service Provider
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 md:mt-4 text-slate-700 dark:text-slate-300">
+                <span className="block text-base sm:text-xl md:text-3xl lg:text-4xl mt-1 md:mt-4 text-slate-700 dark:text-slate-300">
                   Complete Database Information System Guide
                 </span>
               </h1>
-              <p className="text-base md:text-xl text-slate-600 dark:text-slate-400 mb-6 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 animate-fade-in">
+              <p className="text-sm md:text-xl text-slate-600 dark:text-slate-400 mb-4 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2 animate-fade-in">
                 Your comprehensive resource for understanding and mastering the 2026 KCSE Computer Studies Project. 
                 From system analysis to database implementation - everything you need to excel.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-2">
-                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center px-2">
+                <Button asChild size="default" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105 w-full sm:w-auto text-sm md:text-base">
                   <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-5 w-5" />
-                    {buttonText}
+                    <Download className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                    Download Now
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 transition-all transform hover:scale-105 w-full sm:w-auto">
+                <Button asChild size="default" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 transition-all transform hover:scale-105 w-full sm:w-auto text-sm md:text-base">
                   <a href="https://wa.link/jox26j" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
+                    <MessageCircle className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                     Get Expert Help on WhatsApp
                   </a>
                 </Button>
@@ -77,19 +77,19 @@ const KnowledgeBank = () => {
         </section>
 
         {/* Project Overview */}
-        <section className="py-16 bg-white dark:bg-slate-900">
-          <div className="container mx-auto px-4">
+        <section className="py-10 md:py-16 bg-white dark:bg-slate-900">
+          <div className="container mx-auto px-4 max-w-full">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl font-bold mb-4">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="font-display text-2xl md:text-4xl font-bold mb-3 md:mb-4">
                   Understanding the Azani ISP Project
                 </h2>
-                <p className="text-lg text-slate-600 dark:text-slate-400">
+                <p className="text-base md:text-lg text-slate-600 dark:text-slate-400">
                   Official KNEC Computer Studies Paper 3 for KCSE 2026
                 </p>
               </div>
               
-              <div className="prose prose-lg dark:prose-invert max-w-none">
+              <div className="prose prose-sm md:prose-lg dark:prose-invert max-w-none">
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 mb-8">
                   <h3 className="text-2xl font-bold mb-4 text-blue-900 dark:text-blue-100">What is Azani ISP?</h3>
                   <p className="text-slate-700 dark:text-slate-300 text-lg leading-relaxed">
