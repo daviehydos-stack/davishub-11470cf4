@@ -10,11 +10,13 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Trash2, Edit, Plus, ArrowLeft, Save, X, Eye, EyeOff, 
-  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen, Sliders
+  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen, Sliders, MessageSquare, DollarSign
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PastProjectsPanel } from "@/components/admin/PastProjectsPanel";
 import { SiteSettingsPanel } from "@/components/admin/SiteSettingsPanel";
+import { PricingPanel } from "@/components/admin/PricingPanel";
+import { CommentsPanel } from "@/components/admin/CommentsPanel";
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import ImageExtension from '@tiptap/extension-image';
@@ -1116,6 +1118,14 @@ const Admin = () => {
                 <Sliders className="w-4 h-4" />
                 Site Settings
               </TabsTrigger>
+              <TabsTrigger value="pricing" className="flex items-center gap-2">
+                <DollarSign className="w-4 h-4" />
+                Pricing
+              </TabsTrigger>
+              <TabsTrigger value="comments" className="flex items-center gap-2">
+                <MessageSquare className="w-4 h-4" />
+                Comments
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="projects">
@@ -1386,6 +1396,14 @@ const Admin = () => {
 
             <TabsContent value="site-settings">
               <SiteSettingsPanel refreshSession={refreshSession} />
+            </TabsContent>
+
+            <TabsContent value="pricing">
+              <PricingPanel refreshSession={refreshSession} />
+            </TabsContent>
+
+            <TabsContent value="comments">
+              <CommentsPanel refreshSession={refreshSession} />
             </TabsContent>
           </Tabs>
         </div>

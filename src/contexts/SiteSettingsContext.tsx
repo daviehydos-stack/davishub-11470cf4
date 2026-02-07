@@ -58,7 +58,8 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
   const getDownloadUrl = () => {
     if (settings.redirectMode === "whatsapp") {
       const cleanNumber = settings.whatsappNumber.replace(/\D/g, "");
-      return `https://wa.me/${cleanNumber}?text=Hi%2C%20I%20want%20to%20download%20the%20Azani%20ISP%20Project`;
+      const message = encodeURIComponent("Hello, I am a Form Four student currently working on my KCSE 2026 Computer Studies Paper 3.\n\nKindly let me know the cost for a comprehensive Milestone 1, a complete Milestone 2, and the full project. Thank you.");
+      return `https://wa.me/${cleanNumber}?text=${message}`;
     }
     return "https://shop.azaniispproject.co.ke/";
   };

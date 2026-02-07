@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
+import { CopyProtection } from "@/components/CopyProtection";
 import Index from "./pages/Index";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./pages/BlogPost";
@@ -21,6 +22,7 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <SiteSettingsProvider>
         <TooltipProvider>
+          <CopyProtection />
           <Toaster />
           <Sonner />
           <BrowserRouter>
