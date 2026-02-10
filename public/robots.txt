@@ -6,6 +6,8 @@ Allow: /
 Allow: /kcse
 Allow: /knowledge-bank
 Allow: /blogs
+Allow: /kcse-2026-project
+Allow: /community
 Disallow: /admin
 
 # Sitemap

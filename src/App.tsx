@@ -14,6 +14,7 @@ import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import KnowledgeBank from "./pages/KnowledgeBank";
 import Community from "./pages/Community";
+import KcseProject from "./pages/KcseProject";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/kcse" element={<KnowledgeBank />} />
               <Route path="/knowledge-bank" element={<KnowledgeBank />} />
+              <Route path="/kcse-2026-project" element={<KcseProject />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:slug" element={<BlogPost />} />
               <Route path="/tags/:tag" element={<Blogs />} />
