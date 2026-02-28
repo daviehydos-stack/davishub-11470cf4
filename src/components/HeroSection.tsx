@@ -41,6 +41,12 @@ export function HeroSection() {
                 Question Paper
               </a>
             </Button>
+            <Button asChild size="sm" variant="outline" className="border-border hover:bg-secondary font-medium px-4 h-8 text-xs">
+              <a href="http://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                <ShoppingBag className="mr-1.5 h-3 w-3" />
+                Shop
+              </a>
+            </Button>
           </div>
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
@@ -58,12 +64,6 @@ export function HeroSection() {
               <Clock className="w-4 h-4 text-primary" />
               <span>Instant delivery</span>
             </div>
-          </div>
-          <div className="mt-5">
-            <a href="http://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-200">
-              <ShoppingBag className="w-3 h-3" />
-              Shop
-            </a>
           </div>
         </div>
       </div>
