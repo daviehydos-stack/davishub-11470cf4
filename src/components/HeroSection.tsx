@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Shield, Clock, FileText, ShoppingBag } from "lucide-react";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
+
 export function HeroSection() {
   const { getDownloadUrl } = useSiteSettings();
   const downloadUrl = getDownloadUrl();
@@ -41,43 +42,12 @@ export function HeroSection() {
                 Question Paper
               </a>
             </Button>
-            
-              href="http://shop.azaniispproject.co.ke/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                padding: "6px 14px",
-                fontSize: "13px",
-                fontWeight: 500,
-                color: "#7c3aed",
-                border: "1.5px solid #7c3aed40",
-                borderRadius: "20px",
-                background: "#7c3aed08",
-                textDecoration: "none",
-                transition: "all 0.2s ease",
-                animation: "shopPulse 2.5s ease-in-out infinite",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = "#7c3aed15";
-                (e.currentTarget as HTMLElement).style.borderColor = "#7c3aed80";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = "#7c3aed08";
-                (e.currentTarget as HTMLElement).style.borderColor = "#7c3aed40";
-              }}
-            >
-              <style>{`
-                @keyframes shopPulse {
-                  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 #7c3aed20; }
-                  50% { transform: scale(1.04); box-shadow: 0 0 0 6px #7c3aed00; }
-                }
-              `}</style>
-              <ShoppingBag style={{ width: 13, height: 13 }} />
-              Shop
-            </a>
+            <Button asChild size="sm" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 font-medium px-4 h-8 text-xs rounded-full animate-pulse">
+              <a href="http://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                <ShoppingBag className="mr-1.5 h-3 w-3" />
+                Shop
+              </a>
+            </Button>
           </div>
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
