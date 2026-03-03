@@ -52,7 +52,15 @@ const KcseComputerStudies = () => {
     { id: "Rhp84_oP6bU", title: "Getting Started with Microsoft Access for KCSE", desc: "Learn the basics of MS Access — tables, relationships, and navigation pane." },
     { id: "GMP0Fn3WJpk", title: "Database Design & Normalization Tutorial", desc: "How to design your ER diagram and normalize tables to 3NF for maximum marks." },
     { id: "Zj57vFeaO-A", title: "KCSE Computer Studies Exam Preparation Tips", desc: "Tips for presenting your project to KNEC examiners and scoring high." },
+    { id: "Rhp84_oP6bU", title: "Victory School Club — Milestone 2 Database", desc: "KCSE 2024 past project database system walkthrough." },
+    { id: "GMP0Fn3WJpk", title: "Victory School Club — Milestone 1 Documentation", desc: "Complete documentation walkthrough for KCSE 2024 project." },
+    { id: "Zj57vFeaO-A", title: "Uzima Borehole — Full Query Design", desc: "Learn query design from the 2023 KCSE project." },
+    { id: "TMUg9BFWn_g", title: "Uzima Borehole — Table & Form Design", desc: "Table and form design for the Uzima Borehole Drilling System." },
+    { id: "Rhp84_oP6bU", title: "Maringo Sports Club — Full Compilation", desc: "Complete walkthrough of the KCSE 2023 Maringo Sports Club project." },
+    { id: "GMP0Fn3WJpk", title: "Maringo Sports Club — Query Design", desc: "Step-by-step query design for the Maringo Sports Club database." },
   ];
+
+  const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@AZANIISPINFORMATIONSYSTEM?sub_confirmation=1";
 
   const shopPackages = [
     { name: "Free Documentation Sample", price: "KES 5", badge: "Free", desc: "Preview the documentation quality before buying", url: "https://shop.azaniispproject.co.ke/" },
@@ -200,7 +208,7 @@ const KcseComputerStudies = () => {
                 <Button asChild size="lg" className="font-semibold shadow-lg">
                   <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-5 w-5" />
-                    Download Now (WhatsApp)
+                    Download Now
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="font-semibold">
@@ -511,30 +519,39 @@ const KcseComputerStudies = () => {
           </div>
         </section>
 
-        {/* WhatsApp CTA */}
+        {/* Subscribe + CTA */}
         <section className="py-14 md:py-20 bg-secondary/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12">
-              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
-                Ready to Ace Your KCSE 2026 Computer Studies Project?
-              </h2>
-              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Download the complete Azani ISP Information System — documentation and MS Access database.
-                Join 500+ students who scored high with our project.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button asChild size="lg" className="font-semibold">
-                  <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Now
+            <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+              <div className="text-center bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8">
+                <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+                  Subscribe on YouTube
+                </h2>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  Get notified when we publish new KCSE tutorials — 389+ subscribers and growing.
+                </p>
+                <Button asChild size="lg" className="bg-[hsl(0,100%,40%)] hover:bg-[hsl(0,100%,35%)] text-white font-semibold">
+                  <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer">
+                    <Play className="mr-2 h-5 w-5" />
+                    Subscribe Now
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline">
-                  <a href="https://chat.whatsapp.com/IO7QQrf6GH3IRHDMDAbNwm" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Join WhatsApp Community
-                  </a>
-                </Button>
+              </div>
+              <div className="text-center bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8">
+                <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+                  Ready to Ace Your Project?
+                </h2>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  Download the complete Azani ISP project. Join 500+ students who scored high.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button asChild size="lg" className="font-semibold">
+                    <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Now
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

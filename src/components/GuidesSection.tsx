@@ -6,29 +6,43 @@ import { Play, X, ExternalLink } from "lucide-react";
 const videos = [
   {
     id: "TMUg9BFWn_g",
-    title: "Azani ISP Database System | KCSE 2026 Computer Project",
-    description: "Complete KCSE Computer Studies Paper 3 project documentation for Azani Internet Service Provider - Download Now",
-    badge: "New",
+    title: "Azani ISP Database System | KCSE 2026 Complete Walkthrough",
+    description: "Complete KCSE Computer Studies Paper 3 project documentation for Azani Internet Service Provider",
+    badge: "Featured",
   },
   {
     id: "Rhp84_oP6bU",
-    title: "Getting Started",
+    title: "Getting Started with MS Access",
     description: "Set up your project environment and understand the basics.",
     badge: "Beginner",
   },
   {
     id: "GMP0Fn3WJpk",
-    title: "Database Design",
+    title: "Database Design & Normalization",
     description: "Master database structures and relationships for your project.",
     badge: "Core",
   },
   {
     id: "Zj57vFeaO-A",
-    title: "KCSE Prep",
+    title: "KCSE Project Exam Preparation",
     description: "Prepare your project presentation for the exam.",
     badge: "Essential",
   },
+  {
+    id: "Rhp84_oP6bU",
+    title: "M-Pesa WordPress Integration",
+    description: "STK Push Payment Gateway & Paywall Setup — No Plugins needed.",
+    badge: "New",
+  },
+  {
+    id: "GMP0Fn3WJpk",
+    title: "Victory School Club — Milestone 2",
+    description: "Database system walkthrough for the Victory School Club Membership System.",
+    badge: "2024",
+  },
 ];
+
+const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@AZANIISPINFORMATIONSYSTEM?sub_confirmation=1";
 
 export default function GuidesSection() {
   const ref = useRef(null);
@@ -136,18 +150,39 @@ export default function GuidesSection() {
           ))}
         </div>
 
-        {/* WhatsApp CTA */}
+        {/* Subscribe + WhatsApp CTA */}
         <div
-          className={`mt-16 max-w-2xl mx-auto transition-all duration-500 ${
+          className={`mt-16 max-w-3xl mx-auto grid gap-6 md:grid-cols-2 transition-all duration-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
           <div className="glass rounded-2xl p-8 text-center">
-            <h3 className="font-display text-2xl font-bold mb-3">
+            <h3 className="font-display text-xl font-bold mb-3">
+              Subscribe on YouTube
+            </h3>
+            <p className="text-muted-foreground mb-6 text-sm">
+              Get notified when we publish new KCSE project tutorials — 389+ subscribers.
+            </p>
+            <Button
+              asChild
+              className="bg-[hsl(0,100%,40%)] hover:bg-[hsl(0,100%,35%)] font-semibold text-white"
+            >
+              <a
+                href={YOUTUBE_CHANNEL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Play className="mr-2 w-4 h-4" />
+                Subscribe Now
+              </a>
+            </Button>
+          </div>
+          <div className="glass rounded-2xl p-8 text-center">
+            <h3 className="font-display text-xl font-bold mb-3">
               Join our WhatsApp community
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 text-sm">
               Connect with other KCSE students, get instant help, and share your progress.
             </p>
             <Button

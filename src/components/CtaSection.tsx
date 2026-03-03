@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 
 export function CtaSection() {
+  const { getDownloadUrl } = useSiteSettings();
+  const downloadUrl = getDownloadUrl();
+
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Animated background */}
@@ -40,8 +44,8 @@ export function CtaSection() {
               size="lg"
               className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-8 h-14 text-lg group"
             >
-              <a href="#download">
-                Get Your Project
+              <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                Download Now
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
@@ -52,12 +56,11 @@ export function CtaSection() {
               className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 h-14 text-lg"
             >
               <a
-                href="https://wa.link/4mq5mb"
+                href="https://shop.azaniispproject.co.ke/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Chat on WhatsApp
+                Visit Our Shop
               </a>
             </Button>
           </div>
