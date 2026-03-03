@@ -84,11 +84,12 @@ export default function GuidesSection() {
                 {activeVideo === video.id ? (
                   <div className="relative w-full h-full bg-black">
                     <iframe
-                      src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
+                      src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`}
                       title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       className="w-full h-full"
+                      referrerPolicy="strict-origin-when-cross-origin"
                     />
                     <button
                       onClick={() => setActiveVideo(null)}
