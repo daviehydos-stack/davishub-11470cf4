@@ -200,7 +200,7 @@ const KcseComputerStudies = () => {
                 <Button asChild size="lg" className="font-semibold shadow-lg">
                   <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-5 w-5" />
-                    Download Now — Free
+                    Download Now (WhatsApp)
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="font-semibold">
