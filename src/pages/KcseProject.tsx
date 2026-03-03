@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Download, CheckCircle, Play, X, ArrowRight, Clock,
-  Database, FileText, BookOpen, MessageCircle, Star,
+  Database, FileText, BookOpen, Star, ShoppingBag,
   Target, Code, Table, Zap, Shield, Award
 } from "lucide-react";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
@@ -51,7 +51,13 @@ const KcseProject = () => {
     { id: "Rhp84_oP6bU", title: "Getting Started with MS Access", badge: "Beginner" },
     { id: "GMP0Fn3WJpk", title: "Database Design Tutorial", badge: "Core" },
     { id: "Zj57vFeaO-A", title: "KCSE Project Preparation", badge: "Essential" },
+    { id: "Rhp84_oP6bU", title: "Victory School Club — Database", badge: "2024" },
+    { id: "GMP0Fn3WJpk", title: "Uzima Borehole — Queries", badge: "2023" },
+    { id: "Zj57vFeaO-A", title: "Maringo Sports Club System", badge: "2023" },
+    { id: "TMUg9BFWn_g", title: "Maringo — Query Design", badge: "2023" },
   ];
+
+  const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@AZANIISPINFORMATIONSYSTEM?sub_confirmation=1";
 
   const milestones = [
     {
@@ -175,10 +181,10 @@ const KcseProject = () => {
                     Download Now — Free
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="font-semibold">
-                  <a href="https://wa.link/jox26j" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Ask on WhatsApp
+              <Button asChild size="lg" variant="outline" className="font-semibold">
+                  <a href="https://shop.azaniispproject.co.ke/" target="_blank" rel="noopener noreferrer">
+                    <ShoppingBag className="mr-2 h-5 w-5" />
+                    Visit Our Shop
                   </a>
                 </Button>
               </div>
@@ -417,29 +423,39 @@ const KcseProject = () => {
           </div>
         </section>
 
-        {/* Final CTA */}
+        {/* Subscribe + Final CTA */}
         <section className="py-14 md:py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12">
-              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
-                Ready to Ace Your KCSE 2026 Project?
-              </h2>
-              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Download the complete Azani ISP Information System project — 
-                Milestone 1 documentation and Milestone 2 MS Access database included.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button asChild size="lg" className="font-semibold">
-                  <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Now
+            <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+              <div className="text-center bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8">
+                <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+                  Subscribe on YouTube
+                </h2>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  New KCSE tutorials every week — 389+ subscribers and growing.
+                </p>
+                <Button asChild size="lg" className="bg-[hsl(0,100%,40%)] hover:bg-[hsl(0,100%,35%)] text-white font-semibold">
+                  <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer">
+                    <Play className="mr-2 h-5 w-5" />
+                    Subscribe Now
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link to="/kcse">
-                    View Full KCSE Guide <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+              </div>
+              <div className="text-center bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8">
+                <h2 className="font-display text-xl md:text-2xl font-bold mb-4">
+                  Ready to Ace Your KCSE 2026 Project?
+                </h2>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  Download the complete Azani ISP project — Milestone 1 & 2 included.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button asChild size="lg" className="font-semibold">
+                    <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Now
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
