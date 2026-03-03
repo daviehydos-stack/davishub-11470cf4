@@ -18,6 +18,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const KnowledgeBank = lazy(() => import("./pages/KnowledgeBank"));
 const Community = lazy(() => import("./pages/Community"));
 const KcseProject = lazy(() => import("./pages/KcseProject"));
+const KcseComputerStudies = lazy(() => import("./pages/KcseComputerStudies"));
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
                 <Route path="/kcse" element={<KnowledgeBank />} />
                 <Route path="/knowledge-bank" element={<KnowledgeBank />} />
                 <Route path="/kcse-2026-project" element={<KcseProject />} />
+                <Route path="/kcse-2026-computer-studies-project" element={<KcseComputerStudies />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/blogs/:slug" element={<BlogPost />} />
                 <Route path="/tags/:tag" element={<Blogs />} />

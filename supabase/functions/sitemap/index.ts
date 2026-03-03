@@ -34,6 +34,7 @@ serve(async (req) => {
     // Static pages
     const staticPages = [
       { url: "/", priority: "1.0", changefreq: "daily" },
+      { url: "/kcse-2026-computer-studies-project", priority: "0.95", changefreq: "weekly" },
       { url: "/kcse-2026-project", priority: "0.9", changefreq: "weekly" },
       { url: "/kcse", priority: "0.8", changefreq: "weekly" },
       { url: "/blogs", priority: "0.8", changefreq: "daily" },

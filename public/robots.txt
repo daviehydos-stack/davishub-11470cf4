@@ -8,6 +8,7 @@ Allow: /knowledge-bank
 Allow: /blogs
 Allow: /kcse-2026-project
 Allow: /community
+Allow: /kcse-2026-computer-studies-project
 Disallow: /admin
 
 # Sitemap
