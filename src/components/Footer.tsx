@@ -4,7 +4,8 @@ import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { redirectMode, whatsappNumber } = useSiteSettings();
+  const { whatsappNumber, getActiveMode } = useSiteSettings();
+  const activeMode = getActiveMode();
   
   const quickLinks = [{
     href: "/",
@@ -13,15 +14,16 @@ export function Footer() {
     href: "/#download",
     label: "Pricing"
   }, {
+    href: "/kcse-2026-computer-studies-project",
+    label: "KCSE 2026 Project"
+  }, {
     href: "/blogs",
     label: "Blog"
   }, {
     href: "/community",
     label: "Community"
-  }, {
-    href: "/#contact",
-    label: "Contact"
   }];
+
   return <footer className="bg-secondary/50 border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-4">
@@ -51,17 +53,20 @@ export function Footer() {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4 text-foreground">Contact</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-primary" />
-                <a href={`https://wa.me/${whatsappNumber.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-                  {whatsappNumber}
-                </a>
-              </li>
-              {redirectMode === "whatsapp" && (
-                <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span className="font-medium text-foreground">Call/WhatsApp for Orders</span>
-                </li>
+              {/* Only show WhatsApp contact when in whatsapp mode */}
+              {activeMode === "whatsapp" && (
+                <>
+                  <li className="flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4 text-primary" />
+                    <a href={`https://wa.me/${whatsappNumber.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                      {whatsappNumber}
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-primary" />
+                    <span className="font-medium text-foreground">Call/WhatsApp for Orders</span>
+                  </li>
+                </>
               )}
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />

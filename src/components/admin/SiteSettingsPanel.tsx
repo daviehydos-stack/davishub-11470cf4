@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { Save, Settings, ExternalLink, MessageCircle, ShoppingCart } from "lucide-react";
+import { Save, Settings, ExternalLink, MessageCircle, ShoppingCart, AlertTriangle, Clock, PartyPopper } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -21,6 +21,7 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
   const [saving, setSaving] = useState(false);
   const [redirectMode, setRedirectMode] = useState<"shop" | "whatsapp">("shop");
   const [whatsappNumber, setWhatsappNumber] = useState("+254115475543");
+  const [holidayMode, setHolidayMode] = useState(false);
 
   useEffect(() => {
     fetchSettings();
@@ -43,6 +44,9 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
         if (setting.setting_key === "whatsapp_number") {
           setWhatsappNumber(setting.setting_value);
         }
+        if (setting.setting_key === "holiday_mode") {
+          setHolidayMode(setting.setting_value === "true");
+        }
       });
     } catch (err) {
       console.error("Error fetching settings:", err);
@@ -52,28 +56,32 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
     }
   };
 
+  const upsertSetting = async (key: string, value: string, description?: string) => {
+    const existing = settings.find(s => s.setting_key === key);
+    if (existing) {
+      const { error } = await supabase
+        .from("site_settings")
+        .update({ setting_value: value })
+        .eq("setting_key", key);
+      if (error) throw error;
+    } else {
+      const { error } = await supabase
+        .from("site_settings")
+        .insert({ setting_key: key, setting_value: value, description: description || null });
+      if (error) throw error;
+    }
+  };
+
   const handleSave = async () => {
     refreshSession();
     setSaving(true);
 
     try {
-      // Update redirect_mode
-      const { error: modeError } = await supabase
-        .from("site_settings")
-        .update({ setting_value: redirectMode })
-        .eq("setting_key", "redirect_mode");
-
-      if (modeError) throw modeError;
-
-      // Update whatsapp_number
-      const { error: numberError } = await supabase
-        .from("site_settings")
-        .update({ setting_value: whatsappNumber })
-        .eq("setting_key", "whatsapp_number");
-
-      if (numberError) throw numberError;
-
+      await upsertSetting("redirect_mode", redirectMode, "Manual redirect mode override");
+      await upsertSetting("whatsapp_number", whatsappNumber, "WhatsApp contact number");
+      await upsertSetting("holiday_mode", holidayMode ? "true" : "false", "Holiday mode - forces WhatsApp across all pages");
       toast.success("Settings saved successfully!");
+      fetchSettings();
     } catch (err) {
       console.error("Error saving settings:", err);
       toast.error("Failed to save settings");
@@ -82,14 +90,9 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
     }
   };
 
-  const toggleRedirectMode = () => {
-    refreshSession();
-    setRedirectMode((prev) => (prev === "shop" ? "whatsapp" : "shop"));
-  };
-
   if (loading) {
     return (
-      <Card className="p-6">
+      <Card className="p-4 md:p-6">
         <div className="animate-pulse space-y-4">
           <div className="h-6 bg-muted rounded w-1/3"></div>
           <div className="h-20 bg-muted rounded"></div>
@@ -99,131 +102,112 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
   }
 
   return (
-    <Card className="p-6">
-      <div className="flex items-center gap-3 mb-6">
-        <Settings className="h-6 w-6 text-brand-purple" />
-        <h2 className="text-xl font-bold">Site Download Settings</h2>
-      </div>
-
-      <p className="text-muted-foreground mb-6">
-        Control where all download/purchase links redirect. Switch between your shop website and WhatsApp.
-      </p>
-
-      {/* Current Mode Display */}
-      <div className="bg-muted/50 p-6 rounded-xl mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <p className="font-semibold text-lg mb-1">Redirect Mode</p>
-            <p className="text-sm text-muted-foreground">
-              All "Download Now" and pricing buttons will redirect to:
+    <div className="space-y-4 md:space-y-6">
+      {/* Holiday Mode Card */}
+      <Card className="p-4 md:p-6 border-2 border-dashed border-amber-400 dark:border-amber-600">
+        <div className="flex items-start gap-3 mb-4">
+          <PartyPopper className="h-6 w-6 text-amber-500 flex-shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <h2 className="text-lg md:text-xl font-bold">Holiday Mode</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              When enabled, ALL links across the entire site redirect to WhatsApp — overrides the time-based schedule.
             </p>
           </div>
-          <Badge 
-            className={`text-base px-4 py-2 ${
-              redirectMode === "shop" 
-                ? "bg-blue-600 text-white" 
-                : "bg-green-600 text-white"
-            }`}
-          >
-            {redirectMode === "shop" ? (
-              <>
-                <ShoppingCart className="h-4 w-4 mr-2" />
-                Shop Website
-              </>
-            ) : (
-              <>
-                <MessageCircle className="h-4 w-4 mr-2" />
-                WhatsApp
-              </>
-            )}
-          </Badge>
         </div>
 
-        <div className="flex items-center gap-4 p-4 bg-background rounded-lg border">
-          <div className="flex items-center gap-3 flex-1">
-            <ShoppingCart className={`h-5 w-5 ${redirectMode === "shop" ? "text-blue-600" : "text-muted-foreground"}`} />
-            <span className={redirectMode === "shop" ? "font-semibold" : "text-muted-foreground"}>
-              Shop Website
-            </span>
-          </div>
-          
+        <div className="flex items-center gap-4 p-3 md:p-4 bg-muted/50 rounded-lg">
           <Switch
-            checked={redirectMode === "whatsapp"}
-            onCheckedChange={toggleRedirectMode}
-            className="data-[state=checked]:bg-green-600"
+            checked={holidayMode}
+            onCheckedChange={(checked) => { refreshSession(); setHolidayMode(checked); }}
+            className="data-[state=checked]:bg-amber-500"
           />
-          
-          <div className="flex items-center gap-3 flex-1 justify-end">
-            <span className={redirectMode === "whatsapp" ? "font-semibold" : "text-muted-foreground"}>
-              WhatsApp
-            </span>
-            <MessageCircle className={`h-5 w-5 ${redirectMode === "whatsapp" ? "text-green-600" : "text-muted-foreground"}`} />
+          <div>
+            <p className="font-medium text-sm">
+              {holidayMode ? "🎉 Holiday Mode is ON" : "Holiday Mode is OFF"}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {holidayMode ? "All links go to WhatsApp now" : "Using automatic time-based schedule"}
+            </p>
           </div>
         </div>
-      </div>
+      </Card>
 
-      {/* Preview URLs */}
-      <div className="grid gap-4 md:grid-cols-2 mb-6">
-        <div className={`p-4 rounded-lg border-2 transition-all ${
-          redirectMode === "shop" 
-            ? "border-blue-600 bg-blue-50 dark:bg-blue-950" 
-            : "border-muted"
-        }`}>
-          <div className="flex items-center gap-2 mb-2">
-            <ShoppingCart className="h-4 w-4" />
-            <span className="font-medium">Shop URL</span>
-            {redirectMode === "shop" && (
-              <Badge variant="outline" className="text-xs border-blue-600 text-blue-600">Active</Badge>
-            )}
-          </div>
-          <a 
-            href="https://shop.azaniispproject.co.ke/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1"
-          >
-            shop.azaniispproject.co.ke
-            <ExternalLink className="h-3 w-3" />
-          </a>
+      {/* Time Schedule Info */}
+      <Card className="p-4 md:p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <Clock className="h-5 w-5 text-primary flex-shrink-0" />
+          <h2 className="text-lg md:text-xl font-bold">Automatic Schedule (EAT)</h2>
         </div>
-
-        <div className={`p-4 rounded-lg border-2 transition-all ${
-          redirectMode === "whatsapp" 
-            ? "border-green-600 bg-green-50 dark:bg-green-950" 
-            : "border-muted"
-        }`}>
-          <div className="flex items-center gap-2 mb-2">
-            <MessageCircle className="h-4 w-4" />
-            <span className="font-medium">WhatsApp Number</span>
-            {redirectMode === "whatsapp" && (
-              <Badge variant="outline" className="text-xs border-green-600 text-green-600">Active</Badge>
-            )}
-          </div>
-          <Input
-            value={whatsappNumber}
-            onChange={(e) => setWhatsappNumber(e.target.value)}
-            placeholder="+254115475543"
-            className="mt-2"
-          />
-        </div>
-      </div>
-
-      {/* Info Box */}
-      <div className="bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800 p-4 rounded-lg mb-6">
-        <p className="text-sm text-amber-800 dark:text-amber-200">
-          <strong>Note:</strong> When WhatsApp mode is active, the footer will also display your WhatsApp number 
-          for direct contact. All "Download Now", "Order Now", and pricing buttons site-wide will redirect to WhatsApp.
+        <p className="text-sm text-muted-foreground mb-4">
+          The site automatically switches between Shop and WhatsApp based on this schedule. Holiday mode overrides this.
         </p>
-      </div>
+        <div className="space-y-3 text-xs md:text-sm">
+          <div className="p-3 bg-muted/30 rounded-lg">
+            <p className="font-semibold mb-2">Monday – Friday</p>
+            <div className="grid grid-cols-1 gap-1">
+              <span>🛒 12am–4pm → Shop</span>
+              <span>💬 4pm–7pm → WhatsApp</span>
+              <span>🛒 7pm–12am → Shop</span>
+            </div>
+          </div>
+          <div className="p-3 bg-muted/30 rounded-lg">
+            <p className="font-semibold mb-2">Saturday</p>
+            <div className="grid grid-cols-1 gap-1">
+              <span>💬 12am–7am → WhatsApp</span>
+              <span>🛒 7am–12pm → Shop</span>
+              <span>💬 12pm–2pm → WhatsApp</span>
+              <span>🛒 2pm–4pm → Shop</span>
+              <span>💬 4pm–12am → WhatsApp</span>
+            </div>
+          </div>
+          <div className="p-3 bg-muted/30 rounded-lg">
+            <p className="font-semibold mb-2">Sunday</p>
+            <div className="grid grid-cols-1 gap-1">
+              <span>💬 12am–9:30am → WhatsApp</span>
+              <span>🛒 9:30am–12pm → Shop</span>
+              <span>💬 12pm–2pm → WhatsApp</span>
+              <span>🛒 2pm–4pm → Shop</span>
+              <span>💬 4pm–12am → WhatsApp</span>
+            </div>
+          </div>
+        </div>
+      </Card>
 
-      <Button 
-        onClick={handleSave} 
-        disabled={saving}
-        className="bg-brand-purple hover:bg-brand-purple-dark"
-      >
-        <Save className="h-4 w-4 mr-2" />
-        {saving ? "Saving..." : "Save Settings"}
-      </Button>
-    </Card>
+      {/* WhatsApp Number */}
+      <Card className="p-4 md:p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <Settings className="h-5 w-5 text-primary flex-shrink-0" />
+          <h2 className="text-lg md:text-xl font-bold">WhatsApp Settings</h2>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-1.5">WhatsApp Number</label>
+            <Input
+              value={whatsappNumber}
+              onChange={(e) => setWhatsappNumber(e.target.value)}
+              placeholder="+254115475543"
+            />
+            <p className="text-xs text-muted-foreground mt-1">Include country code (e.g. +254)</p>
+          </div>
+
+          <div className="bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800 p-3 rounded-lg">
+            <p className="text-xs md:text-sm text-amber-800 dark:text-amber-200">
+              <AlertTriangle className="w-4 h-4 inline mr-1" />
+              When in WhatsApp mode, the footer shows your number. In Shop mode, no phone number appears on the site.
+            </p>
+          </div>
+        </div>
+
+        <Button 
+          onClick={handleSave} 
+          disabled={saving}
+          className="mt-4 w-full sm:w-auto bg-brand-purple hover:bg-brand-purple-dark"
+        >
+          <Save className="h-4 w-4 mr-2" />
+          {saving ? "Saving..." : "Save All Settings"}
+        </Button>
+      </Card>
+    </div>
   );
 }
