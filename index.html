@@ -65,28 +65,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </noscript>
     
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Azani Internet Service Provider Information System",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Windows",
-      "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "500",
-        "highPrice": "1400",
-        "priceCurrency": "KES"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "500"
-      }
-    }
-    </script>
-    
+    <!-- JSON-LD Structured Data: Organization only (site-wide) -->
+    <!-- SoftwareApplication schema lives in the homepage component only -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -111,12 +91,7 @@
       #root {
         min-height: 100vh;
       }
-      
-      /* Prevent layout shift from fonts loading */
-      * {
-        font-display: swap;
-      }
-      
+
       /* Loading placeholder - prevents blank screen */
       #loading-placeholder {
         position: fixed;
