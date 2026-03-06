@@ -23,7 +23,7 @@ import ImageExtension from '@tiptap/extension-image';
 import LinkExtension from '@tiptap/extension-link';
 import { toast } from "sonner";
 
-const ADMIN_PASSWORD = "Davis";
+const ADMIN_PASSWORD = "Davisme";
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
 
 const CATEGORIES = ["KCSE", "Programming", "Database", "Tips", "News", "Education", "Technology"];
@@ -1077,53 +1077,53 @@ const Admin = () => {
       <Header />
       <main className="flex-1 pt-24 pb-8">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
             <div>
-              <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-              <p className="text-muted-foreground">Manage blog posts and SEO settings</p>
+              <h1 className="text-2xl sm:text-3xl font-bold">Admin Dashboard</h1>
+              <p className="text-muted-foreground text-sm">Manage posts, pricing, settings & SEO</p>
             </div>
             <div className="flex gap-2">
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" size="sm">
                 <Link to="/">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  <ArrowLeft className="mr-1.5 h-3.5 w-3.5" />
                   Home
                 </Link>
               </Button>
-              <Button variant="outline" onClick={handleLogout}>
-                <LogOut className="mr-2 h-4 w-4" />
+              <Button variant="outline" size="sm" onClick={handleLogout}>
+                <LogOut className="mr-1.5 h-3.5 w-3.5" />
                 Logout
               </Button>
             </div>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="mb-6 flex-wrap">
-              <TabsTrigger value="posts" className="flex items-center gap-2">
-                <FileText className="w-4 h-4" />
-                Blog Posts
+            <TabsList className="mb-6 grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-wrap h-auto gap-1 p-1">
+              <TabsTrigger value="posts" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <FileText className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Blog</span> Posts
               </TabsTrigger>
-              <TabsTrigger value="projects" className="flex items-center gap-2">
-                <FolderOpen className="w-4 h-4" />
-                Past Projects
+              <TabsTrigger value="projects" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <FolderOpen className="w-3.5 h-3.5" />
+                Projects
               </TabsTrigger>
-              <TabsTrigger value="videos" className="flex items-center gap-2">
-                <Video className="w-4 h-4" />
-                Video Guides
+              <TabsTrigger value="videos" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <Video className="w-3.5 h-3.5" />
+                Videos
               </TabsTrigger>
-              <TabsTrigger value="seo" className="flex items-center gap-2">
-                <Settings className="w-4 h-4" />
-                SEO Settings
+              <TabsTrigger value="seo" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <Settings className="w-3.5 h-3.5" />
+                SEO
               </TabsTrigger>
-              <TabsTrigger value="site-settings" className="flex items-center gap-2">
-                <Sliders className="w-4 h-4" />
-                Site Settings
+              <TabsTrigger value="site-settings" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <Sliders className="w-3.5 h-3.5" />
+                Settings
               </TabsTrigger>
-              <TabsTrigger value="pricing" className="flex items-center gap-2">
-                <DollarSign className="w-4 h-4" />
+              <TabsTrigger value="pricing" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <DollarSign className="w-3.5 h-3.5" />
                 Pricing
               </TabsTrigger>
-              <TabsTrigger value="comments" className="flex items-center gap-2">
-                <MessageSquare className="w-4 h-4" />
+              <TabsTrigger value="comments" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <MessageSquare className="w-3.5 h-3.5" />
                 Comments
               </TabsTrigger>
             </TabsList>

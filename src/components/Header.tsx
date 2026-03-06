@@ -36,6 +36,9 @@ export function Header() {
     href: "/#download",
     label: "Pricing"
   }, {
+    href: "/kcse-2026-computer-studies-project",
+    label: "KCSE 2026 Project"
+  }, {
     href: "/kcse",
     label: "KCSE Guide"
   }, {

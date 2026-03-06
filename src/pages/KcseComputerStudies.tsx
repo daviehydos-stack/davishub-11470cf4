@@ -49,15 +49,9 @@ const KcseComputerStudies = () => {
 
   const videos = [
     { id: "TMUg9BFWn_g", title: "Azani ISP Database System – Complete KCSE 2026 Walkthrough", desc: "Full project demo showing database, forms, queries, and reports for Paper 451/3." },
-    { id: "Rhp84_oP6bU", title: "Getting Started with Microsoft Access for KCSE", desc: "Learn the basics of MS Access — tables, relationships, and navigation pane." },
-    { id: "GMP0Fn3WJpk", title: "Database Design & Normalization Tutorial", desc: "How to design your ER diagram and normalize tables to 3NF for maximum marks." },
-    { id: "Zj57vFeaO-A", title: "KCSE Computer Studies Exam Preparation Tips", desc: "Tips for presenting your project to KNEC examiners and scoring high." },
-    { id: "Rhp84_oP6bU", title: "Victory School Club — Milestone 2 Database", desc: "KCSE 2024 past project database system walkthrough." },
+    { id: "Rhp84_oP6bU", title: "Victory School Club — Milestone 2 Database System", desc: "KCSE 2024 past project database system walkthrough." },
     { id: "GMP0Fn3WJpk", title: "Victory School Club — Milestone 1 Documentation", desc: "Complete documentation walkthrough for KCSE 2024 project." },
     { id: "Zj57vFeaO-A", title: "Uzima Borehole — Full Query Design", desc: "Learn query design from the 2023 KCSE project." },
-    { id: "TMUg9BFWn_g", title: "Uzima Borehole — Table & Form Design", desc: "Table and form design for the Uzima Borehole Drilling System." },
-    { id: "Rhp84_oP6bU", title: "Maringo Sports Club — Full Compilation", desc: "Complete walkthrough of the KCSE 2023 Maringo Sports Club project." },
-    { id: "GMP0Fn3WJpk", title: "Maringo Sports Club — Query Design", desc: "Step-by-step query design for the Maringo Sports Club database." },
   ];
 
   const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@AZANIISPINFORMATIONSYSTEM?sub_confirmation=1";
@@ -120,64 +114,71 @@ const KcseComputerStudies = () => {
     { q: "Is this project plagiarism-free?", a: "Yes. Each project package is customized with unique content. We provide different batches to ensure no two students submit identical work. Our documentation follows KNEC guidelines while maintaining originality." },
   ];
 
+  // Single consolidated JSON-LD with both schemas using @graph
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: "Azani Internet Service Provider Information System — KCSE 2026",
+        applicationCategory: "EducationalApplication",
+        operatingSystem: "Windows",
+        description: "Complete KCSE 2026 Computer Studies Project (Paper 451/3) for the Azani Internet Service Provider. Includes Milestone 1 documentation and Milestone 2 MS Access database. Free download available.",
+        offers: { "@type": "AggregateOffer", lowPrice: "5", highPrice: "500", priceCurrency: "KES", offerCount: "4" },
+        author: { "@type": "Organization", name: "Azani ISP Project", url: "https://www.azaniispproject.co.ke" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map(f => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      {
+        "@type": "WebPage",
+        name: "KCSE 2026 Computer Studies Project — Free Milestone 1 & 2 Download",
+        url: "https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project",
+        description: "KCSE 2026 Computer Studies Project. Azani Internet Service Provider Information System. Free Milestone 1 and 2. Download Documentation and Database System. Get a copy today.",
+      }
+    ]
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title="KCSE 2026 COMPUTER STUDIES PROJECT | Azani ISP Information System Download"
-        description="KCSE 2026 Computer Studies Project. Azani Internet Service Provider Information System. Download Milestone 1 & 2. Free documentation sample. MS Access database. Paper 451/3. Zero plagiarism."
+        title="KCSE 2026 COMPUTER STUDIES PROJECT | Free Milestone 1 & 2 Download | Azani ISP"
+        description="KCSE 2026 Computer Studies Project. Azani Internet Service Provider Information System. Free Milestone 1 and 2. Download Documentation and Database System. Get a copy today. Zero Plagiarism. KNEC Aligned."
         canonical="https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project"
-        ogTitle="KCSE 2026 Computer Studies Project — Azani ISP Information System"
-        ogDescription="Download the complete KCSE 2026 Computer Studies Project for Azani Internet Service Provider. Milestone 1 documentation + Milestone 2 MS Access database. Free sample available."
+        ogTitle="KCSE 2026 COMPUTER STUDIES PROJECT — Free Milestone 1 & 2 Download"
+        ogDescription="KCSE 2026 Computer Studies Project. Azani Internet Service Provider Information System. Free Milestone 1 and 2. Download Documentation and Database System. Get a copy today."
         ogImage="https://www.azaniispproject.co.ke/azani.jpg"
         keywords={[
           "KCSE 2026 Computer Studies Project",
+          "KCSE 2026 COMPUTER STUDIES PROJECT",
+          "kcse 2026 computer studies project",
           "KCSE 2026 project",
           "KCSE computer studies project 2026",
           "Azani ISP project",
           "Azani Internet Service Provider",
           "KCSE Paper 451/3",
-          "KCSE 2026 Paper 3",
           "computer studies project download",
+          "free KCSE project download",
           "MS Access KCSE project",
           "KCSE project milestone 1",
           "KCSE project milestone 2",
           "KNEC computer project 2026",
-          "KCSE computer project free download",
           "Azani ISP database system",
           "KCSE 2026 computer project Kenya",
           "computer studies project documentation",
+          "free milestone 1 and 2",
         ]}
       />
 
-      {/* Multiple JSON-LD schemas */}
+      {/* Single consolidated JSON-LD — no duplicates */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Azani Internet Service Provider Information System — KCSE 2026",
-            applicationCategory: "EducationalApplication",
-            operatingSystem: "Windows",
-            description: "Complete KCSE 2026 Computer Studies Project (Paper 451/3) for the Azani Internet Service Provider. Includes Milestone 1 documentation and Milestone 2 MS Access database.",
-            offers: { "@type": "AggregateOffer", lowPrice: "5", highPrice: "500", priceCurrency: "KES", offerCount: "4" },
-            author: { "@type": "Organization", name: "Azani ISP Project", url: "https://www.azaniispproject.co.ke" },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map(f => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <Header />
@@ -199,9 +200,12 @@ const KcseComputerStudies = () => {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-                Download the complete, exam-ready project — Milestone 1 documentation and Milestone 2 MS Access database. 
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
+                Download the complete, exam-ready project — <strong className="text-foreground">Free Milestone 1 documentation</strong> and <strong className="text-foreground">Milestone 2 MS Access database</strong>. 
                 Aligned with KNEC marking scheme. Free sample available on our shop.
+              </p>
+              <p className="text-sm text-muted-foreground mb-8">
+                Get the Documentation and Database System today. Zero Plagiarism. Instant delivery via M-Pesa.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -354,10 +358,10 @@ const KcseComputerStudies = () => {
             </p>
 
             <div className="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
-              {videos.map((video) => (
-                <div key={video.id} className="bg-card border border-border rounded-xl overflow-hidden">
+              {videos.map((video, idx) => (
+                <div key={`${video.id}-${idx}`} className="bg-card border border-border rounded-xl overflow-hidden">
                   <div className="relative aspect-video">
-                    {playingVideo === video.id ? (
+                    {playingVideo === `${video.id}-${idx}` ? (
                       <iframe
                         src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`}
                         title={video.title}
@@ -368,7 +372,7 @@ const KcseComputerStudies = () => {
                       />
                     ) : (
                       <button
-                        onClick={() => setPlayingVideo(video.id)}
+                        onClick={() => setPlayingVideo(`${video.id}-${idx}`)}
                         className="relative w-full h-full group"
                         aria-label={`Play ${video.title}`}
                       >
@@ -395,6 +399,15 @@ const KcseComputerStudies = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Subscribe */}
+            <div className="text-center mt-8">
+              <Button asChild variant="outline" className="font-semibold">
+                <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer">
+                  <Play className="mr-2 h-4 w-4" /> Subscribe on YouTube
+                </a>
+              </Button>
             </div>
           </div>
         </section>
@@ -544,14 +557,12 @@ const KcseComputerStudies = () => {
                 <p className="text-muted-foreground mb-6 text-sm">
                   Download the complete Azani ISP project. Join 500+ students who scored high.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button asChild size="lg" className="font-semibold">
-                    <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                      <Download className="mr-2 h-5 w-5" />
-                      Download Now
-                    </a>
-                  </Button>
-                </div>
+                <Button asChild size="lg" className="font-semibold">
+                  <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-5 w-5" />
+                    Download Now
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -561,7 +572,7 @@ const KcseComputerStudies = () => {
         <section className="sr-only" aria-hidden="true">
           <h2>KCSE 2026 Computer Studies Project — Azani ISP</h2>
           <p>The KCSE 2026 Computer Studies Project focuses on the Azani Internet Service Provider Information System. This project is examined as Paper 451/3 and requires students to demonstrate their skills in Microsoft Access database design and implementation. Students must complete Milestone 1 (system documentation including ER diagrams, data dictionary, system flowcharts, and normalization) and Milestone 2 (working MS Access database with tables, forms, queries, and reports). The Azani ISP system manages client registration for educational institutions, bandwidth subscription tracking, payment processing, LAN infrastructure installations, and computer equipment sales across Kenya.</p>
-          <p>Keywords: KCSE 2026 computer studies project, KCSE computer project, Azani ISP project, KCSE Paper 451/3, computer studies paper 3, MS Access KCSE project, KCSE milestone 1, KCSE milestone 2, KNEC computer project, database project Kenya, Azani Internet Service Provider, KCSE 2026 project download, free KCSE project, computer studies project documentation.</p>
+          <p>Keywords: KCSE 2026 computer studies project, KCSE computer project, Azani ISP project, KCSE Paper 451/3, computer studies paper 3, MS Access KCSE project, KCSE milestone 1, KCSE milestone 2, KNEC computer project, database project Kenya, Azani Internet Service Provider, KCSE 2026 project download, free KCSE project, computer studies project documentation, free milestone 1 and 2, download documentation and database system.</p>
         </section>
       </main>
 

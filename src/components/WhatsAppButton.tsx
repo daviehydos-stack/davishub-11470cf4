@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 
 export function WhatsAppButton() {
-  const { redirectMode, getDownloadUrl } = useSiteSettings();
+  const { getDownloadUrl, getActiveMode } = useSiteSettings();
   
-  const isWhatsAppMode = redirectMode === "whatsapp";
+  const activeMode = getActiveMode();
+  const isWhatsAppMode = activeMode === "whatsapp";
   const href = isWhatsAppMode ? "https://wa.link/jox26j" : getDownloadUrl();
   const label = isWhatsAppMode ? "Chat on WhatsApp" : "Download Project";
 
