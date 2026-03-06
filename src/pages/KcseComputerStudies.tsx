@@ -424,7 +424,7 @@ const KcseComputerStudies = () => {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
               {shopPackages.map((pkg) => (
-                <a
+                
                   key={pkg.name}
                   href={pkg.url}
                   target="_blank"
@@ -569,7 +569,7 @@ const KcseComputerStudies = () => {
         </section>
 
         {/* SEO Content Block (hidden visually, visible to crawlers) */}
-        <section className="sr-only" aria-hidden="true">
+        <section className="sr-only">
           <h2>KCSE 2026 Computer Studies Project — Azani ISP</h2>
           <p>The KCSE 2026 Computer Studies Project focuses on the Azani Internet Service Provider Information System. This project is examined as Paper 451/3 and requires students to demonstrate their skills in Microsoft Access database design and implementation. Students must complete Milestone 1 (system documentation including ER diagrams, data dictionary, system flowcharts, and normalization) and Milestone 2 (working MS Access database with tables, forms, queries, and reports). The Azani ISP system manages client registration for educational institutions, bandwidth subscription tracking, payment processing, LAN infrastructure installations, and computer equipment sales across Kenya.</p>
           <p>Keywords: KCSE 2026 computer studies project, KCSE computer project, Azani ISP project, KCSE Paper 451/3, computer studies paper 3, MS Access KCSE project, KCSE milestone 1, KCSE milestone 2, KNEC computer project, database project Kenya, Azani Internet Service Provider, KCSE 2026 project download, free KCSE project, computer studies project documentation, free milestone 1 and 2, download documentation and database system.</p>
