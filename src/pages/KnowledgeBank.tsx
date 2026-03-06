@@ -271,33 +271,23 @@ const KnowledgeBank = () => {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblInstitutions</strong> - Store institution details, addresses, contact info
-                      </div>
+                      <div><strong>tblInstitutions</strong> - Store institution details, addresses, contact info</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblContactPersons</strong> - Personal details of institution representatives
-                      </div>
+                      <div><strong>tblContactPersons</strong> - Personal details of institution representatives</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblBandwidthPackages</strong> - Available bandwidth options and pricing
-                      </div>
+                      <div><strong>tblBandwidthPackages</strong> - Available bandwidth options and pricing</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblServiceSubscriptions</strong> - Track which services institutions use
-                      </div>
+                      <div><strong>tblServiceSubscriptions</strong> - Track which services institutions use</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-blue-600 mr-2">•</span>
-                      <div>
-                        <strong>tblPayments</strong> - Record all payment transactions
-                      </div>
+                      <div><strong>tblPayments</strong> - Record all payment transactions</div>
                     </li>
                   </ul>
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
@@ -316,33 +306,23 @@ const KnowledgeBank = () => {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmInstitutionRegistration</strong> - Register new institutions with validation
-                      </div>
+                      <div><strong>frmInstitutionRegistration</strong> - Register new institutions with validation</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmPaymentEntry</strong> - Record payments with automatic calculations
-                      </div>
+                      <div><strong>frmPaymentEntry</strong> - Record payments with automatic calculations</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmServiceSubscription</strong> - Manage bandwidth and service subscriptions
-                      </div>
+                      <div><strong>frmServiceSubscription</strong> - Manage bandwidth and service subscriptions</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmLANInstallation</strong> - Record LAN infrastructure details
-                      </div>
+                      <div><strong>frmLANInstallation</strong> - Record LAN infrastructure details</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-purple-600 mr-2">•</span>
-                      <div>
-                        <strong>frmMainDashboard</strong> - Navigation menu and system overview
-                      </div>
+                      <div><strong>frmMainDashboard</strong> - Navigation menu and system overview</div>
                     </li>
                   </ul>
                   <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
@@ -361,33 +341,23 @@ const KnowledgeBank = () => {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryRegisteredInstitutions</strong> - List all registered institutions
-                      </div>
+                      <div><strong>qryRegisteredInstitutions</strong> - List all registered institutions</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryDefaulters</strong> - Identify institutions with overdue payments
-                      </div>
+                      <div><strong>qryDefaulters</strong> - Identify institutions with overdue payments</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryDisconnections</strong> - Track disconnection issues and dates
-                      </div>
+                      <div><strong>qryDisconnections</strong> - Track disconnection issues and dates</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryTotalInstallationCosts</strong> - Sum registration + installation + LAN
-                      </div>
+                      <div><strong>qryTotalInstallationCosts</strong> - Sum registration + installation + LAN</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-green-600 mr-2">•</span>
-                      <div>
-                        <strong>qryUpgradeCharges</strong> - Calculate upgrade costs with 10% discount
-                      </div>
+                      <div><strong>qryUpgradeCharges</strong> - Calculate upgrade costs with 10% discount</div>
                     </li>
                   </ul>
                   <Button asChild className="w-full bg-green-600 hover:bg-green-700">
@@ -406,33 +376,23 @@ const KnowledgeBank = () => {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptRegisteredInstitutions</strong> - Complete institution listing
-                      </div>
+                      <div><strong>rptRegisteredInstitutions</strong> - Complete institution listing</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptDefaulters</strong> - Overdue accounts with fines
-                      </div>
+                      <div><strong>rptDefaulters</strong> - Overdue accounts with fines</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptDisconnections</strong> - Service disconnection report
-                      </div>
+                      <div><strong>rptDisconnections</strong> - Service disconnection report</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptInfrastructure</strong> - Infrastructure requirements summary
-                      </div>
+                      <div><strong>rptInfrastructure</strong> - Infrastructure requirements summary</div>
                     </li>
                     <li className="flex items-start">
                       <span className="font-semibold text-orange-600 mr-2">•</span>
-                      <div>
-                        <strong>rptMonthlyRevenue</strong> - Revenue breakdown by service
-                      </div>
+                      <div><strong>rptMonthlyRevenue</strong> - Revenue breakdown by service</div>
                     </li>
                   </ul>
                   <Button asChild className="w-full bg-orange-600 hover:bg-orange-700">
@@ -533,7 +493,6 @@ const KnowledgeBank = () => {
             </p>
             
             <div className="max-w-4xl mx-auto space-y-4">
-              {/* General Questions */}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-lg mb-2 text-blue-600">What is the Azani ISP project about?</h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -584,7 +543,6 @@ const KnowledgeBank = () => {
                 </p>
               </div>
 
-              {/* Technical Questions */}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-lg mb-2 text-indigo-600">How do I calculate the 10% upgrade discount?</h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -624,7 +582,6 @@ const KnowledgeBank = () => {
                 </p>
               </div>
 
-              {/* Documentation Questions */}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-lg mb-2 text-amber-600">What should be in Milestone 1 documentation?</h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -665,7 +622,6 @@ const KnowledgeBank = () => {
                 </p>
               </div>
 
-              {/* Implementation Questions */}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-lg mb-2 text-violet-600">What changeover method should I recommend?</h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -686,7 +642,7 @@ const KnowledgeBank = () => {
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-slate-8 00 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-lg mb-2 text-sky-600">How do I demonstrate data normalization?</h3>
                 <p className="text-slate-700 dark:text-slate-300">
                   Show your database is in Third Normal Form (3NF): 1NF - Eliminate repeating groups (each field contains atomic 
@@ -696,7 +652,6 @@ const KnowledgeBank = () => {
                 </p>
               </div>
 
-              {/* Submission Questions */}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-lg mb-2 text-blue-600">What files should be on my flash disk?</h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -770,71 +725,20 @@ const KnowledgeBank = () => {
         </section>
 
         {/* SEO Content - Hidden but crawlable */}
-        <div className="sr-only" aria-hidden="true">
+        <div className="sr-only">
           <h2>KCSE 2026 Computer Studies Project Complete Information</h2>
-          
           <h3>Project Timeline and Duration</h3>
           <p>The KCSE 2026 Computer Studies Project (451/3) runs from January 2026 to July 2026, giving students 7 months to complete both Milestone 1 (Documentation) and Milestone 2 (Database Implementation).</p>
-          
           <h3>Database Management System Requirements</h3>
           <p>Students must use Microsoft Access or equivalent database management system. The project requires normalized database design, minimum 5 tables with proper relationships, data entry forms with validation, complex queries including calculations and aggregations, professional reports with headers and footers, and VBA code for automation.</p>
-          
           <h3>Azani Company Background</h3>
           <p>Azani is a fictional Internet Service Provider company specializing in educational institutions including primary schools, junior schools, senior schools, and colleges across Kenya. Services include internet connectivity, LAN infrastructure installation, computer sales, and technical support.</p>
-          
           <h3>Complete Pricing Structure</h3>
           <p>Registration fee: KSh 8,500 one-time. Installation fee: KSh 10,000 for ready institutions. Bandwidth packages: 4 MBPS (KSh 1,200/month), 10 MBPS (KSh 2,000/month), 20 MBPS (KSh 3,500/month), 25 MBPS (KSh 4,000/month), 50 MBPS (KSh 7,000/month). LAN nodes: 2-10 nodes (KSh 10,000), 11-20 nodes (KSh 20,000), 21-40 nodes (KSh 30,000), 41-100 nodes (KSh 40,000). Personal computers: KSh 40,000 each.</p>
-          
           <h3>Payment Policies and Penalties</h3>
           <p>Monthly payment due by end of current month. Late payment penalty: 15% surcharge on total amount. Disconnection after 10th day of subsequent month if unpaid. Reconnection fee: KSh 1,000. Upgrade discount: 10% off new bandwidth cost for existing customers upgrading to higher speeds.</p>
-          
-          <h3>Required Database Tables</h3>
-          <p>tblInstitutions stores institution name, address, telephone, location, category. tblContactPersons stores representative details. tblBandwidthPackages stores available speeds and monthly costs. tblServiceSubscriptions links institutions to their chosen services. tblPayments records all financial transactions with dates and amounts. tblInfrastructureRequirements tracks LAN needs. tblPCPurchases records computer sales. tblLANPurchases records network installations. tblUpgrades tracks bandwidth upgrades with discounts. tblDisconnections logs service suspensions. tblReconnections records reactivations with fees.</p>
-          
-          <h3>Required Forms</h3>
-          <p>Institution Registration Form for capturing new client details. Payment Entry Form for recording all payments. Service Subscription Form for bandwidth selection. LAN Installation Form for network setup. Main Dashboard for system navigation. Reports Menu for accessing all reports. Login Form for user authentication and security.</p>
-          
-          <h3>Required Queries</h3>
-          <p>qryRegisteredInstitutions lists all clients. qryDefaulters identifies overdue accounts with fines. qryDisconnections shows suspended services. qryInfrastructureRequirements calculates total installation costs. qryTotalInstallationCosts sums registration plus installation plus LAN. qryPCandLANCosts calculates hardware expenses. qryUpgradeCharges computes new costs with 10% discount. qryMonthlyChargesByCategory groups charges by institution type. qryAggregateServices totals all services per institution. qryOverdueFines calculates 15% penalties.</p>
-          
-          <h3>Required Reports</h3>
-          <p>Registered Institutions Report with complete client listing. Defaulters Report showing overdue accounts and fines. Disconnection Report listing suspended services with dates and reasons. Infrastructure Requirements Report detailing LAN and PC needs per institution. Monthly Revenue Report breaking down income by service type. Institution Summary Report aggregating all services and charges per client.</p>
-          
-          <h3>System Analysis Components</h3>
-          <p>Problem definition identifying manual system limitations: data redundancy, calculation errors, slow report generation, no backup, limited security. Problem solution through computerized database: centralized data storage, automatic calculations, referential integrity, comprehensive reporting, user authentication, regular backups. Feasibility study covering technical, economic, operational, and schedule feasibility.</p>
-          
-          <h3>System Design Elements</h3>
-          <p>System flowchart showing data flow from input through processing to output. Program flowchart detailing logic and decision points. Entity-Relationship diagram showing all tables and relationships. Data Flow Diagrams at context, level 0, and level 1. Table structures with field names, data types, sizes, and constraints. Form designs with layouts and navigation. Report layouts with headers, details, and footers.</p>
-          
-          <h3>Implementation Requirements</h3>
-          <p>Hardware: minimum 4GB RAM, 2.4 GHz processor, 21 inch LCD monitor, CD/DVD drive, peripheral devices. Software: Windows 10 or newer, Microsoft Access 2016 or newer, antivirus software. Changeover method: phased implementation over 3-4 months. Staff training: scheduled sessions covering system operation and maintenance. Data backup: daily automated backups to external storage.</p>
-          
-          <h3>Testing Procedures</h3>
-          <p>Normal data testing with valid entries. Abnormal data testing with invalid inputs to verify validation. Extreme data testing at boundary values. Form navigation testing. Query accuracy verification. Report generation testing. Relationship integrity testing. Security feature verification. Performance testing with large datasets.</p>
-          
-          <h3>Documentation Structure</h3>
-          <p>Title page, declarations, acknowledgments, dedication, table of contents, list of figures and tables. Chapter 1 Introduction with company background. Chapter 2 System Analysis with problem definition and solution. Chapter 3 System Design with flowcharts and diagrams. Chapter 4 Storage requirements. Chapter 5 System Construction with screenshots. Chapter 6 System Testing with test cases. Chapter 7 Implementation plan. Chapter 8 User Manual. Chapter 9 Conclusion, recommendations, bibliography, appendix.</p>
-          
-          <h3>VBA Code Requirements</h3>
-          <p>Automatic ID generation for records. Price calculation based on bandwidth selection. LAN cost computation from node ranges. Overdue fine calculation using date functions. Upgrade discount application. Form validation preventing empty fields. Navigation between forms. Search and filter functionality. Data export to Excel. Automatic backup procedures.</p>
-          
-          <h3>Normalization Process</h3>
-          <p>First Normal Form eliminates repeating groups ensuring atomic values. Second Normal Form removes partial dependencies. Third Normal Form eliminates transitive dependencies. All tables have primary keys. Foreign keys enforce referential integrity. No calculated fields stored in tables. Lookup tables for bandwidth packages and LAN pricing.</p>
-          
           <h3>Contact and Support Information</h3>
-          <p>Phone: 0115475543. WhatsApp: +254115475543. Website: www.azaniispproject.co.ke. Shop: shop.azaniispproject.co.ke. Email: hello@azaniispproject.co.ke. Location: Nairobi, Kenya. Support hours: Monday to Friday 8am-6pm, Saturday 9am-5pm. Response time: Within 2 hours for WhatsApp messages.</p>
-          
-          <h3>Project Deliverables</h3>
-          <p>Printed documentation (hardcopy bound). Soft copy documentation in PDF and Word formats. Complete MS Access database file. Flash disk with all project files. Screenshots of all forms, queries, and reports. User manual with step-by-step instructions. System testing documentation. Implementation and backup procedures. Bibliography and references.</p>
-          
-          <h3>Common Mistakes to Avoid</h3>
-          <p>Incomplete documentation missing required sections. Poor database design without normalization. Forms without proper validation. Queries not demonstrating required calculations. Reports without professional formatting. Missing VBA code for automation. Inadequate testing documentation. No user manual or installation guide. Plagiarism or copying without attribution. Late submission past deadline.</p>
-          
-          <h3>Success Tips</h3>
-          <p>Start early, don't wait until last minute. Plan documentation structure before writing. Design database schema carefully with normalization. Test each component thoroughly. Include screenshots throughout documentation. Use professional formatting consistently. Proofread for grammar and spelling. Follow KNEC guidelines exactly. Back up work regularly. Seek help when stuck rather than guessing.</p>
-          
-          <h3>Additional Keywords</h3>
-          <p>KCSE computer project 2026, Azani ISP system, database management Kenya, MS Access project, computer studies 451/3, KNEC project guidelines, database normalization tutorial, ER diagram examples, VBA code Access, system analysis documentation, implementation manual, KCSE exam preparation, computer project help, student database project, educational ISP system</p>
+          <p>Phone: 0115475543. WhatsApp: +254115475543. Website: www.azaniispproject.co.ke. Shop: shop.azaniispproject.co.ke. Support hours: Monday to Friday 8am-6pm, Saturday 9am-5pm.</p>
         </div>
       </main>
       <Footer />
