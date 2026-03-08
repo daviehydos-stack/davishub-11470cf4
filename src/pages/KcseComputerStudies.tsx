@@ -181,7 +181,7 @@ const KcseComputerStudies = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Header />
+      
 
       <main className="flex-1 pt-16 overflow-x-hidden">
         {/* Hero */}
