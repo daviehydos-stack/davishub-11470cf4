@@ -7,6 +7,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/kcse-2026-computer-studies-project", label: "KCSE 2026 Project" },
   { href: "/#download", label: "Pricing" },
   { href: "/community", label: "Community" },
   { href: "/blogs", label: "Blog" },

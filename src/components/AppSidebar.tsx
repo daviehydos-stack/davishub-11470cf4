@@ -1,4 +1,4 @@
-import { Home, DollarSign, Users, BookOpen } from "lucide-react";
+import { Home, DollarSign, Users, BookOpen, GraduationCap } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -17,6 +17,7 @@ import {
 
 const navItems = [
   { title: "Home", url: "/", icon: Home },
+  { title: "KCSE 2026 Project", url: "/kcse-2026-computer-studies-project", icon: GraduationCap },
   { title: "Pricing", url: "/#download", icon: DollarSign },
   { title: "Community", url: "/community", icon: Users },
   { title: "Blog", url: "/blogs", icon: BookOpen },
