@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Header } from "@/components/Header";
+
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SEOHead } from "@/components/SEOHead";
@@ -131,7 +131,7 @@ const Blogs = () => {
               ]
         }
       />
-      <Header />
+      
       <main className="flex-1 pt-16">
         {/* Compact Hero */}
         <section className="py-8 md:py-12 border-b border-border animate-fade-in">

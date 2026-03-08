@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
+
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SEOHead } from "@/components/SEOHead";
@@ -166,7 +166,7 @@ const Community = () => {
   if (selectedDiscussion) {
     return <div className="flex min-h-screen flex-col">
         <SEOHead title={`${selectedDiscussion.title} | Community`} description={selectedDiscussion.content.slice(0, 160)} />
-        <Header />
+        
         <main className="flex-1 pt-16">
           <div className="container mx-auto px-4 py-8">
             <Button variant="ghost" onClick={() => setSelectedDiscussion(null)} className="mb-6">
@@ -213,7 +213,7 @@ const Community = () => {
   }
   return <div className="flex min-h-screen flex-col">
       <SEOHead title="Community | KCSE Project Discussion" description="Join the KCSE Computer Studies project community. Ask questions, share knowledge, and get help from fellow students." keywords={["KCSE", "community", "discussion", "project help", "Computer Studies"]} />
-      <Header />
+      
       <main className="flex-1 pt-16">
         {/* Hero Section */}
         <section className="py-8 md:py-12 border-b border-border bg-gradient-to-b from-primary/5 to-background">

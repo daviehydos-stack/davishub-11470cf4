@@ -10,6 +10,7 @@ import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
 import { CopyProtection } from "@/components/CopyProtection";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
+import { Header } from "@/components/Header";
 import Index from "./pages/Index";
 
 // Lazy load non-critical pages
@@ -43,6 +44,7 @@ const App = () => (
             <SidebarProvider defaultOpen={false}>
               <div className="min-h-screen flex w-full">
                 <div className="flex-1 flex flex-col min-w-0">
+                  <Header />
                   <Suspense fallback={<PageLoader />}>
                     <Routes>
                       <Route path="/" element={<Index />} />
