@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Shield, Clock, FileText, ShoppingBag } from "lucide-react";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
-import { CountdownTimer } from "@/components/CountdownTimer";
 
 export function HeroSection() {
   const { getDownloadUrl } = useSiteSettings();
@@ -70,10 +69,6 @@ export function HeroSection() {
               <Clock className="w-4 h-4 text-primary" />
               <span>Instant delivery</span>
             </div>
-          </div>
-          {/* Countdown Timer */}
-          <div className="inline-block glass rounded-2xl px-6 py-4">
-            <CountdownTimer />
           </div>
         </div>
       </div>
