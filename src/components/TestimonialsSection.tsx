@@ -6,33 +6,49 @@ const testimonials = [
   {
     name: "Faith W.",
     school: "Kenya High School",
-    year: "2024",
+    year: "2025",
     quote:
-      "I was stressed about my project until I found Victory. The documentation was so thorough that my teacher was impressed. Scored an A!",
+      "The Azani ISP project was well-structured and easy to follow. My teacher was impressed by the ER diagrams and the normalization section. I didn't have to redo anything — it was accepted on the first submission!",
     rating: 5,
   },
   {
-    name: "Mark O.",
-    school: "Nairobi School",
-    year: "2024",
+    name: "Brian K.",
+    school: "Mang'u High School",
+    year: "2025",
     quote:
-      "The WhatsApp support is incredible. They answered all my questions, even at night before my deadline. Total lifesaver!",
+      "I received the complete package within minutes on WhatsApp. The MS Access database had all the forms, queries, and reports already built. It saved me weeks of work and I scored 38/40 on Milestone 2.",
     rating: 5,
   },
   {
     name: "Grace M.",
-    school: "Alliance Girls",
-    year: "2023",
+    school: "Alliance Girls High School",
+    year: "2024",
     quote:
-      "Zero plagiarism concerns. The project was 100% original and I understood everything because of the detailed explanations.",
+      "What stood out was how original the content was. I ran the documentation through plagiarism checkers and it passed perfectly. The data flow diagrams and system flowcharts were professionally done.",
     rating: 5,
   },
   {
-    name: "David K.",
-    school: "Starehe Boys",
+    name: "Kevin O.",
+    school: "Nairobi School",
+    year: "2024",
+    quote:
+      "The video tutorials on the YouTube channel helped me understand how the database works. When my examiner asked questions during the practical, I was fully prepared. Scored an A in Paper 3!",
+    rating: 5,
+  },
+  {
+    name: "Mercy N.",
+    school: "Pangani Girls",
+    year: "2024",
+    quote:
+      "I was worried about the project being too complex, but the documentation broke everything down clearly — from the problem statement to implementation. The WhatsApp support team clarified every doubt I had.",
+    rating: 5,
+  },
+  {
+    name: "James M.",
+    school: "Starehe Boys Centre",
     year: "2023",
     quote:
-      "Best investment for my KCSE. The database design section alone taught me more than my entire term's lessons.",
+      "The Victory School Club project I got was complete and perfectly formatted. My teacher used it as a reference example for other students. Best investment I made for my KCSE preparation.",
     rating: 5,
   },
 ];
@@ -80,7 +96,7 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
@@ -100,20 +116,20 @@ export function TestimonialsSection() {
               </div>
               
               {/* Quote */}
-              <p className="text-foreground mb-6 leading-relaxed">
+              <p className="text-foreground mb-6 leading-relaxed text-sm">
                 "{testimonial.quote}"
               </p>
               
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-cyan flex items-center justify-center text-white font-semibold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-cyan flex items-center justify-center text-white font-semibold text-sm">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <p className="font-semibold text-sm">{testimonial.name}</p>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <span>{testimonial.school}</span>
-                    <Badge variant="outline" className="text-xs border-accent/30 text-accent">
+                    <Badge variant="outline" className="text-[10px] border-accent/30 text-accent px-1.5 py-0">
                       {testimonial.year}
                     </Badge>
                   </div>
