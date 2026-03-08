@@ -8,19 +8,19 @@ const items = [
     icon: FormInput,
     title: "Custom Forms",
     description: "User-friendly data entry forms with validation",
-    features: ["Member registration", "Payment processing", "Activity booking"],
+    features: ["Institution registration", "Payment processing", "Service plan selection"],
   },
   {
     icon: Search,
     title: "Select Queries",
     description: "Powerful queries for data retrieval",
-    features: ["Member search", "Activity reports", "Payment history"],
+    features: ["Customer search", "Service reports", "Billing history"],
   },
   {
     icon: Filter,
     title: "Parameter Queries",
     description: "Interactive queries with user input",
-    features: ["Date range filters", "Category selection", "Status filters"],
+    features: ["Date range filters", "Bandwidth package filters", "Status filters"],
   },
   {
     icon: Settings2,
@@ -47,7 +47,7 @@ export function FormsQueriesSection() {
             Forms & Queries
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Complete set of forms and queries designed for club management operations.
+            Complete set of forms and queries designed for ISP data management operations.
           </p>
         </motion.div>
 

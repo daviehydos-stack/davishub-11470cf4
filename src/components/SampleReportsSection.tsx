@@ -6,26 +6,26 @@ import { FileText, BarChart3, Users, CreditCard } from "lucide-react";
 const reports = [
   {
     icon: Users,
-    title: "Member Reports",
-    description: "Comprehensive member listings with activity status",
+    title: "Customer Reports",
+    description: "Comprehensive customer listings with subscription status and bandwidth details",
     color: "brand-purple",
   },
   {
     icon: CreditCard,
-    title: "Payment Reports",
-    description: "Detailed payment records and outstanding balances",
+    title: "Billing Reports",
+    description: "Detailed billing records, overdue fines, and payment tracking",
     color: "brand-cyan",
   },
   {
     icon: BarChart3,
-    title: "Activity Reports",
-    description: "Club activity participation and attendance tracking",
+    title: "Service Reports",
+    description: "Bandwidth usage, installation tracking, and network analytics",
     color: "brand-orange",
   },
   {
     icon: FileText,
     title: "Summary Reports",
-    description: "Executive summaries with key metrics and statistics",
+    description: "Executive summaries with revenue metrics and institution statistics",
     color: "brand-pink",
   },
 ];

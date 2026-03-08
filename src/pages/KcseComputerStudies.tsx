@@ -424,7 +424,7 @@ const KcseComputerStudies = () => {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
               {shopPackages.map((pkg) => (
-                
+                <a
                   key={pkg.name}
                   href={pkg.url}
                   target="_blank"
