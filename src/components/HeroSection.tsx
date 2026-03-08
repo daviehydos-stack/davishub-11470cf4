@@ -70,6 +70,7 @@ export function HeroSection() {
               <span>Instant delivery</span>
             </div>
           </div>
+        </div>
       </div>
     </section>
   );
