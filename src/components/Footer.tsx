@@ -80,13 +80,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} Azani ISP Project. All rights reserved.
+        <div className="border-t border-border mt-12 pt-8 space-y-4">
+          <p className="text-xs text-muted-foreground text-center italic bg-muted/50 rounded-lg px-4 py-3">
+            ⚠️ <strong>For educational purposes only.</strong> All projects and materials provided on this site are intended as learning references. Students are expected to use them as guides and submit their own original work in compliance with KNEC regulations.
           </p>
-          <p className="text-sm text-muted-foreground">
-            Made for Kenyan students
-          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              © {currentYear} Azani ISP Project. All rights reserved.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Made for Kenyan students
+            </p>
+          </div>
         </div>
       </div>
     </footer>;
