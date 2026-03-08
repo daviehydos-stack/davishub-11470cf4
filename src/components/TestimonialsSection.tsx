@@ -6,17 +6,17 @@ const testimonials = [
   {
     name: "Faith W.",
     school: "Kenya High School",
-    year: "2025",
+    year: "2024",
     quote:
-      "The Azani ISP project was well-structured and easy to follow. My teacher was impressed by the ER diagrams and the normalization section. I didn't have to redo anything — it was accepted on the first submission!",
+      "The Victory School Club Membership System project was so well done. The MS Access database had all the forms, queries, and reports already built. My teacher accepted it on the first submission — I scored 36/40 on Milestone 2!",
     rating: 5,
   },
   {
     name: "Brian K.",
     school: "Mang'u High School",
-    year: "2025",
+    year: "2024",
     quote:
-      "I received the complete package within minutes on WhatsApp. The MS Access database had all the forms, queries, and reports already built. It saved me weeks of work and I scored 38/40 on Milestone 2.",
+      "I got the Maringo Sports Club project and it was complete with ER diagrams, data flow diagrams, and system flowcharts. The documentation was professionally formatted and passed plagiarism checks perfectly.",
     rating: 5,
   },
   {
@@ -24,23 +24,23 @@ const testimonials = [
     school: "Alliance Girls High School",
     year: "2024",
     quote:
-      "What stood out was how original the content was. I ran the documentation through plagiarism checkers and it passed perfectly. The data flow diagrams and system flowcharts were professionally done.",
+      "The Victory School Club project had everything — from the problem statement to implementation. The normalization section and sample reports were exactly what KNEC expects. Scored an A in Paper 3!",
     rating: 5,
   },
   {
     name: "Kevin O.",
     school: "Nairobi School",
-    year: "2024",
+    year: "2023",
     quote:
-      "The video tutorials on the YouTube channel helped me understand how the database works. When my examiner asked questions during the practical, I was fully prepared. Scored an A in Paper 3!",
+      "The Maringo Sports Club database project saved me weeks of work. The video tutorials on YouTube helped me understand how everything works. When my examiner asked questions, I was fully prepared.",
     rating: 5,
   },
   {
     name: "Mercy N.",
     school: "Pangani Girls",
-    year: "2024",
+    year: "2023",
     quote:
-      "I was worried about the project being too complex, but the documentation broke everything down clearly — from the problem statement to implementation. The WhatsApp support team clarified every doubt I had.",
+      "I was worried about the project being too complex, but the documentation broke everything down clearly. The WhatsApp support team clarified every doubt I had about the Victory School Club system.",
     rating: 5,
   },
   {
@@ -48,7 +48,7 @@ const testimonials = [
     school: "Starehe Boys Centre",
     year: "2023",
     quote:
-      "The Victory School Club project I got was complete and perfectly formatted. My teacher used it as a reference example for other students. Best investment I made for my KCSE preparation.",
+      "The past project files were complete and perfectly formatted. My teacher used my Maringo Sports Club submission as a reference example for other students. Best investment I made for KCSE.",
     rating: 5,
   },
 ];
