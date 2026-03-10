@@ -39,6 +39,7 @@ serve(async (req) => {
       { url: "/kcse", priority: "0.8", changefreq: "weekly" },
       { url: "/blogs", priority: "0.8", changefreq: "daily" },
       { url: "/community", priority: "0.7", changefreq: "daily" },
+      { url: "/articles", priority: "0.8", changefreq: "daily" },
     ];
 
     // Generate XML sitemap
