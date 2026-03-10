@@ -22,6 +22,8 @@ const KnowledgeBank = lazy(() => import("./pages/KnowledgeBank"));
 const Community = lazy(() => import("./pages/Community"));
 const KcseProject = lazy(() => import("./pages/KcseProject"));
 const KcseComputerStudies = lazy(() => import("./pages/KcseComputerStudies"));
+const Articles = lazy(() => import("./pages/Articles"));
+const ArticleDetail = lazy(() => import("./pages/ArticleDetail"));
 
 const queryClient = new QueryClient();
 
@@ -56,6 +58,8 @@ const App = () => (
                       <Route path="/blogs/:slug" element={<BlogPost />} />
                       <Route path="/tags/:tag" element={<Blogs />} />
                       <Route path="/community" element={<Community />} />
+                      <Route path="/articles" element={<Articles />} />
+                      <Route path="/articles/:slug" element={<ArticleDetail />} />
                       <Route path="/admin" element={<Admin />} />
                       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                       <Route path="*" element={<NotFound />} />

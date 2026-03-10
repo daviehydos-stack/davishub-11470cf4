@@ -39,6 +39,7 @@ serve(async (req) => {
       { url: "/kcse", priority: "0.8", changefreq: "weekly" },
       { url: "/blogs", priority: "0.8", changefreq: "daily" },
       { url: "/community", priority: "0.7", changefreq: "daily" },
+      { url: "/articles", priority: "0.8", changefreq: "daily" },
     ];
 
     // Generate XML sitemap
@@ -60,6 +61,26 @@ serve(async (req) => {
     <priority>${page.priority}</priority>
   </url>
 `;
+    }
+
+    // Add generated articles
+    const { data: articles } = await supabase
+      .from("generated_articles")
+      .select("slug, created_at")
+      .eq("is_published", true)
+      .order("created_at", { ascending: false });
+
+    if (articles) {
+      for (const article of articles) {
+        const lastmod = new Date(article.created_at).toISOString().split("T")[0];
+        xml += `  <url>
+    <loc>${SITE_URL}/articles/${article.slug}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+`;
+      }
     }
 
     // Add blog posts
