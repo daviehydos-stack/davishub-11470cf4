@@ -63,6 +63,26 @@ serve(async (req) => {
 `;
     }
 
+    // Add generated articles
+    const { data: articles } = await supabase
+      .from("generated_articles")
+      .select("slug, created_at")
+      .eq("is_published", true)
+      .order("created_at", { ascending: false });
+
+    if (articles) {
+      for (const article of articles) {
+        const lastmod = new Date(article.created_at).toISOString().split("T")[0];
+        xml += `  <url>
+    <loc>${SITE_URL}/articles/${article.slug}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+`;
+      }
+    }
+
     // Add blog posts
     if (posts) {
       for (const post of posts) {
