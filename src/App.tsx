@@ -22,6 +22,8 @@ const KnowledgeBank = lazy(() => import("./pages/KnowledgeBank"));
 const Community = lazy(() => import("./pages/Community"));
 const KcseProject = lazy(() => import("./pages/KcseProject"));
 const KcseComputerStudies = lazy(() => import("./pages/KcseComputerStudies"));
+const Articles = lazy(() => import("./pages/Articles"));
+const ArticleDetail = lazy(() => import("./pages/ArticleDetail"));
 
 const queryClient = new QueryClient();
 
