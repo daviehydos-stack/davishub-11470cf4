@@ -20,10 +20,10 @@ interface SEOHeadProps {
   noindex?: boolean;
 }
 
-const SITE_NAME = "AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM";
+const SITE_NAME = "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT";
 const SITE_URL = "https://www.azaniispproject.co.ke";
 const DEFAULT_OG_IMAGE = "https://www.azaniispproject.co.ke/azani.jpg";
-const DEFAULT_DESCRIPTION = "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download. Milestone 1 & 2 Included.";
+const DEFAULT_DESCRIPTION = "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism.";
 
 export const SEOHead = ({
   title,

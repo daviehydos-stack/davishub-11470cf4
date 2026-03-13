@@ -45,8 +45,8 @@ const Index = () => {
   }, []);
 
   // Default SEO values - optimized for target keywords
-  const defaultTitle = "2026 KCSE Computer Studies Project | Azani Internet Service Provider Information System";
-  const defaultDescription = "2026 KCSE Computer Studies Project - Azani Internet Service Provider Information System (Paper 451/3). Download Now. Zero Plagiarism. Free Download. Milestone 1 & 2 Included. MS Access database with forms, queries & reports. 500+ Students Scored 90%+.";
+  const defaultTitle = "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT";
+  const defaultDescription = "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism.";
   const defaultImage = "https://www.azaniispproject.co.ke/azani.jpg";
   const defaultCanonical = "https://www.azaniispproject.co.ke/";
   const defaultKeywords = [
@@ -77,8 +77,8 @@ const Index = () => {
         title={seo?.meta_title || defaultTitle}
         description={seo?.meta_description || defaultDescription}
         canonical={seo?.canonical_url || defaultCanonical}
-        ogTitle={seo?.og_title || "2026 KCSE Computer Studies Project | Azani Internet Service Provider Information System"}
-        ogDescription={seo?.og_description || "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download."}
+        ogTitle={seo?.og_title || "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"}
+        ogDescription={seo?.og_description || "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
         ogImage={seo?.og_image || defaultImage}
         keywords={seo?.keywords || defaultKeywords}
       />
