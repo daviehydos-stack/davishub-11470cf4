@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
-
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -16,11 +16,11 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title="Page Not Found | AZANI INTERNET SERVICE PROVIDER"
-        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Explore our KCSE Computer Studies resources or return to the homepage."
         noindex={true}
       />
-      
+      <Header />
       <main className="flex-1 pt-16 flex items-center justify-center">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">

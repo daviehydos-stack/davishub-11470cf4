@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -100,11 +100,26 @@ const KcseProject = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        title="KCSE 2026 COMPUTER STUDIES PROJECT | AZANI ISP INFORMATION SYSTEM"
+        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Milestone 1 and 2 Download Now. Free Download. Get your copy today."
         canonical="https://www.azaniispproject.co.ke/kcse-2026-project"
-        ogTitle="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        ogTitle="KCSE 2026 Computer Studies Project | Azani ISP Information System"
+        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Milestone 1 and 2 Download Now. Free Download. Get your copy today."
+        keywords={[
+          "KCSE 2026 Computer Studies Project",
+          "Azani ISP Information System",
+          "KCSE 2026 project download",
+          "Azani Internet Service Provider",
+          "KCSE Computer Project 2026",
+          "Paper 451/3 2026",
+          "MS Access KCSE project",
+          "KCSE Milestone 1 and 2",
+          "computer studies project Kenya",
+          "KNEC computer project 2026",
+          "KCSE project free download",
+          "Azani ISP database system",
+          "KCSE 2026 Paper 3",
+        ]}
       />
 
       {/* JSON-LD for this page */}
@@ -134,7 +149,7 @@ const KcseProject = () => {
         }}
       />
 
-      
+      <Header />
 
       <main className="flex-1 pt-16 overflow-x-hidden">
         {/* Hero */}

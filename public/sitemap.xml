@@ -2,50 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.azaniispproject.co.ke/</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://www.azaniispproject.co.ke/kcse-2026-project</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
     <loc>https://www.azaniispproject.co.ke/kcse</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.azaniispproject.co.ke/knowledge-bank</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.azaniispproject.co.ke/blogs</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.azaniispproject.co.ke/community</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.azaniispproject.co.ke/articles</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

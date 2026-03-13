@@ -1,4 +1,4 @@
-
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -15,13 +15,30 @@ const KnowledgeBank = () => {
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 overflow-x-hidden">
       <SEOHead
-        title="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        title="KCSE 2026 Computer Project Complete Guide | Azani ISP Database System"
+        description="Comprehensive guide for KCSE 2026 Computer Studies Project (451/3). Complete documentation on Azani Internet Service Provider Information System - tables, forms, queries, reports, and implementation guide."
         canonical="https://www.azaniispproject.co.ke/kcse"
-        ogTitle="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        ogTitle="KCSE 2026 Computer Project - Complete Azani ISP Guide & Documentation"
+        ogDescription="Everything you need for the 2026 KCSE Computer Studies Project. Detailed breakdown of database tables, forms, queries, reports, calculations, and system requirements."
+        keywords={[
+          "KCSE 2026 Computer Project",
+          "Azani ISP Project",
+          "Azani Internet Service Provider",
+          "KCSE 451/3",
+          "Computer Studies Project Kenya",
+          "MS Access Database Project",
+          "KCSE Database System",
+          "Computer Project Documentation",
+          "KCSE Milestone 1",
+          "KCSE Milestone 2",
+          "Database Tables Design",
+          "ER Diagrams KCSE",
+          "System Flowcharts",
+          "KNEC Computer Project",
+          "2026 KCSE Project Guide"
+        ]}
       />
-      
+      <Header />
       <main className="flex-1 pt-20 w-full max-w-full">
         {/* Hero Section */}
         <section className="py-8 md:py-20 relative overflow-hidden">

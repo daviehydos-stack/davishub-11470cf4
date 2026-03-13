@@ -9,7 +9,6 @@ Allow: /blogs
 Allow: /kcse-2026-project
 Allow: /community
 Allow: /kcse-2026-computer-studies-project
-Allow: /articles
 Disallow: /admin
 
 # Sitemap
