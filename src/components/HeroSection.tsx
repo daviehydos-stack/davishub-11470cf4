@@ -7,6 +7,10 @@ export function HeroSection() {
   const downloadUrl = getDownloadUrl();
   return (
     <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/20">
+      {/* Subtle decorative elements */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
@@ -15,7 +19,7 @@ export function HeroSection() {
               2026 KCSE COMPUTER STUDIES PROJECT (451/3)
             </span>
           </div>
-          {/* H1 - Updated for SEO */}
+          {/* H1 */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 text-foreground">
             Azani Internet Service Provider Information System
             <span className="block text-2xl sm:text-3xl md:text-4xl mt-2 text-muted-foreground font-normal">
@@ -50,7 +54,7 @@ export function HeroSection() {
             </Button>
           </div>
           {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground mb-8">
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-primary" />
               <span>

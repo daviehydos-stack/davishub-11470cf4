@@ -8,31 +8,47 @@ const testimonials = [
     school: "Kenya High School",
     year: "2024",
     quote:
-      "I was stressed about my project until I found Victory. The documentation was so thorough that my teacher was impressed. Scored an A!",
+      "The Victory School Club Membership System project was so well done. The MS Access database had all the forms, queries, and reports already built. My teacher accepted it on the first submission — I scored 36/40 on Milestone 2!",
     rating: 5,
   },
   {
-    name: "Mark O.",
-    school: "Nairobi School",
+    name: "Brian K.",
+    school: "Mang'u High School",
     year: "2024",
     quote:
-      "The WhatsApp support is incredible. They answered all my questions, even at night before my deadline. Total lifesaver!",
+      "I got the Maringo Sports Club project and it was complete with ER diagrams, data flow diagrams, and system flowcharts. The documentation was professionally formatted and passed plagiarism checks perfectly.",
     rating: 5,
   },
   {
     name: "Grace M.",
-    school: "Alliance Girls",
-    year: "2023",
+    school: "Alliance Girls High School",
+    year: "2024",
     quote:
-      "Zero plagiarism concerns. The project was 100% original and I understood everything because of the detailed explanations.",
+      "The Victory School Club project had everything — from the problem statement to implementation. The normalization section and sample reports were exactly what KNEC expects. Scored an A in Paper 3!",
     rating: 5,
   },
   {
-    name: "David K.",
-    school: "Starehe Boys",
+    name: "Kevin O.",
+    school: "Nairobi School",
     year: "2023",
     quote:
-      "Best investment for my KCSE. The database design section alone taught me more than my entire term's lessons.",
+      "The Maringo Sports Club database project saved me weeks of work. The video tutorials on YouTube helped me understand how everything works. When my examiner asked questions, I was fully prepared.",
+    rating: 5,
+  },
+  {
+    name: "Mercy N.",
+    school: "Pangani Girls",
+    year: "2023",
+    quote:
+      "I was worried about the project being too complex, but the documentation broke everything down clearly. The WhatsApp support team clarified every doubt I had about the Victory School Club system.",
+    rating: 5,
+  },
+  {
+    name: "James M.",
+    school: "Starehe Boys Centre",
+    year: "2023",
+    quote:
+      "The past project files were complete and perfectly formatted. My teacher used my Maringo Sports Club submission as a reference example for other students. Best investment I made for KCSE.",
     rating: 5,
   },
 ];
@@ -80,7 +96,7 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
@@ -100,20 +116,20 @@ export function TestimonialsSection() {
               </div>
               
               {/* Quote */}
-              <p className="text-foreground mb-6 leading-relaxed">
+              <p className="text-foreground mb-6 leading-relaxed text-sm">
                 "{testimonial.quote}"
               </p>
               
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-cyan flex items-center justify-center text-white font-semibold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-cyan flex items-center justify-center text-white font-semibold text-sm">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <p className="font-semibold text-sm">{testimonial.name}</p>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <span>{testimonial.school}</span>
-                    <Badge variant="outline" className="text-xs border-accent/30 text-accent">
+                    <Badge variant="outline" className="text-[10px] border-accent/30 text-accent px-1.5 py-0">
                       {testimonial.year}
                     </Badge>
                   </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
+
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -181,7 +181,7 @@ const KcseComputerStudies = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Header />
+      
 
       <main className="flex-1 pt-16 overflow-x-hidden">
         {/* Hero */}
@@ -424,7 +424,7 @@ const KcseComputerStudies = () => {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
               {shopPackages.map((pkg) => (
-                
+                <a
                   key={pkg.name}
                   href={pkg.url}
                   target="_blank"

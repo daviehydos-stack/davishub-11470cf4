@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Header } from "@/components/Header";
+
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SEOHead } from "@/components/SEOHead";
@@ -156,7 +156,7 @@ const BlogPost = () => {
           description="Loading article content. Please wait."
           noindex={true}
         />
-        <Header />
+        
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <Loader2 className="w-8 h-8 animate-spin mx-auto text-primary" />
@@ -176,7 +176,7 @@ const BlogPost = () => {
           description="The article you're looking for doesn't exist or has been removed."
           noindex={true}
         />
-        <Header />
+        
         <main className="flex-1 flex items-center justify-center py-16">
           <div className="text-center">
             <FileQuestion className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
@@ -231,7 +231,7 @@ const BlogPost = () => {
           section: blogPost?.category || "Education",
         }}
       />
-      <Header />
+      
       <main className="flex-1 pt-16">
         {/* Hero Section - Desktop: Two column, Mobile: Stacked */}
         <section className="relative py-8 md:py-12 border-b border-border">
