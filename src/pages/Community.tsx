@@ -212,7 +212,7 @@ const Community = () => {
       </div>;
   }
   return <div className="flex min-h-screen flex-col">
-      <SEOHead title="Community | KCSE Project Discussion" description="Join the KCSE Computer Studies project community. Ask questions, share knowledge, and get help from fellow students." keywords={["KCSE", "community", "discussion", "project help", "Computer Studies"]} />
+      <SEOHead title="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT" description="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." keywords={["KCSE 2026 Computer Studies Project", "Azani Internet Service Provider", "community", "discussion", "project help"]} />
       
       <main className="flex-1 pt-16">
         {/* Hero Section */}

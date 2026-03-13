@@ -89,47 +89,19 @@ const Blogs = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title={
-          activeTag
-            ? `${activeTag} ISP Project Guides`
-            : seo?.meta_title || "ISP Project Resources & Guides"
-        }
-        description={
-          activeTag
-            ? `Read ISP project guides tagged "${activeTag}". Database design, network management, and project support.`
-            : seo?.meta_description ||
-              "Expert guides and resources for ISP management systems. Learn database design, network concepts, and project documentation tips."
-        }
-        canonical={
-          activeTag
-            ? `https://azaniispproject.co.ke/tags/${encodeURIComponent(activeTag)}`
-            : seo?.canonical_url || "https://azaniispproject.co.ke/blogs"
-        }
-        ogTitle={
-          activeTag
-            ? `${activeTag} Guides | Azani ISP Project`
-            : seo?.og_title || "ISP Project Guides | Azani ISP Project"
-        }
-        ogDescription={
-          activeTag
-            ? `Browse guides tagged "${activeTag}" and find related ISP project materials.`
-            : seo?.og_description ||
-              "Step-by-step guides to help you ace your ISP project. Database design, network management, and documentation resources."
-        }
-        ogImage={seo?.og_image || "https://azaniispproject.co.ke/og-image.jpg"}
-        keywords={
-          activeTag
-            ? [activeTag, "ISP", "Computer Science", "Kenya", "Project"]
-            : seo?.keywords || [
-                "ISP project",
-                "Internet Service Provider",
-                "database project",
-                "network management",
-                "Kenya education",
-                "2025 project",
-                "student guides",
-              ]
-        }
+        title={seo?.meta_title || "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"}
+        description={seo?.meta_description || "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
+        canonical={seo?.canonical_url || "https://www.azaniispproject.co.ke/blogs"}
+        ogTitle={seo?.og_title || "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"}
+        ogDescription={seo?.og_description || "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
+        ogImage={seo?.og_image || "https://www.azaniispproject.co.ke/azani.jpg"}
+        keywords={seo?.keywords || [
+          "KCSE 2026 Computer Studies Project",
+          "Azani Internet Service Provider",
+          "Azani ISP",
+          "KCSE project download",
+          "Milestone 1 and 2",
+        ]}
       />
       
       <main className="flex-1 pt-16">

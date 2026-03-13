@@ -66,8 +66,8 @@ export default function ArticleDetail() {
         {article.keywords && <meta name="keywords" content={article.keywords.join(", ")} />}
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://azaniispproject.co.ke/articles/${article.slug}`} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.meta_description || article.excerpt || ""} />
+        <meta property="og:title" content={`${article.title} | AZANI INTERNET SERVICE PROVIDER`} />
+        <meta property="og:description" content="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://azaniispproject.co.ke/articles/${article.slug}`} />
 
