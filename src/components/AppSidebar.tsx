@@ -71,7 +71,7 @@ export function AppSidebar() {
                         }`}
                       >
                         <item.icon className="h-5 w-5" />
-                        {!collapsed && <span className="text-base">{item.title}</span>}
+                        <span className="text-base">{item.title}</span>
                       </a>
                     ) : (
                       <NavLink
