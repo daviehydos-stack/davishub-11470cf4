@@ -61,15 +61,15 @@ export default function ArticleDetail() {
   return (
     <>
       <Helmet>
-        <title>{`${article.title} | AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT`}</title>
-        <meta name="description" content="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
+        <title>{`${article.title} | AZANI INTERNET SERVICE PROVIDER | ARTICLES`}</title>
+        <meta name="description" content="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
         {article.keywords && <meta name="keywords" content={article.keywords.join(", ")} />}
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://azaniispproject.co.ke/articles/${article.slug}`} />
-        <meta property="og:title" content={`${article.title} | AZANI INTERNET SERVICE PROVIDER`} />
-        <meta property="og:description" content="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <link rel="canonical" href={`https://www.azaniispproject.co.ke/articles/${article.slug}`} />
+        <meta property="og:title" content={`${article.title} | AZANI INTERNET SERVICE PROVIDER | ARTICLES`} />
+        <meta property="og:description" content="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://azaniispproject.co.ke/articles/${article.slug}`} />
+        <meta property="og:url" content={`https://www.azaniispproject.co.ke/articles/${article.slug}`} />
 
         <script type="application/ld+json">
           {JSON.stringify({
