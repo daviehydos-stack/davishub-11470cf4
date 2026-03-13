@@ -61,8 +61,8 @@ export default function ArticleDetail() {
   return (
     <>
       <Helmet>
-        <title>{article.title} | Azani ISP Project</title>
-        <meta name="description" content={article.meta_description || article.excerpt || ""} />
+        <title>{`${article.title} | AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT`}</title>
+        <meta name="description" content="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
         {article.keywords && <meta name="keywords" content={article.keywords.join(", ")} />}
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://azaniispproject.co.ke/articles/${article.slug}`} />
