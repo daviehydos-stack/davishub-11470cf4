@@ -46,30 +46,9 @@ const Index = () => {
 
   // Default SEO values - optimized for target keywords
   const defaultTitle = "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT";
-  const defaultDescription = "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism.";
+  const defaultDescription = "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism.";
   const defaultImage = "https://www.azaniispproject.co.ke/azani.jpg";
   const defaultCanonical = "https://www.azaniispproject.co.ke/";
-  const defaultKeywords = [
-    "2026 KCSE Computer Studies Project",
-    "KCSE 2026 project",
-    "KCSE computer project 2026",
-    "Azani ISP",
-    "Azani Internet Service Provider",
-    "KCSE 451/3",
-    "KCSE paper 3 project 2026",
-    "KNEC computer studies project 2026",
-    "Milestone 1",
-    "Milestone 2",
-    "KCSE Computer Studies",
-    "MS Access Project",
-    "KCSE project download",
-    "computer project Kenya",
-    "KCSE database project",
-    "KNEC project requirements 2026",
-    "free KCSE computer project",
-    "computer studies paper 3 2026",
-    "secondary school computer project Kenya"
-  ];
 
   return (
     <div className="flex min-h-screen flex-col">
