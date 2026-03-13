@@ -16,8 +16,8 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title="Page Not Found"
-        description="The page you're looking for doesn't exist. Explore our KCSE Computer Studies resources or return to the homepage."
+        title="Page Not Found | AZANI INTERNET SERVICE PROVIDER"
+        description="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
         noindex={true}
       />
       
