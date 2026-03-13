@@ -1,4 +1,4 @@
-
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -38,7 +38,7 @@ const KnowledgeBank = () => {
           "2026 KCSE Project Guide"
         ]}
       />
-      
+      <Header />
       <main className="flex-1 pt-20 w-full max-w-full">
         {/* Hero Section */}
         <section className="py-8 md:py-20 relative overflow-hidden">

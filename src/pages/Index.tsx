@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
 import { AzaniAboutSection } from "@/components/AzaniAboutSection";
@@ -13,7 +13,6 @@ import GuidesSection from "@/components/GuidesSection";
 import { FreeResourcesSection } from "@/components/FreeResourcesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { PastProjectsSection } from "@/components/PastProjectsSection";
-import { CtaSection } from "@/components/CtaSection";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SEOHead } from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
@@ -45,30 +44,21 @@ const Index = () => {
   }, []);
 
   // Default SEO values - optimized for target keywords
-  const defaultTitle = "2026 KCSE Computer Studies Project | Azani Internet Service Provider Information System";
-  const defaultDescription = "2026 KCSE Computer Studies Project - Azani Internet Service Provider Information System (Paper 451/3). Download Now. Zero Plagiarism. Free Download. Milestone 1 & 2 Included. MS Access database with forms, queries & reports. 500+ Students Scored 90%+.";
+  const defaultTitle = "AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT";
+  const defaultDescription = "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download. Milestone 1 & 2 Included. 500+ Students Scored 90%+.";
   const defaultImage = "https://www.azaniispproject.co.ke/azani.jpg";
   const defaultCanonical = "https://www.azaniispproject.co.ke/";
   const defaultKeywords = [
-    "2026 KCSE Computer Studies Project",
-    "KCSE 2026 project",
-    "KCSE computer project 2026",
     "Azani ISP",
-    "Azani Internet Service Provider",
+    "2026 KCSE Computer Project",
     "KCSE 451/3",
-    "KCSE paper 3 project 2026",
-    "KNEC computer studies project 2026",
+    "Azani Internet Service Provider",
     "Milestone 1",
     "Milestone 2",
     "KCSE Computer Studies",
     "MS Access Project",
     "KCSE project download",
-    "computer project Kenya",
-    "KCSE database project",
-    "KNEC project requirements 2026",
-    "free KCSE computer project",
-    "computer studies paper 3 2026",
-    "secondary school computer project Kenya"
+    "computer project Kenya"
   ];
 
   return (
@@ -77,12 +67,12 @@ const Index = () => {
         title={seo?.meta_title || defaultTitle}
         description={seo?.meta_description || defaultDescription}
         canonical={seo?.canonical_url || defaultCanonical}
-        ogTitle={seo?.og_title || "2026 KCSE Computer Studies Project | Azani Internet Service Provider Information System"}
+        ogTitle={seo?.og_title || "AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT"}
         ogDescription={seo?.og_description || "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download."}
         ogImage={seo?.og_image || defaultImage}
         keywords={seo?.keywords || defaultKeywords}
       />
-      
+      <Header />
       <main className="flex-1 pt-16">
         <HeroSection />
         <AzaniAboutSection />
@@ -96,7 +86,6 @@ const Index = () => {
         <GuidesSection />
         <FreeResourcesSection />
         <TestimonialsSection />
-        <CtaSection />
       </main>
       <Footer />
       <WhatsAppButton />

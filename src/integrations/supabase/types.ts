@@ -184,48 +184,6 @@ export type Database = {
         }
         Relationships: []
       }
-      generated_articles: {
-        Row: {
-          category: string | null
-          content: string
-          created_at: string
-          excerpt: string | null
-          id: string
-          is_published: boolean | null
-          keywords: string[] | null
-          meta_description: string | null
-          slug: string
-          title: string
-          updated_at: string
-        }
-        Insert: {
-          category?: string | null
-          content: string
-          created_at?: string
-          excerpt?: string | null
-          id?: string
-          is_published?: boolean | null
-          keywords?: string[] | null
-          meta_description?: string | null
-          slug: string
-          title: string
-          updated_at?: string
-        }
-        Update: {
-          category?: string | null
-          content?: string
-          created_at?: string
-          excerpt?: string | null
-          id?: string
-          is_published?: boolean | null
-          keywords?: string[] | null
-          meta_description?: string | null
-          slug?: string
-          title?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
       past_projects: {
         Row: {
           created_at: string

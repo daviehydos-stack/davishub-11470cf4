@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -1018,7 +1018,7 @@ const Admin = () => {
   if (!isAuthenticated) {
     return (
       <div className="flex min-h-screen flex-col bg-muted/30">
-        
+        <Header />
         <main className="flex-1 flex items-center justify-center pt-24 pb-8">
           <Card className="w-full max-w-md p-8">
             <div className="text-center mb-8">
@@ -1074,7 +1074,7 @@ const Admin = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-muted/30">
-      
+      <Header />
       <main className="flex-1 pt-24 pb-8">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
