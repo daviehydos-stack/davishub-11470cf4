@@ -24,8 +24,7 @@ const navItems = [
 ];
 
 export function AppSidebar() {
-  const { state, setOpenMobile } = useSidebar();
-  const collapsed = state === "collapsed";
+  const { setOpenMobile, isMobile } = useSidebar();
   const location = useLocation();
 
   const isActive = (path: string) => {
