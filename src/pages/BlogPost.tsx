@@ -204,7 +204,7 @@ const BlogPost = () => {
     pageSeo?.meta_description ||
     blogPost?.meta_description ||
     blogPost?.excerpt ||
-    "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism.";
+    "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism.";
   const ogImage = pageSeo?.og_image || blogPost?.og_image || blogPost?.featured_image || undefined;
   const seoKeywords =
     pageSeo?.keywords ||

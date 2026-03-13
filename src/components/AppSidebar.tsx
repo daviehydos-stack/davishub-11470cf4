@@ -24,8 +24,7 @@ const navItems = [
 ];
 
 export function AppSidebar() {
-  const { state, setOpenMobile } = useSidebar();
-  const collapsed = state === "collapsed";
+  const { setOpenMobile, isMobile } = useSidebar();
   const location = useLocation();
 
   const isActive = (path: string) => {
@@ -72,7 +71,7 @@ export function AppSidebar() {
                         }`}
                       >
                         <item.icon className="h-5 w-5" />
-                        {!collapsed && <span className="text-base">{item.title}</span>}
+                        <span className="text-base">{item.title}</span>
                       </a>
                     ) : (
                       <NavLink
@@ -83,7 +82,7 @@ export function AppSidebar() {
                         activeClassName="bg-primary/10 text-primary font-semibold"
                       >
                         <item.icon className="h-5 w-5" />
-                        {!collapsed && <span className="text-base">{item.title}</span>}
+                        <span className="text-base">{item.title}</span>
                       </NavLink>
                     )}
                   </SidebarMenuButton>

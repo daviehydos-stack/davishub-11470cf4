@@ -38,9 +38,9 @@ export default function Articles() {
   return (
     <>
       <Helmet>
-        <title>AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT</title>
-        <meta name="description" content="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
-        <meta name="robots" content="index, follow" />
+        <title>AZANI INTERNET SERVICE PROVIDER | ARTICLES</title>
+        <meta name="description" content="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://www.azaniispproject.co.ke/articles" />
       </Helmet>
 

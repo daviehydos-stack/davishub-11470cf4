@@ -101,25 +101,10 @@ const KcseProject = () => {
     <div className="flex min-h-screen flex-col">
       <SEOHead
         title="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        description="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
         canonical="https://www.azaniispproject.co.ke/kcse-2026-project"
         ogTitle="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        ogDescription="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
-        keywords={[
-          "KCSE 2026 Computer Studies Project",
-          "Azani ISP Information System",
-          "KCSE 2026 project download",
-          "Azani Internet Service Provider",
-          "KCSE Computer Project 2026",
-          "Paper 451/3 2026",
-          "MS Access KCSE project",
-          "KCSE Milestone 1 and 2",
-          "computer studies project Kenya",
-          "KNEC computer project 2026",
-          "KCSE project free download",
-          "Azani ISP database system",
-          "KCSE 2026 Paper 3",
-        ]}
+        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
       />
 
       {/* JSON-LD for this page */}
