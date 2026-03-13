@@ -17,7 +17,7 @@ const NotFound = () => {
     <div className="flex min-h-screen flex-col">
       <SEOHead
         title="Page Not Found | AZANI INTERNET SERVICE PROVIDER"
-        description="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
         noindex={true}
       />
       

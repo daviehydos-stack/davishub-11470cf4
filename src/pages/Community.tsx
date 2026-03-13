@@ -165,7 +165,7 @@ const Community = () => {
   const filteredDiscussions = discussions.filter(d => d.title.toLowerCase().includes(searchQuery.toLowerCase()) || d.content.toLowerCase().includes(searchQuery.toLowerCase()));
   if (selectedDiscussion) {
     return <div className="flex min-h-screen flex-col">
-        <SEOHead title={`${selectedDiscussion.title} | AZANI INTERNET SERVICE PROVIDER`} description="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
+        <SEOHead title={`${selectedDiscussion.title} | AZANI INTERNET SERVICE PROVIDER | COMMUNITY`} description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism." />
         
         <main className="flex-1 pt-16">
           <div className="container mx-auto px-4 py-8">

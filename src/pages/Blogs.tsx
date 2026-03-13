@@ -89,19 +89,12 @@ const Blogs = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title={seo?.meta_title || "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"}
-        description={seo?.meta_description || "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
+        title={seo?.meta_title || "AZANI INTERNET SERVICE PROVIDER | BLOG"}
+        description={seo?.meta_description || "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
         canonical={seo?.canonical_url || "https://www.azaniispproject.co.ke/blogs"}
-        ogTitle={seo?.og_title || "AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"}
-        ogDescription={seo?.og_description || "Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
+        ogTitle={seo?.og_title || "AZANI INTERNET SERVICE PROVIDER | BLOG"}
+        ogDescription={seo?.og_description || "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."}
         ogImage={seo?.og_image || "https://www.azaniispproject.co.ke/azani.jpg"}
-        keywords={seo?.keywords || [
-          "KCSE 2026 Computer Studies Project",
-          "Azani Internet Service Provider",
-          "Azani ISP",
-          "KCSE project download",
-          "Milestone 1 and 2",
-        ]}
       />
       
       <main className="flex-1 pt-16">

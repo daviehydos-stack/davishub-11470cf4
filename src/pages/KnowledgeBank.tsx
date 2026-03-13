@@ -16,27 +16,10 @@ const KnowledgeBank = () => {
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 overflow-x-hidden">
       <SEOHead
         title="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        description="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
+        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
         canonical="https://www.azaniispproject.co.ke/kcse"
         ogTitle="AZANI INTERNET SERVICE PROVIDER | KCSE 2026 COMPUTER STUDIES PROJECT"
-        ogDescription="Azani Internet Service Provider. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
-        keywords={[
-          "KCSE 2026 Computer Project",
-          "Azani ISP Project",
-          "Azani Internet Service Provider",
-          "KCSE 451/3",
-          "Computer Studies Project Kenya",
-          "MS Access Database Project",
-          "KCSE Database System",
-          "Computer Project Documentation",
-          "KCSE Milestone 1",
-          "KCSE Milestone 2",
-          "Database Tables Design",
-          "ER Diagrams KCSE",
-          "System Flowcharts",
-          "KNEC Computer Project",
-          "2026 KCSE Project Guide"
-        ]}
+        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now for Free. Milestone 1 and 2 Available. Zero Plagiarism."
       />
       
       <main className="flex-1 pt-20 w-full max-w-full">
