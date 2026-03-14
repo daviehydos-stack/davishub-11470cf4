@@ -152,7 +152,7 @@ const KcseComputerStudies = () => {
         canonical="https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project"
         ogTitle="KCSE 2026 COMPUTER STUDIES PROJECT | Free Milestone 1 & 2 Download"
         ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2. Zero Plagiarism. Download Now."
-        ogImage="https://www.azaniispproject.co.ke/azani.jpg"
+        ogImage="https://www.azaniispproject.co.ke/og-image.jpg"
         keywords={[
           "KCSE 2026 Computer Studies Project",
           "KCSE 2026 COMPUTER STUDIES PROJECT",

@@ -116,7 +116,7 @@ const Blogs = () => {
             : seo?.og_description ||
               "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free guides and tutorials."
         }
-        ogImage={seo?.og_image || "https://www.azaniispproject.co.ke/azani.jpg"}
+        ogImage={seo?.og_image || "https://www.azaniispproject.co.ke/og-image.jpg"}
         keywords={
           activeTag
             ? [activeTag, "KCSE 2026", "Computer Studies Project", "Azani ISP", "Milestone 1", "Milestone 2"]
