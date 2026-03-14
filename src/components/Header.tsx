@@ -70,7 +70,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="eager" src="/favicon.png" />
+            <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="eager" src="/lovable-uploads/fd494ada-9c5d-4b7c-afdb-9a7c55eaa793.webp" />
             <span className="font-display text-xl font-bold">
               Azani<span className="text-primary">ISP</span>
             </span>
@@ -78,7 +78,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => link.href.startsWith("/#") ? <a key={link.href} href={link.href} className={cn("px-4 py-2 rounded-lg text-sm font-medium transition-colors", "text-muted-foreground hover:text-foreground hover:bg-secondary/50")} onClick={e => handleSmoothScroll(e, link.href)}>
+            {navLinks.map((link) => link.href.startsWith("/#") ? <a key={link.href} href={link.href} className={cn("px-4 py-2 rounded-lg text-sm font-medium transition-colors", "text-muted-foreground hover:text-foreground hover:bg-secondary/50")} onClick={(e) => handleSmoothScroll(e, link.href)}>
                   {link.label}
                 </a> : <Link key={link.href} to={link.href} className={cn("px-4 py-2 rounded-lg text-sm font-medium transition-colors", location.pathname === link.href ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/50")} onClick={handleNavClick}>
                   {link.label}
@@ -106,7 +106,7 @@ export function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
-            {navLinks.map(link => link.href.startsWith("/#") ? <a key={link.href} href={link.href} className={cn("px-4 py-3 rounded-lg text-sm font-medium transition-colors", "text-muted-foreground hover:text-foreground hover:bg-secondary/50")} onClick={e => handleSmoothScroll(e, link.href)}>
+            {navLinks.map((link) => link.href.startsWith("/#") ? <a key={link.href} href={link.href} className={cn("px-4 py-3 rounded-lg text-sm font-medium transition-colors", "text-muted-foreground hover:text-foreground hover:bg-secondary/50")} onClick={(e) => handleSmoothScroll(e, link.href)}>
                   {link.label}
                 </a> : <Link key={link.href} to={link.href} className={cn("px-4 py-3 rounded-lg text-sm font-medium transition-colors", location.pathname === link.href ? "text-foreground bg-secondary" : "text-muted-foreground hover:text-foreground hover:bg-secondary/50")} onClick={handleNavClick}>
                   {link.label}
