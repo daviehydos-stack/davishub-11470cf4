@@ -70,7 +70,11 @@ export function Footer() {
               )}
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                hello@azaniispproject.co.ke
+                <a href="mailto:hello@azaniispproject.co.ke" className="hover:text-foreground transition-colors">hello@azaniispproject.co.ke</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+254115475543" className="hover:text-foreground transition-colors">0115 475 543</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
