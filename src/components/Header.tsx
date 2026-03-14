@@ -70,7 +70,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="eager" src="/lovable-uploads/fd494ada-9c5d-4b7c-afdb-9a7c55eaa793.webp" />
+            <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="eager" src="/lovable-uploads/4910ae35-3b9c-4675-84d8-e600896dfc4f.webp" />
             <span className="font-display text-xl font-bold">
               Azani<span className="text-primary">ISP</span>
             </span>
