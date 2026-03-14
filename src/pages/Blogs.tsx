@@ -91,43 +91,43 @@ const Blogs = () => {
       <SEOHead
         title={
           activeTag
-            ? `${activeTag} ISP Project Guides`
-            : seo?.meta_title || "ISP Project Resources & Guides"
+            ? `${activeTag} | KCSE 2026 Project Guides | Azani ISP INFORMATION SYSTEM`
+            : seo?.meta_title || "KCSE 2026 Project Guides & Articles | Azani ISP INFORMATION SYSTEM"
         }
         description={
           activeTag
-            ? `Read ISP project guides tagged "${activeTag}". Database design, network management, and project support.`
+            ? `Read KCSE 2026 Computer Studies project guides tagged "${activeTag}". Azani Internet Service Provider Information System tutorials and resources.`
             : seo?.meta_description ||
-              "Expert guides and resources for ISP management systems. Learn database design, network concepts, and project documentation tips."
+              "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project guides, tutorials, and articles. Free Download Milestone 1 and Milestone 2."
         }
         canonical={
           activeTag
-            ? `https://azaniispproject.co.ke/tags/${encodeURIComponent(activeTag)}`
-            : seo?.canonical_url || "https://azaniispproject.co.ke/blogs"
+            ? `https://www.azaniispproject.co.ke/tags/${encodeURIComponent(activeTag)}`
+            : seo?.canonical_url || "https://www.azaniispproject.co.ke/blogs"
         }
         ogTitle={
           activeTag
-            ? `${activeTag} Guides | Azani ISP Project`
-            : seo?.og_title || "ISP Project Guides | Azani ISP Project"
+            ? `${activeTag} Guides | Azani ISP INFORMATION SYSTEM`
+            : seo?.og_title || "KCSE 2026 Project Guides | Azani ISP INFORMATION SYSTEM"
         }
         ogDescription={
           activeTag
-            ? `Browse guides tagged "${activeTag}" and find related ISP project materials.`
+            ? `Browse KCSE 2026 guides tagged "${activeTag}". Azani ISP project materials and tutorials.`
             : seo?.og_description ||
-              "Step-by-step guides to help you ace your ISP project. Database design, network management, and documentation resources."
+              "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free guides and tutorials."
         }
-        ogImage={seo?.og_image || "https://azaniispproject.co.ke/og-image.jpg"}
+        ogImage={seo?.og_image || "https://www.azaniispproject.co.ke/azani.jpg"}
         keywords={
           activeTag
-            ? [activeTag, "ISP", "Computer Science", "Kenya", "Project"]
+            ? [activeTag, "KCSE 2026", "Computer Studies Project", "Azani ISP", "Milestone 1", "Milestone 2"]
             : seo?.keywords || [
-                "ISP project",
-                "Internet Service Provider",
-                "database project",
-                "network management",
-                "Kenya education",
-                "2025 project",
-                "student guides",
+                "KCSE 2026 Computer Studies Project",
+                "Azani ISP guides",
+                "Azani Internet Service Provider",
+                "KCSE project tutorials",
+                "MS Access project",
+                "Milestone 1 and 2",
+                "KNEC computer project",
               ]
         }
       />

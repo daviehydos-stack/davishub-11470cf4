@@ -67,8 +67,8 @@ const Index = () => {
         title={seo?.meta_title || defaultTitle}
         description={seo?.meta_description || defaultDescription}
         canonical={seo?.canonical_url || defaultCanonical}
-        ogTitle={seo?.og_title || "AZANI INTERNET SERVICE PROVIDER INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT"}
-        ogDescription={seo?.og_description || "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Download Now. Zero Plagiarism. Free Download."}
+        ogTitle={seo?.og_title || "Azani ISP INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT"}
+        ogDescription={seo?.og_description || "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2. Zero Plagiarism. Download Now."}
         ogImage={seo?.og_image || defaultImage}
         keywords={seo?.keywords || defaultKeywords}
       />

@@ -147,11 +147,11 @@ const KcseComputerStudies = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <SEOHead
-        title="KCSE 2026 COMPUTER STUDIES PROJECT | Free Milestone 1 & 2 Download | Azani ISP"
-        description="KCSE 2026 Computer Studies Project. Azani Internet Service Provider Information System. Free Milestone 1 and 2. Download Documentation and Database System. Get a copy today. Zero Plagiarism. KNEC Aligned."
+        title="KCSE 2026 COMPUTER STUDIES PROJECT | Free Milestone 1 & 2 | Azani ISP INFORMATION SYSTEM"
+        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2. Zero Plagiarism. Download Now. Get Documentation and Database System today."
         canonical="https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project"
-        ogTitle="KCSE 2026 COMPUTER STUDIES PROJECT — Free Milestone 1 & 2 Download"
-        ogDescription="KCSE 2026 Computer Studies Project. Azani Internet Service Provider Information System. Free Milestone 1 and 2. Download Documentation and Database System. Get a copy today."
+        ogTitle="KCSE 2026 COMPUTER STUDIES PROJECT | Free Milestone 1 & 2 Download"
+        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2. Zero Plagiarism. Download Now."
         ogImage="https://www.azaniispproject.co.ke/azani.jpg"
         keywords={[
           "KCSE 2026 Computer Studies Project",
