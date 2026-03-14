@@ -11,6 +11,10 @@
     
     <!-- Preload hero background image (CRITICAL for LCP) -->
     <link rel="preload" as="image" href="/hero-background.webp" fetchpriority="high" type="image/webp" />
+
+    <!-- Preload og-image for social crawlers -->
+    <link rel="preload" as="image" href="/og-image.jpg" />
+    <link rel="preload" as="image" href="/meta.jpg" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -40,7 +44,7 @@
     <!-- Default title - React Helmet will override per page -->
     <title>Azani ISP INFORMATION SYSTEM | KCSE 2026 COMPUTER STUDIES PROJECT</title>
     
-    <!-- Canonical URL -->
+    <!-- ✅ FIXED: Canonical URL - consistent www -->
     <link rel="canonical" href="https://www.azaniispproject.co.ke/" />
     
     <!-- Open Graph / Facebook / WhatsApp -->
@@ -67,15 +71,35 @@
       <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </noscript>
     
-    <!-- JSON-LD Structured Data: Organization only (site-wide) -->
-    <!-- SoftwareApplication schema lives in the homepage component only -->
+    <!-- ✅ FIXED: JSON-LD Structured Data - all URLs now use www -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Azani ISP Project",
-      "url": "https://azaniispproject.co.ke",
-      "logo": "https://www.azaniispproject.co.ke/android-chrome-512x512.png"
+      "url": "https://www.azaniispproject.co.ke",
+      "logo": "https://www.azaniispproject.co.ke/android-chrome-512x512.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+254115475543",
+        "contactType": "customer support",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@AZANIISPINFORMATIONSYSTEM"
+      ]
+    }
+    </script>
+
+    <!-- ✅ ADDED: WebSite schema for Sitelinks Search Box -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Azani ISP Project",
+      "url": "https://www.azaniispproject.co.ke",
+      "description": "Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project.",
+      "inLanguage": "en"
     }
     </script>
     
