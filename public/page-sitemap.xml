@@ -12,6 +12,10 @@
       <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
       <image:title>Azani Internet Service Provider Information System - KCSE 2026 Computer Studies Project</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/og-image.jpg</image:loc>
+      <image:title>Azani ISP KCSE 2026 Project - Download Milestone 1 and 2</image:title>
+    </image:image>
   </url>
 
   <!-- Primary SEO Landing Page -->
@@ -22,7 +26,7 @@
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
-      <image:title>KCSE 2026 Computer Studies Project - Azani ISP</image:title>
+      <image:title>KCSE 2026 Computer Studies Project - Azani ISP Information System</image:title>
     </image:image>
   </url>
 
@@ -32,9 +36,13 @@
     <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:title>KCSE 2026 Project Overview - Azani ISP Database System</image:title>
+    </image:image>
   </url>
 
-  <!-- Knowledge Bank -->
+  <!-- Knowledge Bank / KCSE Guide -->
   <url>
     <loc>https://www.azaniispproject.co.ke/kcse</loc>
     <lastmod>2026-03-14</lastmod>
@@ -42,7 +50,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Knowledge Bank (alternate) -->
+  <!-- Knowledge Bank (alternate URL) -->
   <url>
     <loc>https://www.azaniispproject.co.ke/knowledge-bank</loc>
     <lastmod>2026-03-14</lastmod>
@@ -58,7 +66,7 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Community -->
+  <!-- Community Forum -->
   <url>
     <loc>https://www.azaniispproject.co.ke/community</loc>
     <lastmod>2026-03-14</lastmod>

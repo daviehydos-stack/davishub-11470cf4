@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://www.azaniispproject.co.ke/</loc>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:title>Azani Internet Service Provider Information System - KCSE 2026</image:title>
+      <image:caption>Azani ISP Information System KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/og-image.jpg</image:loc>
+      <image:title>Azani ISP KCSE 2026 Computer Studies Project</image:title>
+      <image:caption>Download the complete Azani Internet Service Provider Information System for KCSE 2026.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/meta.jpg</image:loc>
+      <image:title>KCSE 2026 Computer Studies Project - Azani ISP</image:title>
+      <image:caption>KCSE 2026 Computer Studies Project Paper 451/3 - Azani Internet Service Provider Information System.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/favicon.png</image:loc>
+      <image:title>Azani ISP Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/hero-background.webp</image:loc>
+      <image:title>Azani ISP KCSE 2026 Project Hero Background</image:title>
+    </image:image>
+  </url>
+
+  <!-- KCSE 2026 Project Page Images -->
+  <url>
+    <loc>https://www.azaniispproject.co.ke/kcse-2026-computer-studies-project</loc>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:title>KCSE 2026 Computer Studies Project - Azani ISP Information System</image:title>
+      <image:caption>Complete KCSE 2026 Computer Studies Project with documentation and MS Access database system.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/lovable-uploads/2ce88f57-9148-449d-b1ec-c167b50e692a.jpg</image:loc>
+      <image:title>Azani ISP Database System Screenshots</image:title>
+      <image:caption>MS Access Database screenshots for KCSE 2026 Computer Studies Project.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/lovable-uploads/23029cdd-ff38-43b2-a168-923327c0d0d8.jpg</image:loc>
+      <image:title>Azani ISP Project Documentation</image:title>
+      <image:caption>Documentation and milestone guides for KCSE 2026 Computer Studies Project.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- KCSE 2026 Project Overview -->
+  <url>
+    <loc>https://www.azaniispproject.co.ke/kcse-2026-project</loc>
+    <image:image>
+      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:title>KCSE 2026 Project - Azani Internet Service Provider Information System</image:title>
+      <image:caption>Free download KCSE 2026 Azani ISP project. Milestone 1 documentation and Milestone 2 database system.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
