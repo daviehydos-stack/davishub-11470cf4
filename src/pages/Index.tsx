@@ -1,21 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
+import { SEOHead } from "@/components/SEOHead";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { supabase } from "@/integrations/supabase/client";
+
+// ✅ Above-fold: load immediately
 import { AzaniAboutSection } from "@/components/AzaniAboutSection";
 import { DownloadSection } from "@/components/DownloadSection";
-import { MSAccessSection } from "@/components/MSAccessSection";
-import { FormsQueriesSection } from "@/components/FormsQueriesSection";
-import { SampleReportsSection } from "@/components/SampleReportsSection";
-import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
-import { WhatsIncludedSection } from "@/components/WhatsIncludedSection";
-import GuidesSection from "@/components/GuidesSection";
-import { FreeResourcesSection } from "@/components/FreeResourcesSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { PastProjectsSection } from "@/components/PastProjectsSection";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { SEOHead } from "@/components/SEOHead";
-import { supabase } from "@/integrations/supabase/client";
+
+// ✅ Below-fold: lazy load (saves ~109 KiB on initial load)
+const MSAccessSection = lazy(() => import("@/components/MSAccessSection").then(m => ({ default: m.MSAccessSection })));
+const FormsQueriesSection = lazy(() => import("@/components/FormsQueriesSection").then(m => ({ default: m.FormsQueriesSection })));
+const SampleReportsSection = lazy(() => import("@/components/SampleReportsSection").then(m => ({ default: m.SampleReportsSection })));
+const WhyChooseUsSection = lazy(() => import("@/components/WhyChooseUsSection").then(m => ({ default: m.WhyChooseUsSection })));
+const WhatsIncludedSection = lazy(() => import("@/components/WhatsIncludedSection").then(m => ({ default: m.WhatsIncludedSection })));
+const GuidesSection = lazy(() => import("@/components/GuidesSection"));
+const FreeResourcesSection = lazy(() => import("@/components/FreeResourcesSection").then(m => ({ default: m.FreeResourcesSection })));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection").then(m => ({ default: m.TestimonialsSection })));
+const PastProjectsSection = lazy(() => import("@/components/PastProjectsSection").then(m => ({ default: m.PastProjectsSection })));
+
+// ✅ Simple fallback - no layout shift
+const SectionFallback = () => (
+  <div style={{ minHeight: '200px', background: 'transparent' }} aria-hidden="true" />
+);
 
 interface SEOSettings {
   meta_title: string | null;
@@ -31,16 +40,17 @@ const Index = () => {
   const [seo, setSeo] = useState<SEOSettings | null>(null);
 
   useEffect(() => {
-    const fetchSEO = async () => {
+    // ✅ Defer SEO fetch slightly to not compete with hero render
+    const timer = setTimeout(async () => {
       const { data } = await supabase
         .from('seo_settings')
         .select('*')
         .eq('page_path', '/')
         .maybeSingle();
-      
       if (data) setSeo(data);
-    };
-    fetchSEO();
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Default SEO values - optimized for target keywords
@@ -74,18 +84,39 @@ const Index = () => {
       />
       <Header />
       <main className="flex-1 pt-16">
+        {/* ✅ Above fold - loads immediately, no Supabase calls */}
         <HeroSection />
         <AzaniAboutSection />
         <DownloadSection />
-        <PastProjectsSection />
-        <MSAccessSection />
-        <FormsQueriesSection />
-        <SampleReportsSection />
-        <WhyChooseUsSection />
-        <WhatsIncludedSection />
-        <GuidesSection />
-        <FreeResourcesSection />
-        <TestimonialsSection />
+
+        {/* ✅ Below fold - lazy loaded after hero is visible */}
+        <Suspense fallback={<SectionFallback />}>
+          <PastProjectsSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <MSAccessSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <FormsQueriesSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <SampleReportsSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <WhyChooseUsSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <WhatsIncludedSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <GuidesSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <FreeResourcesSection />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <TestimonialsSection />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />
