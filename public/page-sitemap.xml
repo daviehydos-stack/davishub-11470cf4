@@ -9,7 +9,7 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:loc>https://www.azaniispproject.co.ke/og-image.jpg</image:loc>
       <image:title>Azani Internet Service Provider Information System - KCSE 2026 Computer Studies Project</image:title>
     </image:image>
     <image:image>
@@ -25,7 +25,7 @@
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:loc>https://www.azaniispproject.co.ke/og-image.jpg</image:loc>
       <image:title>KCSE 2026 Computer Studies Project - Azani ISP Information System</image:title>
     </image:image>
   </url>
@@ -37,7 +37,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
-      <image:loc>https://www.azaniispproject.co.ke/azani.jpg</image:loc>
+      <image:loc>https://www.azaniispproject.co.ke/og-image.jpg</image:loc>
       <image:title>KCSE 2026 Project Overview - Azani ISP Database System</image:title>
     </image:image>
   </url>
