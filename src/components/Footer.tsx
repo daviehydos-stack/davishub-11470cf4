@@ -6,7 +6,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   const { whatsappNumber, getActiveMode } = useSiteSettings();
   const activeMode = getActiveMode();
-  
+
   const quickLinks = [{
     href: "/",
     label: "Home"
@@ -30,7 +30,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="lazy" src="/favicon.png" />
+              <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="lazy" src="/lovable-uploads/7fa7108f-5d1f-41e6-8d34-bcb309a37640.webp" />
               <span className="font-display text-xl font-bold text-foreground">
                 Azani<span className="text-primary">ISP</span>
               </span>
@@ -42,7 +42,7 @@ export function Footer() {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-3">
-              {quickLinks.map(link => <li key={link.href}>
+              {quickLinks.map((link) => <li key={link.href}>
                   <Link to={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.label}
                   </Link>
@@ -54,8 +54,8 @@ export function Footer() {
             <h3 className="font-display font-semibold text-lg mb-4 text-foreground">Contact</h3>
             <ul className="space-y-3 text-muted-foreground">
               {/* Only show WhatsApp contact when in whatsapp mode */}
-              {activeMode === "whatsapp" && (
-                <>
+              {activeMode === "whatsapp" &&
+            <>
                   <li className="flex items-center gap-2">
                     <MessageCircle className="w-4 h-4 text-primary" />
                     <a href={`https://wa.me/${whatsappNumber.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
@@ -67,14 +67,10 @@ export function Footer() {
                     <span className="font-medium text-foreground">Call/WhatsApp for Orders</span>
                   </li>
                 </>
-              )}
+            }
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:hello@azaniispproject.co.ke" className="hover:text-foreground transition-colors">hello@azaniispproject.co.ke</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+254115475543" className="hover:text-foreground transition-colors">0115 475 543</a>
+                hello@azaniispproject.co.ke
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
