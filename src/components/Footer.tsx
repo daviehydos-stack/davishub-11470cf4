@@ -30,7 +30,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="lazy" src="/lovable-uploads/d85ceef7-9044-4d12-b562-9daa5a113d3e.png" />
+              <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="lazy" src="/favicon.png" />
               <span className="font-display text-xl font-bold text-foreground">
                 Azani<span className="text-primary">ISP</span>
               </span>
@@ -70,7 +70,11 @@ export function Footer() {
               )}
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                hello@azaniispproject.co.ke
+                <a href="mailto:hello@azaniispproject.co.ke" className="hover:text-foreground transition-colors">hello@azaniispproject.co.ke</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+254115475543" className="hover:text-foreground transition-colors">0115 475 543</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />

@@ -1,9 +1,10 @@
-# Azani ISP Project - Enterprise-Grade Robots.txt
+# Enterprise-Grade Robots.txt for Azani ISP Project
+# Optimized for AI Crawlers, LLMs, and Traditional Search Engines
 # Website: https://www.azaniispproject.co.ke
 # Last Updated: March 2026
 
 # ============================================================================
-# SECTION 1: AI & LLM CRAWLERS
+# SECTION 1: AI & LLM CRAWLERS (OpenAI, Google AI, Anthropic, Perplexity, etc.)
 # ============================================================================
 
 # OpenAI GPTBot (ChatGPT, GPT-4, etc.)
@@ -11,7 +12,7 @@ User-agent: GPTBot
 Allow: /
 Crawl-delay: 1
 
-# OpenAI ChatGPT-User
+# OpenAI ChatGPT-User (ChatGPT browsing)
 User-agent: ChatGPT-User
 Allow: /
 Crawl-delay: 1
@@ -26,6 +27,7 @@ User-agent: anthropic-ai
 Allow: /
 Crawl-delay: 1
 
+# Anthropic ClaudeBot
 User-agent: ClaudeBot
 Allow: /
 Crawl-delay: 1
@@ -40,25 +42,42 @@ User-agent: cohere-ai
 Allow: /
 Crawl-delay: 1
 
-# Meta AI
+# AI2Bot (Allen Institute for AI)
+User-agent: AI2Bot
+Allow: /
+Crawl-delay: 1
+
+# Meta AI (Facebook/Meta AI)
 User-agent: FacebookBot
 Allow: /
 Crawl-delay: 1
 
+# Meta AI (Meta-ExternalAgent)
 User-agent: Meta-ExternalAgent
 Allow: /
 Crawl-delay: 1
 
-# Apple Intelligence / Siri
+# Applebot (Apple Intelligence, Siri)
 User-agent: Applebot
 Allow: /
 Crawl-delay: 1
 
+# Applebot Extended (Apple AI features)
 User-agent: Applebot-Extended
 Allow: /
 Crawl-delay: 1
 
-# Common Crawl (AI training data)
+# Amazon Alexa / Internet Archive
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 1
+
+# Diffbot (AI-powered web data extraction)
+User-agent: Diffbot
+Allow: /
+Crawl-delay: 1
+
+# Common Crawl (used by many AI models for training)
 User-agent: CCBot
 Allow: /
 Crawl-delay: 1
@@ -68,18 +87,8 @@ User-agent: Bytespider
 Allow: /
 Crawl-delay: 1
 
-# You.com AI Search
+# YouBot (You.com AI search)
 User-agent: YouBot
-Allow: /
-Crawl-delay: 1
-
-# Diffbot
-User-agent: Diffbot
-Allow: /
-Crawl-delay: 1
-
-# AI2Bot (Allen Institute for AI)
-User-agent: AI2Bot
 Allow: /
 Crawl-delay: 1
 
@@ -95,6 +104,11 @@ Crawl-delay: 1
 # Google Images
 User-agent: Googlebot-Image
 Allow: /
+Allow: /lovable-uploads/
+Allow: /azani.jpg
+Allow: /meta.jpg
+Allow: /og-image.jpg
+Allow: /hero-background.webp
 Crawl-delay: 1
 
 # Google Mobile
@@ -127,12 +141,12 @@ User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
 
-# Baidu
+# Baidu (China)
 User-agent: Baiduspider
 Allow: /
 Crawl-delay: 1
 
-# Yandex
+# Yandex (Russia)
 User-agent: YandexBot
 Allow: /
 Crawl-delay: 1
@@ -141,26 +155,32 @@ Crawl-delay: 1
 # SECTION 3: SOCIAL MEDIA CRAWLERS
 # ============================================================================
 
+# Twitter/X
 User-agent: Twitterbot
 Allow: /
 Crawl-delay: 1
 
+# Facebook
 User-agent: facebookexternalhit
 Allow: /
 Crawl-delay: 1
 
+# LinkedIn
 User-agent: LinkedInBot
 Allow: /
 Crawl-delay: 1
 
+# Pinterest
 User-agent: Pinterestbot
 Allow: /
 Crawl-delay: 1
 
+# WhatsApp
 User-agent: WhatsApp
 Allow: /
 Crawl-delay: 1
 
+# Telegram
 User-agent: TelegramBot
 Allow: /
 Crawl-delay: 1
@@ -169,10 +189,7 @@ Crawl-delay: 1
 # SECTION 4: ACADEMIC & RESEARCH CRAWLERS
 # ============================================================================
 
-User-agent: ia_archiver
-Allow: /
-Crawl-delay: 1
-
+# Semantic Scholar
 User-agent: SemanticScholarBot
 Allow: /
 Crawl-delay: 1
@@ -181,6 +198,7 @@ Crawl-delay: 1
 # SECTION 5: ALL OTHER BOTS (Default Policy)
 # ============================================================================
 
+# Allow all other well-behaved bots
 User-agent: *
 Allow: /
 Allow: /kcse-2026-computer-studies-project
@@ -189,13 +207,49 @@ Allow: /kcse
 Allow: /knowledge-bank
 Allow: /blogs
 Allow: /community
+Allow: /lovable-uploads/
+
+# Disallow private/admin areas
 Disallow: /admin
 Disallow: /*?preview=
 Disallow: /*?s=
 
 # ============================================================================
-# SECTION 6: SITEMAPS
+# SECTION 6: SITEMAP LOCATIONS
 # ============================================================================
 
+# Sitemap Index (contains all sub-sitemaps)
+Sitemap: https://www.azaniispproject.co.ke/sitemap_index.xml
+
+# Individual Sitemaps
 Sitemap: https://www.azaniispproject.co.ke/sitemap.xml
-Sitemap: https://www.azaniispproject.co.ke/sitemap-posts.xml
+Sitemap: https://www.azaniispproject.co.ke/page-sitemap.xml
+Sitemap: https://www.azaniispproject.co.ke/post-sitemap.xml
+Sitemap: https://www.azaniispproject.co.ke/image-sitemap.xml
+
+# ============================================================================
+# SECTION 7: CRAWL OPTIMIZATION & CONTACT
+# ============================================================================
+
+# This robots.txt is designed to:
+# 1. Welcome ALL AI crawlers and LLMs (ChatGPT, Google AI, Claude, etc.)
+# 2. Allow traditional search engines full access
+# 3. Protect admin areas from indexing
+# 4. Prevent duplicate content indexing
+# 5. Provide clear sitemap locations for efficient crawling
+# 6. Use crawl-delay to be respectful of server resources
+#
+# For maximum AI visibility:
+# - All public content is accessible
+# - Structured data (JSON-LD) is fully crawlable
+# - Meta tags and semantic HTML are indexed
+# - Sitemap provides clear content structure
+# - Images are fully indexable
+#
+# Website: https://www.azaniispproject.co.ke
+# Shop: https://shop.azaniispproject.co.ke
+# Contact: hello@azaniispproject.co.ke
+# Phone: +254115475543
+# WhatsApp: +254115475543
+# YouTube: https://www.youtube.com/@AZANIISPINFORMATIONSYSTEM
+# Location: Nairobi, Kenya
