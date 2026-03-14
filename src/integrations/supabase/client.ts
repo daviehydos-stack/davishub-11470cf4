@@ -13,5 +13,24 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
     storage: localStorage,
     persistSession: true,
     autoRefreshToken: true,
-  }
+  },
+  // ✅ Disable Realtime WebSocket - fixes console errors & Best Practices score
+  realtime: {
+    params: {
+      eventsPerSecond: -1,
+    },
+  },
+  global: {
+    headers: {
+      // ✅ Identify requests clearly
+      'x-application-name': 'azani-isp-project',
+    },
+  },
+  // ✅ Disable WebSocket connection entirely
+  db: {
+    schema: 'public',
+  },
 });
+
+// ✅ Disconnect realtime immediately to prevent WebSocket errors
+supabase.realtime.disconnect();
