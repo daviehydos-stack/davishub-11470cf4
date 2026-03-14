@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Blog posts are dynamically generated via the sitemap edge function -->
+  <!-- This static fallback ensures Google can always find blog content -->
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://www.azaniispproject.co.ke/blogs</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
