@@ -30,7 +30,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="lazy" src="/lovable-uploads/242f4420-443e-4442-af06-0d2ea542f866.webp" />
+              <img alt="Azani ISP Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} loading="lazy" src="/lovable-uploads/01270420-b6d4-4cab-8692-39144570551d.webp" />
               <span className="font-display text-xl font-bold text-foreground">
                 Azani<span className="text-primary">ISP</span>
               </span>
