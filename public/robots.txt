@@ -1,15 +1,201 @@
-# Azani ISP Project - robots.txt
-# https://www.azaniispproject.co.ke
+# Azani ISP Project - Enterprise-Grade Robots.txt
+# Website: https://www.azaniispproject.co.ke
+# Last Updated: March 2026
+
+# ============================================================================
+# SECTION 1: AI & LLM CRAWLERS
+# ============================================================================
+
+# OpenAI GPTBot (ChatGPT, GPT-4, etc.)
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# OpenAI ChatGPT-User
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+# Google AI (Bard, Gemini, Google AI Overview)
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 1
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 1
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 1
+
+# Common Crawl (AI training data)
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+# Bytespider (ByteDance/TikTok AI)
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 1
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+Crawl-delay: 1
+
+# AI2Bot (Allen Institute for AI)
+User-agent: AI2Bot
+Allow: /
+Crawl-delay: 1
+
+# ============================================================================
+# SECTION 2: TRADITIONAL SEARCH ENGINES
+# ============================================================================
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 1
+
+# Google Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
+
+# Bing Search
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bing Preview
+User-agent: BingPreview
+Allow: /
+Crawl-delay: 1
+
+# Microsoft Bing AI (Copilot)
+User-agent: msnbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo Search
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# ============================================================================
+# SECTION 3: SOCIAL MEDIA CRAWLERS
+# ============================================================================
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Pinterestbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 1
+
+User-agent: TelegramBot
+Allow: /
+Crawl-delay: 1
+
+# ============================================================================
+# SECTION 4: ACADEMIC & RESEARCH CRAWLERS
+# ============================================================================
+
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 1
+
+User-agent: SemanticScholarBot
+Allow: /
+Crawl-delay: 1
+
+# ============================================================================
+# SECTION 5: ALL OTHER BOTS (Default Policy)
+# ============================================================================
 
 User-agent: *
 Allow: /
+Allow: /kcse-2026-computer-studies-project
+Allow: /kcse-2026-project
 Allow: /kcse
 Allow: /knowledge-bank
 Allow: /blogs
-Allow: /kcse-2026-project
 Allow: /community
-Allow: /kcse-2026-computer-studies-project
 Disallow: /admin
+Disallow: /*?preview=
+Disallow: /*?s=
 
-# Sitemap
+# ============================================================================
+# SECTION 6: SITEMAPS
+# ============================================================================
+
 Sitemap: https://www.azaniispproject.co.ke/sitemap.xml
+Sitemap: https://www.azaniispproject.co.ke/sitemap-posts.xml
