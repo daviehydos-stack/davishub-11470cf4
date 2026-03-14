@@ -15,11 +15,11 @@ const KnowledgeBank = () => {
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 overflow-x-hidden">
       <SEOHead
-        title="KCSE 2026 Computer Project Complete Guide | Azani ISP Database System"
-        description="Comprehensive guide for KCSE 2026 Computer Studies Project (451/3). Complete documentation on Azani Internet Service Provider Information System - tables, forms, queries, reports, and implementation guide."
+        title="Azani ISP Complete Guide | KCSE 2026 COMPUTER STUDIES PROJECT | Knowledge Bank"
+        description="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2. Complete guide with tables, forms, queries, reports."
         canonical="https://www.azaniispproject.co.ke/kcse"
-        ogTitle="KCSE 2026 Computer Project - Complete Azani ISP Guide & Documentation"
-        ogDescription="Everything you need for the 2026 KCSE Computer Studies Project. Detailed breakdown of database tables, forms, queries, reports, calculations, and system requirements."
+        ogTitle="Azani ISP Complete Guide | KCSE 2026 COMPUTER STUDIES PROJECT"
+        ogDescription="Azani Internet Service Provider Information System. KCSE 2026 Computer Studies Project. Free Download Milestone 1 and Milestone 2. Zero Plagiarism. Download Now."
         keywords={[
           "KCSE 2026 Computer Project",
           "Azani ISP Project",
