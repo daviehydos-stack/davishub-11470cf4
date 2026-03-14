@@ -105,7 +105,7 @@ Crawl-delay: 1
 User-agent: Googlebot-Image
 Allow: /
 Allow: /lovable-uploads/
-Allow: /azani.jpg
+Allow: /og-image.jpg
 Allow: /meta.jpg
 Allow: /og-image.jpg
 Allow: /hero-background.webp
