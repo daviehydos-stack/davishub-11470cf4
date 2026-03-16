@@ -42,7 +42,7 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/kcse" element={<KnowledgeBank />} />
-                <Route path="/knowledge-bank" element={<KnowledgeBank />} />
+                <Route path="/knowledge-bank" element={<Navigate to="/kcse" replace />} />
                 <Route path="/kcse-2026-project" element={<KcseProject />} />
                 <Route path="/kcse-2026-computer-studies-project" element={<KcseComputerStudies />} />
                 <Route path="/blogs" element={<Blogs />} />
