@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
@@ -42,7 +42,7 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/kcse" element={<KnowledgeBank />} />
-                <Route path="/knowledge-bank" element={<KnowledgeBank />} />
+                <Route path="/knowledge-bank" element={<Navigate to="/kcse" replace />} />
                 <Route path="/kcse-2026-project" element={<KcseProject />} />
                 <Route path="/kcse-2026-computer-studies-project" element={<KcseComputerStudies />} />
                 <Route path="/blogs" element={<Blogs />} />
