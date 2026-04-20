@@ -1133,9 +1133,7 @@ const Admin = () => {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="redirect">
-              <RedirectModePanel refreshSession={refreshSession} />
-            </TabsContent>
+
 
             <TabsContent value="projects">
               <PastProjectsPanel refreshSession={refreshSession} />
