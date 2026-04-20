@@ -10,14 +10,13 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Trash2, Edit, Plus, ArrowLeft, Save, X, Eye, EyeOff, 
-  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen, Sliders, MessageSquare, DollarSign, Repeat
+  Lock, LogOut, Upload, Search, Settings, FileText, ExternalLink, Play, Video, FolderOpen, Sliders, MessageSquare, DollarSign
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PastProjectsPanel } from "@/components/admin/PastProjectsPanel";
 import { SiteSettingsPanel } from "@/components/admin/SiteSettingsPanel";
 import { PricingPanel } from "@/components/admin/PricingPanel";
 import { CommentsPanel } from "@/components/admin/CommentsPanel";
-import { RedirectModePanel } from "@/components/admin/RedirectModePanel";
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import ImageExtension from '@tiptap/extension-image';
@@ -1099,10 +1098,6 @@ const Admin = () => {
 
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="mb-6 grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-wrap h-auto gap-1 p-1">
-              <TabsTrigger value="posts" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
-                <FileText className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Blog</span> Posts
-              </TabsTrigger>
               <TabsTrigger value="posts" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
                 <FileText className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Blog</span> Posts
