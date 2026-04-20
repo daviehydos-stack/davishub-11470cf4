@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { Save, Settings, ExternalLink, MessageCircle, ShoppingCart, AlertTriangle, Clock, PartyPopper } from "lucide-react";
+import { Save, Settings, ExternalLink, MessageCircle, ShoppingCart, AlertTriangle, Clock, PartyPopper, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -22,6 +22,7 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
   const [redirectMode, setRedirectMode] = useState<"shop" | "whatsapp">("shop");
   const [whatsappNumber, setWhatsappNumber] = useState("+254115475543");
   const [holidayMode, setHolidayMode] = useState(false);
+  const [forcingShop, setForcingShop] = useState(false);
 
   useEffect(() => {
     fetchSettings();
@@ -101,8 +102,62 @@ export function SiteSettingsPanel({ refreshSession }: { refreshSession: () => vo
     );
   }
 
+  const handleForceShop = async () => {
+    refreshSession();
+    setForcingShop(true);
+    try {
+      // Turn OFF holiday mode AND set redirect_mode to shop
+      await upsertSetting("holiday_mode", "false", "Holiday mode - forces WhatsApp across all pages");
+      await upsertSetting("redirect_mode", "shop", "Manual redirect mode override");
+      setHolidayMode(false);
+      setRedirectMode("shop");
+      toast.success("🛒 Site switched to Shop mode");
+      fetchSettings();
+    } catch (err) {
+      console.error("Error forcing shop mode:", err);
+      toast.error("Failed to switch to Shop");
+    } finally {
+      setForcingShop(false);
+    }
+  };
+
   return (
     <div className="space-y-4 md:space-y-6">
+      {/* Force Shop Mode — quick action */}
+      <Card className="p-4 md:p-6 border-2 border-emerald-400 dark:border-emerald-700 bg-emerald-50/50 dark:bg-emerald-950/20">
+        <div className="flex items-start gap-3 mb-4">
+          <ShoppingCart className="h-6 w-6 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <h2 className="text-lg md:text-xl font-bold">Shop Mode (Quick Switch)</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              One-click to force the entire site to Shop mode. Turns off Holiday Mode and overrides the time schedule.
+            </p>
+          </div>
+        </div>
+
+        <Button
+          onClick={handleForceShop}
+          disabled={forcingShop}
+          size="lg"
+          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
+        >
+          {forcingShop ? (
+            <>
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+              Switching...
+            </>
+          ) : (
+            <>
+              <ShoppingCart className="mr-2 h-5 w-5" />
+              Switch Site to Shop Now
+            </>
+          )}
+        </Button>
+
+        <p className="text-xs text-muted-foreground mt-3 text-center">
+          Currently: <span className="font-semibold">{holidayMode ? "WhatsApp (Holiday)" : redirectMode === "shop" ? "Shop ✓" : "WhatsApp"}</span>
+        </p>
+      </Card>
       {/* Holiday Mode Card */}
       <Card className="p-4 md:p-6 border-2 border-dashed border-amber-400 dark:border-amber-600">
         <div className="flex items-start gap-3 mb-4">
