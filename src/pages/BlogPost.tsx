@@ -50,7 +50,7 @@ interface SEOSettings {
   robots_directives: string | null;
 }
 
-const SITE_URL = "https://azaniispproject.co.ke";
+const SITE_URL = "https://www.azaniispproject.co.ke";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
