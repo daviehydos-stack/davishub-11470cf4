@@ -1,10 +1,13 @@
 import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
+type ForceMode = "schedule" | "whatsapp" | "shop";
+
 interface SiteSettings {
-  redirectMode: "shop" | "whatsapp";
+  redirectMode: "shop" | "whatsapp"; // legacy compat
   whatsappNumber: string;
-  holidayMode: boolean;
+  holidayMode: boolean; // legacy compat
+  forceMode: ForceMode;
   isLoading: boolean;
 }
 
@@ -18,6 +21,7 @@ const defaultSettings: SiteSettings = {
   redirectMode: "shop",
   whatsappNumber: "+254115475543",
   holidayMode: false,
+  forceMode: "schedule",
   isLoading: true,
 };
 
@@ -29,59 +33,36 @@ const SiteSettingsContext = createContext<SiteSettingsContextType>({
 });
 
 /**
- * Time-based schedule (EAT / UTC+3):
- * WEEKDAYS (Mon-Fri):
- *   00:00–16:00 → shop
- *   16:00–19:00 → whatsapp
- *   19:00–00:00 → shop
- *
- * SATURDAY:
- *   00:00–07:00 → whatsapp
- *   07:00–12:00 → shop
- *   12:00–14:00 → whatsapp
- *   14:00–16:00 → shop
- *   16:00–00:00 (Sun) → whatsapp (handled as sat 16-24)
- *
- * SUNDAY:
- *   00:00–09:30 → whatsapp (carried from sat)
- *   09:30–12:00 → shop
- *   12:00–14:00 → whatsapp
- *   14:00–16:00 → shop
- *   16:00–00:00 → whatsapp
+ * Time-based schedule (EAT / UTC+3) — only used when forceMode === "schedule"
  */
 function getScheduledMode(): "shop" | "whatsapp" {
-  // Get current time in EAT (UTC+3)
   const now = new Date();
-  const eatOffset = 3 * 60; // minutes
+  const eatOffset = 3 * 60;
   const utcMinutes = now.getUTCHours() * 60 + now.getUTCMinutes();
   const eatMinutes = (utcMinutes + eatOffset) % 1440;
   const eatHours = eatMinutes / 60;
 
-  // Get EAT day of week (0=Sun, 6=Sat)
   const utcDay = now.getUTCDay();
   const eatDay = (utcMinutes + eatOffset >= 1440) ? (utcDay + 1) % 7 : utcDay;
 
-  // Weekdays: Mon(1) - Fri(5)
   if (eatDay >= 1 && eatDay <= 5) {
     if (eatHours >= 16 && eatHours < 19) return "whatsapp";
     return "shop";
   }
 
-  // Saturday (6)
   if (eatDay === 6) {
     if (eatHours < 7) return "whatsapp";
     if (eatHours < 12) return "shop";
     if (eatHours < 14) return "whatsapp";
     if (eatHours < 16) return "shop";
-    return "whatsapp"; // 16:00 onwards
+    return "whatsapp";
   }
 
-  // Sunday (0)
   if (eatHours < 9.5) return "whatsapp";
   if (eatHours < 12) return "shop";
   if (eatHours < 14) return "whatsapp";
   if (eatHours < 16) return "shop";
-  return "whatsapp"; // 16:00 onwards
+  return "whatsapp";
 }
 
 export function SiteSettingsProvider({ children }: { children: ReactNode }) {
@@ -96,15 +77,24 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
 
       if (error) throw error;
 
-      const settingsMap: Record<string, string> = {};
+      const map: Record<string, string> = {};
       data?.forEach((row: { setting_key: string; setting_value: string }) => {
-        settingsMap[row.setting_key] = row.setting_value;
+        map[row.setting_key] = row.setting_value;
       });
 
+      // Resolve forceMode (new) with backwards-compat fallback to old keys
+      let forceMode: ForceMode = "schedule";
+      if (map.force_mode === "schedule" || map.force_mode === "whatsapp" || map.force_mode === "shop") {
+        forceMode = map.force_mode;
+      } else if (map.holiday_mode === "true") {
+        forceMode = "whatsapp";
+      }
+
       setSettings({
-        redirectMode: (settingsMap.redirect_mode as "shop" | "whatsapp") || "shop",
-        whatsappNumber: settingsMap.whatsapp_number || "+254115475543",
-        holidayMode: settingsMap.holiday_mode === "true",
+        redirectMode: (map.redirect_mode as "shop" | "whatsapp") || "shop",
+        whatsappNumber: map.whatsapp_number || "+254115475543",
+        holidayMode: map.holiday_mode === "true",
+        forceMode,
         isLoading: false,
       });
     } catch (err) {
@@ -117,7 +107,7 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
     fetchSettings();
   }, []);
 
-  // Update scheduled mode every minute
+  // Tick scheduled mode every minute
   useEffect(() => {
     const interval = setInterval(() => {
       setScheduledMode(getScheduledMode());
@@ -126,11 +116,10 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const getActiveMode = useCallback((): "shop" | "whatsapp" => {
-    // Holiday mode overrides everything → always whatsapp
-    if (settings.holidayMode) return "whatsapp";
-    // Otherwise use time-based schedule
+    if (settings.forceMode === "shop") return "shop";
+    if (settings.forceMode === "whatsapp") return "whatsapp";
     return scheduledMode;
-  }, [settings.holidayMode, scheduledMode]);
+  }, [settings.forceMode, scheduledMode]);
 
   const getDownloadUrl = useCallback(() => {
     const mode = getActiveMode();
@@ -159,3 +148,4 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
 export function useSiteSettings() {
   return useContext(SiteSettingsContext);
 }
+
