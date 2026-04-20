@@ -43,6 +43,9 @@ const App = () => (
                 <Route path="/" element={<Index />} />
                 <Route path="/kcse" element={<KnowledgeBank />} />
                 <Route path="/knowledge-bank" element={<Navigate to="/kcse" replace />} />
+                {/* Redirect old /articles/* URLs to /blogs to prevent noindex 404s */}
+                <Route path="/articles" element={<Navigate to="/blogs" replace />} />
+                <Route path="/articles/:slug" element={<Navigate to="/blogs" replace />} />
                 <Route path="/kcse-2026-project" element={<KcseProject />} />
                 <Route path="/kcse-2026-computer-studies-project" element={<KcseComputerStudies />} />
                 <Route path="/blogs" element={<Blogs />} />
