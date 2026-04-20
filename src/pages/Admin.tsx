@@ -1099,9 +1099,9 @@ const Admin = () => {
 
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="mb-6 grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-wrap h-auto gap-1 p-1">
-              <TabsTrigger value="redirect" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
-                <Repeat className="w-3.5 h-3.5" />
-                Redirect
+              <TabsTrigger value="posts" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
+                <FileText className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Blog</span> Posts
               </TabsTrigger>
               <TabsTrigger value="posts" className="flex items-center gap-1.5 text-xs sm:text-sm px-2 sm:px-3 py-2">
                 <FileText className="w-3.5 h-3.5" />
